@@ -269,6 +269,7 @@ public class Codelist : IEnumerable<GameEntry>, IEnumerable
 			throw new ArgumentException("A read/write stream is required.");
 		}
 		StreamWriter stringWriter = new StreamWriter(Stream);
+		stringWriter.AutoFlush = true;
 		using (IEnumerator<GameEntry> enumerator = GetEnumerator())
 		{
 			while (enumerator.MoveNext())
@@ -277,7 +278,6 @@ public class Codelist : IEnumerable<GameEntry>, IEnumerable
 				current.Write(stringWriter);
 			}
 		}
-		
 	}
 
 	public void xd5da23b762ce52a2(Codelist x3b50be75884cb97e)
