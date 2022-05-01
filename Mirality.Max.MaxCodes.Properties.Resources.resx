@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>1.3</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><data name="MCDecrypted"><value>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;xs:schema targetNamespace="http://www.mirality.co.nz/ns/MaxCodeManager2-Decrypted1" elementFormDefault="qualified"
+	xmlns="http://www.mirality.co.nz/ns/MaxCodeManager2-Decrypted1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	version="2"&gt;
+	&lt;xs:annotation&gt;
+		&lt;xs:documentation xml:lang="en"&gt;
+			List of decrypted code data, suitable for passing back from a decryption engine (or to an encryption engine).
+			Copyright (C) 2006,2008 by Mirality Systems.
+			Permission is hereby granted to use this schema in accordance with the GNU
+			General Public License, version 2.
+		&lt;/xs:documentation&gt;
+	&lt;/xs:annotation&gt;
+	&lt;xs:element name="CodeList"&gt;
+		&lt;xs:complexType&gt;
+			&lt;xs:sequence&gt;
+				&lt;xs:element name="Code" minOccurs="0" maxOccurs="unbounded"&gt;
+					&lt;xs:complexType&gt;
+						&lt;xs:choice&gt;
+							&lt;xs:element name="Error"&gt;
+								&lt;xs:complexType&gt;
+									&lt;xs:simpleContent&gt;
+										&lt;xs:extension base="xs:string"&gt;
+											&lt;xs:attribute name="Line" type="xs:nonNegativeInteger" use="optional" /&gt;
+										&lt;/xs:extension&gt;
+									&lt;/xs:simpleContent&gt;
+								&lt;/xs:complexType&gt;
+							&lt;/xs:element&gt;
+							&lt;xs:sequence&gt;
+								&lt;xs:element name="GameId" type="HexableDword" /&gt;
+								&lt;xs:element name="CodeId" type="HexableDword" /&gt;
+								&lt;xs:element name="Region" type="RegionType" /&gt;
+								&lt;xs:element name="Extension" minOccurs="0" maxOccurs="unbounded"&gt;
+									&lt;xs:complexType&gt;
+										&lt;xs:sequence /&gt;
+										&lt;xs:attribute name="Type" type="xs:unsignedByte" use="required" /&gt;
+										&lt;xs:attribute name="Value" type="HexableDword" use="optional" default="0" /&gt;
+									&lt;/xs:complexType&gt;
+								&lt;/xs:element&gt;
+								&lt;xs:element name="Commands" minOccurs="0"&gt;
+									&lt;xs:complexType&gt;
+										&lt;xs:sequence&gt;
+											&lt;xs:element name="Command" minOccurs="0" maxOccurs="unbounded"&gt;
+												&lt;xs:complexType&gt;
+													&lt;xs:sequence /&gt;
+													&lt;xs:attribute name="Address" type="HexableDword" use="required" /&gt;
+													&lt;xs:attribute name="Value" type="HexableDword" use="required" /&gt;
+												&lt;/xs:complexType&gt;
+											&lt;/xs:element&gt;
+										&lt;/xs:sequence&gt;
+									&lt;/xs:complexType&gt;
+								&lt;/xs:element&gt;
+							&lt;/xs:sequence&gt;
+						&lt;/xs:choice&gt;
+						&lt;xs:attribute name="Id" type="xs:string" use="optional" /&gt;
+						&lt;xs:attribute name="Master" type="xs:boolean" use="optional" default="false" /&gt;
+						&lt;xs:attribute name="Reserved" type="xs:boolean" use="optional" default="false" /&gt;
+					&lt;/xs:complexType&gt;
+				&lt;/xs:element&gt;
+			&lt;/xs:sequence&gt;
+		&lt;/xs:complexType&gt;
+		&lt;xs:unique name="UniqueIds"&gt;
+			&lt;xs:selector xpath="Code" /&gt;
+			&lt;xs:field xpath="@Id" /&gt;
+		&lt;/xs:unique&gt;
+	&lt;/xs:element&gt;
+	&lt;xs:simpleType name="RegionType"&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="NTSC" /&gt;
+			&lt;xs:enumeration value="PAL" /&gt;
+			&lt;xs:enumeration value="NTSCJ" /&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="HexableDword"&gt;
+		&lt;xs:union memberTypes="xs:unsignedInt"&gt;
+			&lt;xs:simpleType&gt;
+				&lt;xs:restriction base="xs:string"&gt;
+					&lt;xs:pattern value="0[xX][A-Fa-f0-9]{1,8}" /&gt;
+				&lt;/xs:restriction&gt;
+			&lt;/xs:simpleType&gt;
+		&lt;/xs:union&gt;
+	&lt;/xs:simpleType&gt;
+&lt;/xs:schema&gt;</value></data>
+  <data name="MCEncrypted"><value>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;xs:schema targetNamespace="http://www.mirality.co.nz/ns/MaxCodeManager2-Encrypted1" elementFormDefault="qualified"
+	xmlns="http://www.mirality.co.nz/ns/MaxCodeManager2-Encrypted1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	version="1"&gt;
+	&lt;xs:annotation&gt;
+		&lt;xs:documentation xml:lang="en"&gt;
+			List of encrypted code data, suitable for passing to a decryption engine (or from an encryption engine).
+			Copyright (C) 2006 by Mirality Systems.
+			Permission is hereby granted to use this schema in accordance with the GNU
+			General Public License, version 2.
+		&lt;/xs:documentation&gt;
+	&lt;/xs:annotation&gt;
+	&lt;xs:element name="CodeList"&gt;
+		&lt;xs:complexType&gt;
+			&lt;xs:sequence&gt;
+				&lt;xs:element name="Code" minOccurs="0" maxOccurs="unbounded"&gt;
+					&lt;xs:complexType&gt;
+						&lt;xs:choice minOccurs="0"&gt;
+							&lt;xs:element name="Error" type="xs:string" /&gt;
+							&lt;xs:element name="Line" minOccurs="1" maxOccurs="unbounded" type="xs:string" /&gt;
+						&lt;/xs:choice&gt;
+						&lt;xs:attribute name="Id" type="xs:string" use="optional" /&gt;
+					&lt;/xs:complexType&gt;
+				&lt;/xs:element&gt;
+			&lt;/xs:sequence&gt;
+		&lt;/xs:complexType&gt;
+	&lt;/xs:element&gt;
+&lt;/xs:schema&gt;</value></data>
+  </root>
