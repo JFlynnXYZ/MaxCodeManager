@@ -372,28 +372,28 @@ internal static class x9a1f7a25d35ea036
 			}
 		}
 
-		public bool x263d579af1d0d43f(string xe83157ceef27b3d4)
+		public bool x263d579af1d0d43f(string verbName)
 		{
-			return _080a233dd16d015c.ContainsKey(xe83157ceef27b3d4);
+			return _080a233dd16d015c.ContainsKey(verbName);
 		}
 
-		public xe264ee45dcea29ee xd6b6ed77479ef68c(string xe83157ceef27b3d4)
+		public xe264ee45dcea29ee xd6b6ed77479ef68c(string verbName)
 		{
 			if (xdf3d8f13acb97655)
 			{
 				throw new InvalidOperationException("Read only; cannot add verb");
 			}
-			if (xe83157ceef27b3d4 == null)
+			if (verbName == null)
 			{
 				throw new ArgumentNullException("verbName");
 			}
-			if (x263d579af1d0d43f(xe83157ceef27b3d4))
+			if (x263d579af1d0d43f(verbName))
 			{
 				return this.xe6d4b1b411ed94b5;
 			}
-			RegistryKey xcaaacea3d4f71ad = _2638e5469f8234dc.CreateSubKey(xe83157ceef27b3d4);
+			RegistryKey xcaaacea3d4f71ad = _2638e5469f8234dc.CreateSubKey(verbName);
 			xe264ee45dcea29ee xe264ee45dcea29ee = new xe264ee45dcea29ee(xcaaacea3d4f71ad, xdf3d8f13acb97655);
-			_080a233dd16d015c.Add(xe83157ceef27b3d4, xe264ee45dcea29ee);
+			_080a233dd16d015c.Add(verbName, xe264ee45dcea29ee);
 			return xe264ee45dcea29ee;
 		}
 

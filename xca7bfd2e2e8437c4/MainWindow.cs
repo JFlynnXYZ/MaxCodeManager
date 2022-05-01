@@ -42,10 +42,10 @@ internal class MainWindow : Form
 		}
 	}
 
-	public static MainWindow xebcf83b00134300b(Form x071bde1041617fce, string x399bfb4377fa76d2)
+	public static MainWindow CreateMessageBox(Form Parent, string Message)
 	{
 		MainWindow x0ad6e0a9d6b71dfc2 = new MainWindow();
-		x0ad6e0a9d6b71dfc2.x20aee281977480cf(x071bde1041617fce, x399bfb4377fa76d2);
+		x0ad6e0a9d6b71dfc2.x20aee281977480cf(Parent, Message);
 		return x0ad6e0a9d6b71dfc2;
 	}
 
@@ -57,9 +57,9 @@ internal class MainWindow : Form
 		}
 	}
 
-	protected void x20aee281977480cf(Form x071bde1041617fce, string x399bfb4377fa76d2)
+	protected void x20aee281977480cf(Form owner, string x399bfb4377fa76d2)
 	{
-		base.Owner = x071bde1041617fce;
+		base.Owner = owner;
 		xd397bb1e465ce45e = x399bfb4377fa76d2;
 		x35579b297303ed43();
 		x53b7203e935fcc6d();
@@ -88,7 +88,7 @@ internal class MainWindow : Form
 		Hide();
 	}
 
-	public void x4147aa1c4fe3686a(string x5786461d089b10a0, params object[] xce8d8c7e3c2c2426)
+	public void Message(string x5786461d089b10a0, params object[] xce8d8c7e3c2c2426)
 	{
 		xd397bb1e465ce45e = string.Format(CultureInfo.CurrentCulture, x5786461d089b10a0, xce8d8c7e3c2c2426);
 		x53b7203e935fcc6d();

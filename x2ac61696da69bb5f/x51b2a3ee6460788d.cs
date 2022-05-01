@@ -16,7 +16,7 @@ internal sealed class x51b2a3ee6460788d : IDisposable
 
 	private static bool _b9077bf2adec63c7;
 
-	public x51b2a3ee6460788d(TextReader xe134235b3526fa75)
+	public x51b2a3ee6460788d(TextReader reader)
 	{
 		XmlReaderSettings xmlReaderSettings = new XmlReaderSettings();
 		xmlReaderSettings.IgnoreComments = true;
@@ -27,7 +27,7 @@ internal sealed class x51b2a3ee6460788d : IDisposable
 		xmlReaderSettings.ValidationFlags |= XmlSchemaValidationFlags.ReportValidationWarnings;
 		xmlReaderSettings.Schemas.Add(xe0178b3cb76b6574());
 		xmlReaderSettings.Schemas.Compile();
-		xad23438fa23654dc = xe134235b3526fa75;
+		xad23438fa23654dc = reader;
 		xf86de1bd2f396938 = XmlReader.Create(xad23438fa23654dc, xmlReaderSettings);
 		xf86de1bd2f396938.ReadStartElement("CodeList");
 	}
@@ -171,59 +171,59 @@ internal sealed class x51b2a3ee6460788d : IDisposable
 		}
 	}
 
-	private static void x94831055fe55580e(x047611ec9892e059 x9035cf16181332fc, XmlReader xe134235b3526fa75)
+	private static void x94831055fe55580e(x047611ec9892e059 code, XmlReader reader)
 	{
-		while (!xe134235b3526fa75.EOF && xe134235b3526fa75.NodeType != XmlNodeType.EndElement)
+		while (!reader.EOF && reader.NodeType != XmlNodeType.EndElement)
 		{
-			string localName = xe134235b3526fa75.LocalName;
+			string localName = reader.LocalName;
 			try
 			{
 				switch (localName)
 				{
 				case "GameId":
-					x9035cf16181332fc.x52b8174788d367f9 = x9a16efbffdb71769(null, xe134235b3526fa75.ReadElementContentAsString());
+					code.x52b8174788d367f9 = x9a16efbffdb71769(null, reader.ReadElementContentAsString());
 					break;
 				case "CodeId":
-					x9035cf16181332fc.xb3efee94cf138f44 = x9a16efbffdb71769(null, xe134235b3526fa75.ReadElementContentAsString());
+					code.xb3efee94cf138f44 = x9a16efbffdb71769(null, reader.ReadElementContentAsString());
 					break;
 				case "Region":
 				{
-					string text = xe134235b3526fa75.ReadElementContentAsString();
+					string text = reader.ReadElementContentAsString();
 					if (Enum.IsDefined(typeof(RegionCode), text))
 					{
-						x9035cf16181332fc.x4b94e58155458175 = (RegionCode)Enum.Parse(typeof(RegionCode), text);
+						code.x4b94e58155458175 = (RegionCode)Enum.Parse(typeof(RegionCode), text);
 						break;
 					}
 					throw new FormatException("'" + text + "' is not a valid region code.");
 				}
 				case "Extension":
 				{
-					byte x43163d22e8cd5a = byte.Parse(xe134235b3526fa75.GetAttribute("Type"), CultureInfo.InvariantCulture);
-					string attribute = xe134235b3526fa75.GetAttribute("Value");
+					byte x43163d22e8cd5a = byte.Parse(reader.GetAttribute("Type"), CultureInfo.InvariantCulture);
+					string attribute = reader.GetAttribute("Value");
 					if (attribute == null)
 					{
-						x9035cf16181332fc.xa54a49b4cb11c6d1.Add(new x047611ec9892e059.x8f4d4d97dd0fc840(x43163d22e8cd5a, 0u));
+						code.xa54a49b4cb11c6d1.Add(new x047611ec9892e059.x8f4d4d97dd0fc840(x43163d22e8cd5a, 0u));
 					}
 					else
 					{
-						x9035cf16181332fc.xa54a49b4cb11c6d1.Add(new x047611ec9892e059.x8f4d4d97dd0fc840(x43163d22e8cd5a, x9a16efbffdb71769("Value", attribute)));
+						code.xa54a49b4cb11c6d1.Add(new x047611ec9892e059.x8f4d4d97dd0fc840(x43163d22e8cd5a, x9a16efbffdb71769("Value", attribute)));
 					}
-					xe134235b3526fa75.Skip();
+					reader.Skip();
 					break;
 				}
 				case "Commands":
-					if (xe134235b3526fa75.IsEmptyElement)
+					if (reader.IsEmptyElement)
 					{
-						xe134235b3526fa75.Skip();
+						reader.Skip();
 						break;
 					}
 					try
 					{
-						xe134235b3526fa75.ReadStartElement();
-						xc4acc6d39a6e0c05(x9035cf16181332fc, xe134235b3526fa75);
-						if (xe134235b3526fa75.NodeType == XmlNodeType.EndElement)
+						reader.ReadStartElement();
+						xc4acc6d39a6e0c05(code, reader);
+						if (reader.NodeType == XmlNodeType.EndElement)
 						{
-							xe134235b3526fa75.ReadEndElement();
+							reader.ReadEndElement();
 						}
 					}
 					catch (XmlSchemaException ex)
@@ -246,14 +246,14 @@ internal sealed class x51b2a3ee6460788d : IDisposable
 		}
 	}
 
-	private static void xc4acc6d39a6e0c05(x047611ec9892e059 x9035cf16181332fc, XmlReader xe134235b3526fa75)
+	private static void xc4acc6d39a6e0c05(x047611ec9892e059 code, XmlReader reader)
 	{
-		while (xe134235b3526fa75.IsStartElement("Command"))
+		while (reader.IsStartElement("Command"))
 		{
-			uint x179bb663e71b1f = x9a16efbffdb71769("Address", xe134235b3526fa75.GetAttribute("Address"));
-			uint xbcea506a33cf = x9a16efbffdb71769("Value", xe134235b3526fa75.GetAttribute("Value"));
-			x9035cf16181332fc.xea84056d876cd25a.Add(new x047611ec9892e059.x7a274f60ab25f2b9(x179bb663e71b1f, xbcea506a33cf));
-			xe134235b3526fa75.Skip();
+			uint x179bb663e71b1f = x9a16efbffdb71769("Address", reader.GetAttribute("Address"));
+			uint xbcea506a33cf = x9a16efbffdb71769("Value", reader.GetAttribute("Value"));
+			code.xea84056d876cd25a.Add(new x047611ec9892e059.x7a274f60ab25f2b9(x179bb663e71b1f, xbcea506a33cf));
+			reader.Skip();
 		}
 	}
 

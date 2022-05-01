@@ -19,7 +19,7 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 	{
 		public xfd5dc9a89edfa955 xc8f46b505998937b;
 
-		public xbabc9feec6f641db xb0b4ff1622a01d12;
+		public CodeEntry xb0b4ff1622a01d12;
 
 		public string xe9297f3324ef6f28;
 
@@ -33,10 +33,10 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 
 		public RectangleF x81baaabf2ec59aa2;
 
-		public x8f6a4861a1fa98b2(xfd5dc9a89edfa955 x9035cf16181332fc)
+		public x8f6a4861a1fa98b2(xfd5dc9a89edfa955 code)
 		{
-			xc8f46b505998937b = x9035cf16181332fc;
-			xb0b4ff1622a01d12 = x9035cf16181332fc.xb0b4ff1622a01d12;
+			xc8f46b505998937b = code;
+			xb0b4ff1622a01d12 = code.xb0b4ff1622a01d12;
 		}
 	}
 
@@ -66,7 +66,7 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 	private static Predicate<x95fcf261e3011b00> x2ead37855225a377;
 
 	[CompilerGenerated]
-	private static Predicate<xbabc9feec6f641db> xf7a1e5b55d7eece4;
+	private static Predicate<CodeEntry> xf7a1e5b55d7eece4;
 
 	[Browsable(false)]
 	[ReadOnly(true)]
@@ -331,9 +331,9 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 
 	private void x3cd69f5448118938()
 	{
-		Converter<x95fcf261e3011b00, uint> converter = (x95fcf261e3011b00 xda5bf54deb817e37) => x9559a72e127afe45(xda5bf54deb817e37).xb0b4ff1622a01d12.xb3efee94cf138f44;
+		Converter<x95fcf261e3011b00, uint> converter = (x95fcf261e3011b00 node) => x9559a72e127afe45(node).xb0b4ff1622a01d12.xb3efee94cf138f44;
 		List<uint> list = new List<x95fcf261e3011b00>(base.xc82eff4818ce3f25).ConvertAll(converter);
-		List<uint> list2 = new List<x95fcf261e3011b00>(base.x03a3afe609cec84c).FindAll((x95fcf261e3011b00 xda5bf54deb817e37) => xda5bf54deb817e37.x5e48bd0c96038b5e).ConvertAll(converter);
+		List<uint> list2 = new List<x95fcf261e3011b00>(base.x03a3afe609cec84c).FindAll((x95fcf261e3011b00 node) => node.x5e48bd0c96038b5e).ConvertAll(converter);
 		_7a83d5516f8079b5 = null;
 		x5577363cc650aaeb();
 		try
@@ -396,22 +396,22 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 		}
 	}
 
-	private void x72be6f2957b1e0ca(xfd5dc9a89edfa955 x9035cf16181332fc)
+	private void x72be6f2957b1e0ca(xfd5dc9a89edfa955 code)
 	{
-		if (x9035cf16181332fc.xb0b4ff1622a01d12.xda8f238d1a051872)
+		if (code.xb0b4ff1622a01d12.xda8f238d1a051872)
 		{
 			return;
 		}
-		x95fcf261e3011b00 x95fcf261e3011b = new x95fcf261e3011b00(x9035cf16181332fc.xb0b4ff1622a01d12.Name);
-		x95fcf261e3011b.xd229d86af0f16fb0 = new x8f6a4861a1fa98b2(x9035cf16181332fc);
-		if (x9035cf16181332fc.xb0b4ff1622a01d12.xbe23edc82b0342c0 == null)
+		x95fcf261e3011b00 x95fcf261e3011b = new x95fcf261e3011b00(code.xb0b4ff1622a01d12.Name);
+		x95fcf261e3011b.xd229d86af0f16fb0 = new x8f6a4861a1fa98b2(code);
+		if (code.xb0b4ff1622a01d12.xbe23edc82b0342c0 == null)
 		{
 			x7098cef51c198a8d.x63b0f7fed3f5bd88.Add(x95fcf261e3011b);
 		}
 		else
 		{
 			x95fcf261e3011b.xc439cbba6c00a3a0 = "CheckboxCode";
-			x047611ec9892e059.x8f4d4d97dd0fc840 x8f4d4d97dd0fc = x9035cf16181332fc.xb0b4ff1622a01d12.xbe23edc82b0342c0.x4521e8bf4ec2b6be(4);
+			x047611ec9892e059.x8f4d4d97dd0fc840 x8f4d4d97dd0fc = code.xb0b4ff1622a01d12.xbe23edc82b0342c0.x4521e8bf4ec2b6be(4);
 			if (x8f4d4d97dd0fc == null)
 			{
 				x7098cef51c198a8d.x63b0f7fed3f5bd88.Add(x95fcf261e3011b);
@@ -430,7 +430,7 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 				x95fcf261e3011b.xc439cbba6c00a3a0 = "UnknownCode";
 				x7098cef51c198a8d.x63b0f7fed3f5bd88.Add(x95fcf261e3011b);
 			}
-			x047611ec9892e059.x8f4d4d97dd0fc840 x8f4d4d97dd0fc2 = x9035cf16181332fc.xb0b4ff1622a01d12.xbe23edc82b0342c0.x4521e8bf4ec2b6be(5);
+			x047611ec9892e059.x8f4d4d97dd0fc840 x8f4d4d97dd0fc2 = code.xb0b4ff1622a01d12.xbe23edc82b0342c0.x4521e8bf4ec2b6be(5);
 			if (x8f4d4d97dd0fc2 != null)
 			{
 				if (x8f4d4d97dd0fc2.x6b73aa01aa019d3a == 0)
@@ -443,16 +443,16 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 				}
 			}
 		}
-		x13aa21d407581685.Add(x9035cf16181332fc.xb0b4ff1622a01d12.xb3efee94cf138f44, x95fcf261e3011b);
+		x13aa21d407581685.Add(code.xb0b4ff1622a01d12.xb3efee94cf138f44, x95fcf261e3011b);
 	}
 
-	public x95fcf261e3011b00 x394a3caa61f59fc1(xfd5dc9a89edfa955 x9035cf16181332fc)
+	public x95fcf261e3011b00 x394a3caa61f59fc1(xfd5dc9a89edfa955 code)
 	{
-		if (x9035cf16181332fc == null)
+		if (code == null)
 		{
 			throw new ArgumentNullException("code");
 		}
-		return x394a3caa61f59fc1(x9035cf16181332fc.xb0b4ff1622a01d12.xb3efee94cf138f44);
+		return x394a3caa61f59fc1(code.xb0b4ff1622a01d12.xb3efee94cf138f44);
 	}
 
 	public x95fcf261e3011b00 x394a3caa61f59fc1(uint xba336f6c3ae33222)
@@ -464,13 +464,13 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 		return null;
 	}
 
-	public xfd5dc9a89edfa955 x9559a72e127afe45(x95fcf261e3011b00 xda5bf54deb817e37)
+	public xfd5dc9a89edfa955 x9559a72e127afe45(x95fcf261e3011b00 node)
 	{
-		if (xda5bf54deb817e37 == null)
+		if (node == null)
 		{
 			throw new ArgumentNullException("node");
 		}
-		return ((x8f6a4861a1fa98b2)xda5bf54deb817e37.xd229d86af0f16fb0).xc8f46b505998937b;
+		return ((x8f6a4861a1fa98b2)node.xd229d86af0f16fb0).xc8f46b505998937b;
 	}
 
 	protected override void OnNodeSelectionChanged(x8f674b723ab8cda2 xfbf34718e704c6bc)
@@ -529,13 +529,13 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 		xf8992f666652d7b1(x95fcf261e3011b, x95fcf261e3011b.x4f6686d624d5dfe1);
 	}
 
-	private void xf8992f666652d7b1(x95fcf261e3011b00 xda5bf54deb817e37, x95fcf261e3011b00 x9885ca17c1b6bfb1)
+	private void xf8992f666652d7b1(x95fcf261e3011b00 node, x95fcf261e3011b00 x9885ca17c1b6bfb1)
 	{
-		if (xda5bf54deb817e37 == null)
+		if (node == null)
 		{
 			throw new ArgumentNullException("node");
 		}
-		xfd5dc9a89edfa955 xfd5dc9a89edfa = x9559a72e127afe45(xda5bf54deb817e37);
+		xfd5dc9a89edfa955 xfd5dc9a89edfa = x9559a72e127afe45(node);
 		if (xfd5dc9a89edfa.xa157de8185757b11)
 		{
 			throw new InvalidOperationException("Cannot move inherited codes");
@@ -561,7 +561,7 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 		{
 			owner = owner.Owner;
 		}
-		List<xbabc9feec6f641db> list = xa0380078f0b6cbb7.xfd788c2d21a2ecf6((xbabc9feec6f641db x9035cf16181332fc) => x9035cf16181332fc.xbe23edc82b0342c0 == null);
+		List<CodeEntry> list = xa0380078f0b6cbb7.xfd788c2d21a2ecf6((CodeEntry code) => code.xbe23edc82b0342c0 == null);
 		if (list.Count == 0)
 		{
 			return;
@@ -615,13 +615,13 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 		base.OnExpanded(xfbf34718e704c6bc);
 	}
 
-	protected override void UpdateNodeHeight(x95fcf261e3011b00 xda5bf54deb817e37, int x9b0739496f8b5475)
+	protected override void UpdateNodeHeight(x95fcf261e3011b00 node, int x9b0739496f8b5475)
 	{
-		if (xda5bf54deb817e37.xd229d86af0f16fb0 is x8f6a4861a1fa98b2 x8f6a4861a1fa98b)
+		if (node.xd229d86af0f16fb0 is x8f6a4861a1fa98b2 x8f6a4861a1fa98b)
 		{
 			if (x8f6a4861a1fa98b.xb0b4ff1622a01d12.xda8f238d1a051872)
 			{
-				x8f6a4861a1fa98b.xe9297f3324ef6f28 = xa0380078f0b6cbb7.xcde1799d3b83bb92.x759aa16c2016a289;
+				x8f6a4861a1fa98b.xe9297f3324ef6f28 = xa0380078f0b6cbb7.xcde1799d3b83bb92.Name;
 				x8f6a4861a1fa98b.x999a9e029fc88104 = xa0380078f0b6cbb7.xcde1799d3b83bb92.x4e020dae918bd2ce;
 			}
 			else
@@ -632,7 +632,7 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 			x8f6a4861a1fa98b.x4191326b8c285bfa = x8f6a4861a1fa98b.xb0b4ff1622a01d12.x4191326b8c285bfa;
 			using (Graphics graphics = CreateGraphics())
 			{
-				int num = xda5bf54deb817e37.x884641cec39ad3eb.Width;
+				int num = node.x884641cec39ad3eb.Width;
 				SizeF size = graphics.MeasureString(x8f6a4861a1fa98b.xe9297f3324ef6f28, x896f29d711ea5f3c, num);
 				x8f6a4861a1fa98b.x633856f77b322cec = new RectangleF(Point.Empty, size);
 				SizeF sizeF = graphics.MeasureString(x8f6a4861a1fa98b.x999a9e029fc88104, x884ddcb4b34ebfd4, num - 8);
@@ -640,14 +640,14 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 				SizeF sizeF2 = graphics.MeasureString(x8f6a4861a1fa98b.x4191326b8c285bfa, x288a00e303b5ad49, num - 16);
 				x8f6a4861a1fa98b.x81baaabf2ec59aa2 = new RectangleF(x8f6a4861a1fa98b.x633856f77b322cec.Left + 16f, Math.Max(x8f6a4861a1fa98b.x633856f77b322cec.Bottom, x8f6a4861a1fa98b.xffaf890d231e8b63.Bottom), sizeF2.Width, sizeF2.Height);
 			}
-			xda5bf54deb817e37.xb0f146032f47c24e = (int)Math.Ceiling(x8f6a4861a1fa98b.x81baaabf2ec59aa2.Bottom - x8f6a4861a1fa98b.x633856f77b322cec.Top);
+			node.xb0f146032f47c24e = (int)Math.Ceiling(x8f6a4861a1fa98b.x81baaabf2ec59aa2.Bottom - x8f6a4861a1fa98b.x633856f77b322cec.Top);
 		}
-		base.UpdateNodeHeight(xda5bf54deb817e37, x9b0739496f8b5475);
+		base.UpdateNodeHeight(node, x9b0739496f8b5475);
 	}
 
-	protected override void PaintContentText(Graphics x41347a961b838962, Rectangle xda73fcb97c77d998, x95fcf261e3011b00 xda5bf54deb817e37, Color x53218bf919efffd4, Color x154083d58301ef75)
+	protected override void PaintContentText(Graphics x41347a961b838962, Rectangle xda73fcb97c77d998, x95fcf261e3011b00 node, Color x53218bf919efffd4, Color x154083d58301ef75)
 	{
-		if (!(xda5bf54deb817e37.xd229d86af0f16fb0 is x8f6a4861a1fa98b2 x8f6a4861a1fa98b))
+		if (!(node.xd229d86af0f16fb0 is x8f6a4861a1fa98b2 x8f6a4861a1fa98b))
 		{
 			return;
 		}
@@ -674,15 +674,15 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 	}
 
 	[CompilerGenerated]
-	private uint x061d076d22192317(x95fcf261e3011b00 xda5bf54deb817e37)
+	private uint x061d076d22192317(x95fcf261e3011b00 node)
 	{
-		return x9559a72e127afe45(xda5bf54deb817e37).xb0b4ff1622a01d12.xb3efee94cf138f44;
+		return x9559a72e127afe45(node).xb0b4ff1622a01d12.xb3efee94cf138f44;
 	}
 
 	[CompilerGenerated]
-	private static bool xfab0c875b6424502(x95fcf261e3011b00 xda5bf54deb817e37)
+	private static bool xfab0c875b6424502(x95fcf261e3011b00 node)
 	{
-		return xda5bf54deb817e37.x5e48bd0c96038b5e;
+		return node.x5e48bd0c96038b5e;
 	}
 
 	[CompilerGenerated]
@@ -702,8 +702,8 @@ public class x70c0f08fb6e896c2 : xea5e4be807a4597b
 	}
 
 	[CompilerGenerated]
-	private static bool xcf9b486fe85c7d84(xbabc9feec6f641db x9035cf16181332fc)
+	private static bool xcf9b486fe85c7d84(CodeEntry code)
 	{
-		return x9035cf16181332fc.xbe23edc82b0342c0 == null;
+		return code.xbe23edc82b0342c0 == null;
 	}
 }

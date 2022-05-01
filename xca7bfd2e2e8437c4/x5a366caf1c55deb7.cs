@@ -65,7 +65,7 @@ internal abstract class x5a366caf1c55deb7 : x1cc976ec1727390f
 			x97f9c5601511630c.OnLog(new xdd5ac28490ab132e(string.Format(x5786461d089b10a0, xce8d8c7e3c2c2426)));
 		}
 
-		public void x4147aa1c4fe3686a(string xb41faee6912a2313)
+		public void Message(string xb41faee6912a2313)
 		{
 			if (!x97f9c5601511630c.x25e3ad2b132958d4)
 			{

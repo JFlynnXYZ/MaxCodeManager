@@ -58,7 +58,7 @@ internal sealed class xed601ddc3e643870 : IDisposable
 		}
 	}
 
-	public void xc4305ca6c268b073(string xeaf1b27180c0557b, x047611ec9892e059 x9035cf16181332fc)
+	public void xc4305ca6c268b073(string xeaf1b27180c0557b, x047611ec9892e059 code)
 	{
 		if (x5aa326f374b3d0ef == null)
 		{
@@ -69,18 +69,18 @@ internal sealed class xed601ddc3e643870 : IDisposable
 		{
 			x5aa326f374b3d0ef.WriteAttributeString("Id", xeaf1b27180c0557b);
 		}
-		if (x9035cf16181332fc.xda8f238d1a051872)
+		if (code.xda8f238d1a051872)
 		{
 			x5aa326f374b3d0ef.WriteAttributeString("Master", "true");
 		}
-		if (x9035cf16181332fc.xd0431a295f2ed35f)
+		if (code.xd0431a295f2ed35f)
 		{
 			x5aa326f374b3d0ef.WriteAttributeString("Reserved", "true");
 		}
-		x5aa326f374b3d0ef.WriteElementString("GameId", x9035cf16181332fc.x52b8174788d367f9.ToString(CultureInfo.InvariantCulture));
-		x5aa326f374b3d0ef.WriteElementString("CodeId", x9035cf16181332fc.xb3efee94cf138f44.ToString(CultureInfo.InvariantCulture));
-		x5aa326f374b3d0ef.WriteElementString("Region", x9035cf16181332fc.x4b94e58155458175.ToString());
-		foreach (x047611ec9892e059.x8f4d4d97dd0fc840 item in x9035cf16181332fc.xa54a49b4cb11c6d1)
+		x5aa326f374b3d0ef.WriteElementString("GameId", code.x52b8174788d367f9.ToString(CultureInfo.InvariantCulture));
+		x5aa326f374b3d0ef.WriteElementString("CodeId", code.xb3efee94cf138f44.ToString(CultureInfo.InvariantCulture));
+		x5aa326f374b3d0ef.WriteElementString("Region", code.x4b94e58155458175.ToString());
+		foreach (x047611ec9892e059.x8f4d4d97dd0fc840 item in code.xa54a49b4cb11c6d1)
 		{
 			x5aa326f374b3d0ef.WriteStartElement("Extension");
 			x5aa326f374b3d0ef.WriteAttributeString("Type", item.x3146d638ec378671.ToString(CultureInfo.InvariantCulture));
@@ -91,7 +91,7 @@ internal sealed class xed601ddc3e643870 : IDisposable
 			x5aa326f374b3d0ef.WriteEndElement();
 		}
 		x5aa326f374b3d0ef.WriteStartElement("Commands");
-		foreach (x047611ec9892e059.x7a274f60ab25f2b9 item2 in x9035cf16181332fc.xea84056d876cd25a)
+		foreach (x047611ec9892e059.x7a274f60ab25f2b9 item2 in code.xea84056d876cd25a)
 		{
 			x5aa326f374b3d0ef.WriteStartElement("Command");
 			x5aa326f374b3d0ef.WriteAttributeString("Address", item2.x1d5cfa3bffdfb042.ToString(CultureInfo.InvariantCulture));

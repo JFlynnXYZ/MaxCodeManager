@@ -7,13 +7,13 @@ public struct x131eae80bdcb392e
 {
 	public static readonly x131eae80bdcb392e x45260ad4b94166f2 = default(x131eae80bdcb392e);
 
-	private x33636090f73cdcbf x48ba31883363a74d;
+	private Codelist x48ba31883363a74d;
 
-	private x33636090f73cdcbf xe5419d2bfb9d8f67;
+	private Codelist xe5419d2bfb9d8f67;
 
-	private x33636090f73cdcbf _32866930416901c3;
+	private Codelist _32866930416901c3;
 
-	public x33636090f73cdcbf x32866930416901c3 => _32866930416901c3;
+	public Codelist x32866930416901c3 => _32866930416901c3;
 
 	public bool xc4d326c7b2d73aa6 => x48ba31883363a74d != null;
 
@@ -31,7 +31,7 @@ public struct x131eae80bdcb392e
 		}
 	}
 
-	public x131eae80bdcb392e(x33636090f73cdcbf xcbac40a09f61fedb, x33636090f73cdcbf xf21973aee6cb64fb)
+	public x131eae80bdcb392e(Codelist xcbac40a09f61fedb, Codelist xf21973aee6cb64fb)
 	{
 		x48ba31883363a74d = xcbac40a09f61fedb;
 		xe5419d2bfb9d8f67 = xf21973aee6cb64fb;
@@ -72,7 +72,7 @@ public struct x131eae80bdcb392e
 		return !x363a1f6e92149df5.Equals(xd6efc2d6e891a521);
 	}
 
-	public x33636090f73cdcbf x38758cbbee49e4cb(RegionCode xa4d52e34b62b5495)
+	public Codelist x38758cbbee49e4cb(RegionCode xa4d52e34b62b5495)
 	{
 		return xa4d52e34b62b5495 switch
 		{
@@ -82,15 +82,15 @@ public struct x131eae80bdcb392e
 		};
 	}
 
-	public void x90fda48194fc6b9a(RegionCode xa4d52e34b62b5495, x33636090f73cdcbf x8a0b266419f09a55)
+	public void x90fda48194fc6b9a(RegionCode xa4d52e34b62b5495, Codelist list)
 	{
 		switch (xa4d52e34b62b5495)
 		{
 		case RegionCode.PAL:
-			x48ba31883363a74d = x8a0b266419f09a55;
+			x48ba31883363a74d = list;
 			break;
 		case RegionCode.NTSC:
-			xe5419d2bfb9d8f67 = x8a0b266419f09a55;
+			xe5419d2bfb9d8f67 = list;
 			break;
 		}
 		xbbec9f370125b395();
@@ -100,7 +100,7 @@ public struct x131eae80bdcb392e
 	{
 		if (xc4d326c7b2d73aa6 && x09d3019ea043c710)
 		{
-			_32866930416901c3 = new x33636090f73cdcbf();
+			_32866930416901c3 = new Codelist();
 			_32866930416901c3.xd5da23b762ce52a2(x48ba31883363a74d);
 			_32866930416901c3.xd5da23b762ce52a2(xe5419d2bfb9d8f67);
 		}

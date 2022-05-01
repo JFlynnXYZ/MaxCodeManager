@@ -146,9 +146,9 @@ public class x1e80b3bb288f59a1 : Form
 
 	private ToolStripMenuItem xc0f4af8720b77998;
 
-	private readonly xa0380078f0b6cbb7 _c74ed71dea076128;
+	private readonly GameEntry _c74ed71dea076128;
 
-	private xbabc9feec6f641db _b0b4ff1622a01d12;
+	private CodeEntry _b0b4ff1622a01d12;
 
 	private Font _288a00e303b5ad49;
 
@@ -159,7 +159,7 @@ public class x1e80b3bb288f59a1 : Form
 	[CompilerGenerated]
 	private static Comparison<x9e548743c3f0e895.xf370fda13822d1f9> xb52cc720056569fd;
 
-	public xbabc9feec6f641db xe55cfc2215257397 => _b0b4ff1622a01d12;
+	public CodeEntry xe55cfc2215257397 => _b0b4ff1622a01d12;
 
 	protected override void Dispose(bool xb41acd866d5cbca8)
 	{
@@ -699,7 +699,7 @@ public class x1e80b3bb288f59a1 : Form
 		ResumeLayout(performLayout: false);
 	}
 
-	public x1e80b3bb288f59a1(xa0380078f0b6cbb7 xbfd1755ba00cde3c, xbabc9feec6f641db x9035cf16181332fc)
+	public x1e80b3bb288f59a1(GameEntry xbfd1755ba00cde3c, CodeEntry code)
 	{
 		x85601834555fb7d5();
 		_288a00e303b5ad49 = new Font(FontFamily.GenericMonospace, x903f46c0ecaae5df.Font.SizeInPoints, FontStyle.Regular, GraphicsUnit.Point);
@@ -707,7 +707,7 @@ public class x1e80b3bb288f59a1 : Form
 		x88a745fd562c8d72.Location = xb4aadda44c560ced.Location;
 		x0c4d83043d585aad();
 		_c74ed71dea076128 = xbfd1755ba00cde3c;
-		_b0b4ff1622a01d12 = x9035cf16181332fc;
+		_b0b4ff1622a01d12 = code;
 		xea522ff5ab83cc71();
 	}
 
@@ -752,7 +752,7 @@ public class x1e80b3bb288f59a1 : Form
 			x88a745fd562c8d72.Visible = true;
 			if (_b0b4ff1622a01d12 == null)
 			{
-				_b0b4ff1622a01d12 = new xbabc9feec6f641db();
+				_b0b4ff1622a01d12 = new CodeEntry();
 				_b0b4ff1622a01d12.xda8f238d1a051872 = true;
 				_b0b4ff1622a01d12.xb1d0737e4174a713 = CodeManagerSettings.Instance.RegionCode;
 				if (_b0b4ff1622a01d12.xb1d0737e4174a713 == RegionCode.Mixed)
@@ -788,8 +788,8 @@ public class x1e80b3bb288f59a1 : Form
 			x5247f59b7f2d7c0a(null, EventArgs.Empty);
 			if (_b0b4ff1622a01d12 == null)
 			{
-				_b0b4ff1622a01d12 = new xbabc9feec6f641db();
-				_b0b4ff1622a01d12.xb1d0737e4174a713 = _c74ed71dea076128.x9b7a81a8f32a1422;
+				_b0b4ff1622a01d12 = new CodeEntry();
+				_b0b4ff1622a01d12.xb1d0737e4174a713 = _c74ed71dea076128.Region;
 				if (_b0b4ff1622a01d12.xb1d0737e4174a713 == RegionCode.Mixed)
 				{
 					_b0b4ff1622a01d12.xb1d0737e4174a713 = RegionCode.PAL;
@@ -825,7 +825,7 @@ public class x1e80b3bb288f59a1 : Form
 
 	private void x2dff49496bdb3cf1()
 	{
-		foreach (xbabc9feec6f641db item in _c74ed71dea076128)
+		foreach (CodeEntry item in _c74ed71dea076128)
 		{
 			if (item.xbe23edc82b0342c0 != null)
 			{
@@ -941,7 +941,7 @@ public class x1e80b3bb288f59a1 : Form
 		{
 			return;
 		}
-		foreach (xbabc9feec6f641db item in x70803a733f990c26.Items)
+		foreach (CodeEntry item in x70803a733f990c26.Items)
 		{
 			if (item.xb3efee94cf138f44 == (uint)x97e273780f406bf3.Value)
 			{
@@ -982,7 +982,7 @@ public class x1e80b3bb288f59a1 : Form
 		_8329ef83c85d35c7 = true;
 		try
 		{
-			x97e273780f406bf3.Value = ((xbabc9feec6f641db)x70803a733f990c26.SelectedItem).xb3efee94cf138f44;
+			x97e273780f406bf3.Value = ((CodeEntry)x70803a733f990c26.SelectedItem).xb3efee94cf138f44;
 		}
 		finally
 		{
@@ -993,13 +993,13 @@ public class x1e80b3bb288f59a1 : Form
 
 	private void xf7172edd6d7047b1()
 	{
-		xbabc9feec6f641db xbabc9feec6f641db = (xbabc9feec6f641db)x70803a733f990c26.SelectedItem;
-		if (xbabc9feec6f641db == null || xbabc9feec6f641db.xbe23edc82b0342c0 == null)
+		CodeEntry codeEntry = (CodeEntry)x70803a733f990c26.SelectedItem;
+		if (codeEntry == null || codeEntry.xbe23edc82b0342c0 == null)
 		{
 			x343902aafcac4852.ImageIndex = 0;
 			return;
 		}
-		x047611ec9892e059.x8f4d4d97dd0fc840 x8f4d4d97dd0fc = xbabc9feec6f641db.xbe23edc82b0342c0.x4521e8bf4ec2b6be(5);
+		x047611ec9892e059.x8f4d4d97dd0fc840 x8f4d4d97dd0fc = codeEntry.xbe23edc82b0342c0.x4521e8bf4ec2b6be(5);
 		if (x8f4d4d97dd0fc == null)
 		{
 			x343902aafcac4852.ImageIndex = 0;
@@ -1068,7 +1068,7 @@ public class x1e80b3bb288f59a1 : Form
 				_b0b4ff1622a01d12.xbe23edc82b0342c0.xa54a49b4cb11c6d1.Add(new x047611ec9892e059.x8f4d4d97dd0fc840(5, 1u));
 			}
 		}
-		List<xbabc9feec6f641db> list = new List<xbabc9feec6f641db>();
+		List<CodeEntry> list = new List<CodeEntry>();
 		list.Add(_b0b4ff1622a01d12);
 		List<string> list2 = x7bb28d9758d19dd0.x6b6fd0a44693bc2e(list);
 		if (list2.Count > 0)

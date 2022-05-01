@@ -12,7 +12,7 @@ internal interface xa593855140ea9af2
 
 	void x0c8a59ac3e2be908(string x5786461d089b10a0, params object[] xce8d8c7e3c2c2426);
 
-	void x4147aa1c4fe3686a(string xb41faee6912a2313);
+	void Message(string xb41faee6912a2313);
 
 	void xefaf3c086735b687(int xc196721e130d135a, double x0fbedfe2f1bb9bd6);
 

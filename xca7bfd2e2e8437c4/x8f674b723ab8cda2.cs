@@ -8,8 +8,8 @@ public class x8f674b723ab8cda2 : EventArgs
 
 	public x95fcf261e3011b00 x40212106aad8a8b0 => _40212106aad8a8b0;
 
-	public x8f674b723ab8cda2(x95fcf261e3011b00 xda5bf54deb817e37)
+	public x8f674b723ab8cda2(x95fcf261e3011b00 node)
 	{
-		_40212106aad8a8b0 = xda5bf54deb817e37;
+		_40212106aad8a8b0 = node;
 	}
 }

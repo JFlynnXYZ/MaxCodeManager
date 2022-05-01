@@ -28,26 +28,26 @@ internal class CodeLineException : Exception
 	}
 
 	[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
-	protected CodeLineException(SerializationInfo x8d3f74e5f925679c, StreamingContext x0f7b23d1c393aed9)
-		: base(x8d3f74e5f925679c, x0f7b23d1c393aed9)
+	protected CodeLineException(SerializationInfo info, StreamingContext x0f7b23d1c393aed9)
+		: base(info, x0f7b23d1c393aed9)
 	{
-		if (x8d3f74e5f925679c == null)
+		if (info == null)
 		{
 			throw new ArgumentNullException("info");
 		}
-		_LineIndex = x8d3f74e5f925679c.GetInt32("LineIndex");
-		_Line = x8d3f74e5f925679c.GetString("Line");
+		_LineIndex = info.GetInt32("LineIndex");
+		_Line = info.GetString("Line");
 	}
 
 	[SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
-	public override void GetObjectData(SerializationInfo x8d3f74e5f925679c, StreamingContext x0f7b23d1c393aed9)
+	public override void GetObjectData(SerializationInfo info, StreamingContext x0f7b23d1c393aed9)
 	{
-		base.GetObjectData(x8d3f74e5f925679c, x0f7b23d1c393aed9);
-		if (x8d3f74e5f925679c == null)
+		base.GetObjectData(info, x0f7b23d1c393aed9);
+		if (info == null)
 		{
 			throw new ArgumentNullException("info");
 		}
-		x8d3f74e5f925679c.AddValue("LineIndex", LineIndex);
-		x8d3f74e5f925679c.AddValue("Line", Line);
+		info.AddValue("LineIndex", LineIndex);
+		info.AddValue("Line", Line);
 	}
 }

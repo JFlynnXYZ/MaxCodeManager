@@ -13,13 +13,13 @@ namespace x4c5768933ca951f6;
 
 public class x1536525b14cf2192 : Form
 {
-	private xa0380078f0b6cbb7 _c74ed71dea076128;
+	private GameEntry _c74ed71dea076128;
 
 	private uint _52b8174788d367f9;
 
 	private uint _b3efee94cf138f44;
 
-	private xbabc9feec6f641db _b0b4ff1622a01d12;
+	private CodeEntry _b0b4ff1622a01d12;
 
 	private IContainer xb7dfc13308b54974;
 
@@ -35,7 +35,7 @@ public class x1536525b14cf2192 : Form
 
 	private Button x96468a6307eec3e3;
 
-	public xbabc9feec6f641db xb0b4ff1622a01d12 => _b0b4ff1622a01d12;
+	public CodeEntry xb0b4ff1622a01d12 => _b0b4ff1622a01d12;
 
 	public event CancelEventHandler x33db2684576804ef;
 
@@ -49,10 +49,10 @@ public class x1536525b14cf2192 : Form
 		}
 	}
 
-	public static x1536525b14cf2192 xebcf83b00134300b(xa0380078f0b6cbb7 xb6a159a84cb992d6, uint x28011ef2e60e6ef5, uint xba336f6c3ae33222, string x1c2743f354837549, string xc15bd84e01929885, string x77c5a31ec0891f38, params string[] xeb980cfa89af6e46)
+	public static x1536525b14cf2192 xebcf83b00134300b(GameEntry Form, uint x28011ef2e60e6ef5, uint xba336f6c3ae33222, string x1c2743f354837549, string xc15bd84e01929885, string x77c5a31ec0891f38, params string[] xeb980cfa89af6e46)
 	{
 		x1536525b14cf2192 x1536525b14cf2193 = new x1536525b14cf2192();
-		x1536525b14cf2193._c74ed71dea076128 = xb6a159a84cb992d6;
+		x1536525b14cf2193._c74ed71dea076128 = Form;
 		x1536525b14cf2193._52b8174788d367f9 = x28011ef2e60e6ef5;
 		x1536525b14cf2193._b3efee94cf138f44 = xba336f6c3ae33222;
 		x1536525b14cf2193.Text = x1c2743f354837549;
@@ -71,14 +71,14 @@ public class x1536525b14cf2192 : Form
 		}
 	}
 
-	private xbabc9feec6f641db xc9e97689bb4a5102()
+	private CodeEntry xc9e97689bb4a5102()
 	{
-		xbabc9feec6f641db xbabc9feec6f641db = new xbabc9feec6f641db();
-		xbabc9feec6f641db.Name = x9592d68fcb5ab881.Text.Trim();
-		xbabc9feec6f641db.x4e020dae918bd2ce = x5ee38acf34ff0ae3.Text.Trim();
+		CodeEntry codeEntry = new CodeEntry();
+		codeEntry.Name = x9592d68fcb5ab881.Text.Trim();
+		codeEntry.x4e020dae918bd2ce = x5ee38acf34ff0ae3.Text.Trim();
 		try
 		{
-			xbabc9feec6f641db.x7e5b09fa2269d9a5 = new xf6e5c5e1901f893f(xdd8dff12a799aaad.Lines);
+			codeEntry.CheatCodes = new Codes(xdd8dff12a799aaad.Lines);
 		}
 		catch (CodeLineException ex)
 		{
@@ -90,7 +90,7 @@ public class x1536525b14cf2192 : Form
 		}
 		if (x7bb28d9758d19dd0.x3452082a8fecf97d)
 		{
-			List<string> list = x7bb28d9758d19dd0.x2731b90dfbad5cbc(new List<xbabc9feec6f641db>(new xbabc9feec6f641db[1] { xbabc9feec6f641db }));
+			List<string> list = x7bb28d9758d19dd0.x2731b90dfbad5cbc(new List<CodeEntry>(new CodeEntry[1] { codeEntry }));
 			if (list.Count > 0)
 			{
 				base.ActiveControl = xdd8dff12a799aaad;
@@ -98,21 +98,21 @@ public class x1536525b14cf2192 : Form
 				base.DialogResult = DialogResult.None;
 				return null;
 			}
-			if (xbabc9feec6f641db.xbe23edc82b0342c0 == null)
+			if (codeEntry.xbe23edc82b0342c0 == null)
 			{
 				MessageBox.Show(this, "No error was reported, but something went wrong while trying to read the code you've entered.", "Code error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 				base.DialogResult = DialogResult.None;
 				return null;
 			}
-			if (xbabc9feec6f641db.xbe23edc82b0342c0.xd0431a295f2ed35f)
+			if (codeEntry.xbe23edc82b0342c0.xd0431a295f2ed35f)
 			{
 				MessageBox.Show(this, "This code appears to have the Freaky Unknown Bit set.  Since we have no idea what that's for, we're not sure how to deal with it.  Please contact Mirality Systems providing details of the code in question and where you obtained it from.", "We don't know what that means", MessageBoxButtons.OK, MessageBoxIcon.Question);
 				base.DialogResult = DialogResult.None;
 				return null;
 			}
-			xbabc9feec6f641db.x548b1e187be884eb();
+			codeEntry.x548b1e187be884eb();
 		}
-		return xbabc9feec6f641db;
+		return codeEntry;
 	}
 
 	private void xeebb56e8f7be7895(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
@@ -131,10 +131,10 @@ public class x1536525b14cf2192 : Form
 			base.DialogResult = DialogResult.None;
 			return;
 		}
-		xbabc9feec6f641db xbabc9feec6f641db = xc9e97689bb4a5102();
-		if (xbabc9feec6f641db != null)
+		CodeEntry codeEntry = xc9e97689bb4a5102();
+		if (codeEntry != null)
 		{
-			_b0b4ff1622a01d12 = xbabc9feec6f641db;
+			_b0b4ff1622a01d12 = codeEntry;
 			CancelEventArgs cancelEventArgs = new CancelEventArgs();
 			OnAdditionalValidation(cancelEventArgs);
 			if (cancelEventArgs.Cancel)
@@ -146,20 +146,20 @@ public class x1536525b14cf2192 : Form
 
 	private void xdc66bf225631b236(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
 	{
-		xbabc9feec6f641db xbabc9feec6f641db = null;
+		CodeEntry codeEntry = null;
 		if (xdd8dff12a799aaad.Text.Trim() != "")
 		{
-			xbabc9feec6f641db = xc9e97689bb4a5102();
-			if (xbabc9feec6f641db == null)
+			codeEntry = xc9e97689bb4a5102();
+			if (codeEntry == null)
 			{
 				return;
 			}
 		}
-		using x1e80b3bb288f59a1 x1e80b3bb288f59a2 = new x1e80b3bb288f59a1(_c74ed71dea076128, xbabc9feec6f641db);
+		using x1e80b3bb288f59a1 x1e80b3bb288f59a2 = new x1e80b3bb288f59a1(_c74ed71dea076128, codeEntry);
 		x1e80b3bb288f59a2.Owner = this;
 		if (x1e80b3bb288f59a2.ShowDialog() == DialogResult.OK)
 		{
-			xdd8dff12a799aaad.Lines = x1e80b3bb288f59a2.xe55cfc2215257397.x7e5b09fa2269d9a5.xa9edb3b115d067da();
+			xdd8dff12a799aaad.Lines = x1e80b3bb288f59a2.xe55cfc2215257397.CheatCodes.xa9edb3b115d067da();
 		}
 	}
 

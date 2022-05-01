@@ -33,13 +33,13 @@ internal class x94a6cdfb7e9c9552 : x5a366caf1c55deb7
 		this.x48c112b540538df3?.Invoke(this, xfbf34718e704c6bc);
 	}
 
-	public x94a6cdfb7e9c9552(Form x071bde1041617fce)
+	public x94a6cdfb7e9c9552(Form owner)
 	{
-		if (x071bde1041617fce == null)
+		if (owner == null)
 		{
 			throw new ArgumentNullException("owner");
 		}
-		_9ce35bc295da5a81 = x071bde1041617fce;
+		_9ce35bc295da5a81 = owner;
 	}
 
 	protected override void DoBeginRun(string x399bfb4377fa76d2, bool xfb54ea78556e1909)

@@ -45,20 +45,20 @@ internal sealed class x5e4059a15fb5fca5
 		x295cb4a1df7a5add(x5cafa8d49ea71ea1, 0, x5cafa8d49ea71ea1.Length);
 	}
 
-	public void x295cb4a1df7a5add(byte[] x1ef26dbdd5d13d24, int xf2ebf5458da93d3b, int xb5964a891b6cf7c3)
+	public void x295cb4a1df7a5add(byte[] buf, int xf2ebf5458da93d3b, int xb5964a891b6cf7c3)
 	{
-		if (x1ef26dbdd5d13d24 == null)
+		if (buf == null)
 		{
 			throw new ArgumentNullException("buf");
 		}
-		if (xf2ebf5458da93d3b < 0 || xb5964a891b6cf7c3 < 0 || xf2ebf5458da93d3b + xb5964a891b6cf7c3 > x1ef26dbdd5d13d24.Length)
+		if (xf2ebf5458da93d3b < 0 || xb5964a891b6cf7c3 < 0 || xf2ebf5458da93d3b + xb5964a891b6cf7c3 > buf.Length)
 		{
 			throw new ArgumentOutOfRangeException("off/len");
 		}
 		xa4660e7fe4e71d99 ^= uint.MaxValue;
 		while (--xb5964a891b6cf7c3 >= 0)
 		{
-			xa4660e7fe4e71d99 = x427dcfa1c6ec4a9c[(xa4660e7fe4e71d99 ^ x1ef26dbdd5d13d24[xf2ebf5458da93d3b++]) & 0xFF] ^ (xa4660e7fe4e71d99 >> 8);
+			xa4660e7fe4e71d99 = x427dcfa1c6ec4a9c[(xa4660e7fe4e71d99 ^ buf[xf2ebf5458da93d3b++]) & 0xFF] ^ (xa4660e7fe4e71d99 >> 8);
 		}
 		xa4660e7fe4e71d99 ^= uint.MaxValue;
 	}

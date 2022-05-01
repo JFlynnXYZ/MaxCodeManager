@@ -105,13 +105,13 @@ public static class x71e47d5e67c3290d
 		x6a4d36d60e4f5261.Proxy = x543946f68ef21fdb();
 	}
 
-	public static bool xe7e13de667c703d7(Form xb6a159a84cb992d6, RegionCode xa4d52e34b62b5495)
+	public static bool xe7e13de667c703d7(Form Form, RegionCode xa4d52e34b62b5495)
 	{
 		xa868f38828e95534 xa868f38828e = xe85ce58ca29f3f6e(xa4d52e34b62b5495);
 		xa868f38828e.xe24ab952271f0e04 = null;
 		try
 		{
-			using (MainWindow.xebcf83b00134300b(xb6a159a84cb992d6, string.Concat("Retrieving configuration details from ", xa4d52e34b62b5495, " server...")))
+			using (MainWindow.CreateMessageBox(Form, string.Concat("Retrieving configuration details from ", xa4d52e34b62b5495, " server...")))
 			{
 				string text = null;
 				try
@@ -149,11 +149,11 @@ public static class x71e47d5e67c3290d
 		return true;
 	}
 
-	private static bool xae676c12288031ee(Form xb6a159a84cb992d6, RegionCode xa4d52e34b62b5495)
+	private static bool xae676c12288031ee(Form Form, RegionCode xa4d52e34b62b5495)
 	{
 		if (xde424771bec64340(xa4d52e34b62b5495))
 		{
-			if (!xe7e13de667c703d7(xb6a159a84cb992d6, xa4d52e34b62b5495))
+			if (!xe7e13de667c703d7(Form, xa4d52e34b62b5495))
 			{
 				return false;
 			}
@@ -196,15 +196,15 @@ public static class x71e47d5e67c3290d
 		return BitConverter.ToInt32(array, 12);
 	}
 
-	public static int x3952158a13fc61b9(Form xb6a159a84cb992d6, RegionCode xa4d52e34b62b5495)
+	public static int x3952158a13fc61b9(Form Form, RegionCode xa4d52e34b62b5495)
 	{
-		if (!xae676c12288031ee(xb6a159a84cb992d6, xa4d52e34b62b5495))
+		if (!xae676c12288031ee(Form, xa4d52e34b62b5495))
 		{
 			throw new IOException(string.Concat("Unable to read ", xa4d52e34b62b5495, " server configuration."));
 		}
 		try
 		{
-			using (MainWindow.xebcf83b00134300b(xb6a159a84cb992d6, string.Concat("Querying ", xa4d52e34b62b5495, " server for latest codelist version...")))
+			using (MainWindow.CreateMessageBox(Form, string.Concat("Querying ", xa4d52e34b62b5495, " server for latest codelist version...")))
 			{
 				xa868f38828e95534 xb6b3da7953a69f = xe85ce58ca29f3f6e(xa4d52e34b62b5495);
 				return x6b4ab96d3f02e9d7(xb6b3da7953a69f);
@@ -216,11 +216,11 @@ public static class x71e47d5e67c3290d
 		}
 	}
 
-	public static int xf097174157e3d00e(Form xb6a159a84cb992d6, RegionCode xa4d52e34b62b5495)
+	public static int xf097174157e3d00e(Form Form, RegionCode xa4d52e34b62b5495)
 	{
 		try
 		{
-			using (MainWindow.xebcf83b00134300b(xb6a159a84cb992d6, string.Concat("Querying backup server for latest ", xa4d52e34b62b5495, " codelist version...")))
+			using (MainWindow.CreateMessageBox(Form, string.Concat("Querying backup server for latest ", xa4d52e34b62b5495, " codelist version...")))
 			{
 				xa868f38828e95534 xb6b3da7953a69f = x2b6a0fc67d65d74b(xa4d52e34b62b5495);
 				return x6b4ab96d3f02e9d7(xb6b3da7953a69f);
@@ -253,12 +253,12 @@ public static class x71e47d5e67c3290d
 				stream2.Write(array, 0, num);
 				if (httpWebResponse.ContentLength == -1)
 				{
-					xa6607dfd4b3038ad.x4147aa1c4fe3686a(string.Concat("Downloading ", xb6b3da7953a69f26.x4b94e58155458175, " codelist... {0} bytes done..."), stream2.Position);
+					xa6607dfd4b3038ad.Message(string.Concat("Downloading ", xb6b3da7953a69f26.x4b94e58155458175, " codelist... {0} bytes done..."), stream2.Position);
 				}
 				else
 				{
 					long num2 = stream2.Position * 10000 / httpWebResponse.ContentLength;
-					xa6607dfd4b3038ad.x4147aa1c4fe3686a(string.Concat("Downloading ", xb6b3da7953a69f26.x4b94e58155458175, " codelist... {0}.{1:00}% done..."), num2 / 100, num2 % 100);
+					xa6607dfd4b3038ad.Message(string.Concat("Downloading ", xb6b3da7953a69f26.x4b94e58155458175, " codelist... {0}.{1:00}% done..."), num2 / 100, num2 % 100);
 				}
 				if (xa6607dfd4b3038ad.x319ab2d89dd113ab)
 				{
@@ -273,15 +273,15 @@ public static class x71e47d5e67c3290d
 		}
 	}
 
-	public static bool xb1fade4398e4ef6c(Form xb6a159a84cb992d6, RegionCode xa4d52e34b62b5495, string xb41a802ca5fde63b)
+	public static bool xb1fade4398e4ef6c(Form Form, RegionCode xa4d52e34b62b5495, string xb41a802ca5fde63b)
 	{
-		if (!xae676c12288031ee(xb6a159a84cb992d6, xa4d52e34b62b5495))
+		if (!xae676c12288031ee(Form, xa4d52e34b62b5495))
 		{
 			return false;
 		}
 		try
 		{
-			using x7d218f2528893f5a xa6607dfd4b3038ad = x7d218f2528893f5a.xebcf83b00134300b(xb6a159a84cb992d6, string.Concat("Requesting ", xa4d52e34b62b5495, " codelist from server..."));
+			using x7d218f2528893f5a xa6607dfd4b3038ad = x7d218f2528893f5a.xebcf83b00134300b(Form, string.Concat("Requesting ", xa4d52e34b62b5495, " codelist from server..."));
 			xa868f38828e95534 xb6b3da7953a69f = xe85ce58ca29f3f6e(xa4d52e34b62b5495);
 			return xb1fade4398e4ef6c(xa6607dfd4b3038ad, xb6b3da7953a69f, xb41a802ca5fde63b);
 		}
@@ -291,11 +291,11 @@ public static class x71e47d5e67c3290d
 		}
 	}
 
-	public static bool x3b4eb5505a678b12(Form xb6a159a84cb992d6, RegionCode xa4d52e34b62b5495, string xb41a802ca5fde63b)
+	public static bool x3b4eb5505a678b12(Form Form, RegionCode xa4d52e34b62b5495, string xb41a802ca5fde63b)
 	{
 		try
 		{
-			using x7d218f2528893f5a xa6607dfd4b3038ad = x7d218f2528893f5a.xebcf83b00134300b(xb6a159a84cb992d6, string.Concat("Requesting ", xa4d52e34b62b5495, " codelist from backup server..."));
+			using x7d218f2528893f5a xa6607dfd4b3038ad = x7d218f2528893f5a.xebcf83b00134300b(Form, string.Concat("Requesting ", xa4d52e34b62b5495, " codelist from backup server..."));
 			xa868f38828e95534 xb6b3da7953a69f = x2b6a0fc67d65d74b(xa4d52e34b62b5495);
 			return xb1fade4398e4ef6c(xa6607dfd4b3038ad, xb6b3da7953a69f, xb41a802ca5fde63b);
 		}

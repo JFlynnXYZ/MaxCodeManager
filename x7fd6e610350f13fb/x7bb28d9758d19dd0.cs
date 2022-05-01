@@ -27,7 +27,7 @@ internal class x7bb28d9758d19dd0
 
 	private static TimeSpan _321c8219d9ae23e6;
 
-	private static readonly xf6e5c5e1901f893f[] _8d4ca4824671bb70;
+	private static readonly Codes[] _8d4ca4824671bb70;
 
 	private static readonly x047611ec9892e059[] _47a596f517a06afc;
 
@@ -47,12 +47,12 @@ internal class x7bb28d9758d19dd0
 	{
 		xc47612914d7178b2 = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "MaxCryptor.exe");
 		_321c8219d9ae23e6 = TimeSpan.Zero;
-		_8d4ca4824671bb70 = new xf6e5c5e1901f893f[5];
-		_8d4ca4824671bb70[0] = new xf6e5c5e1901f893f("RK6H-QTBZ-Z1AQJ", "Z20Q-9YPG-TE8A7");
-		_8d4ca4824671bb70[1] = new xf6e5c5e1901f893f("8G45-8TTM-37RZY");
-		_8d4ca4824671bb70[2] = new xf6e5c5e1901f893f("6RMD-FFD2-FB6PG", "XM6T-KNFE-7M9F7");
-		_8d4ca4824671bb70[3] = new xf6e5c5e1901f893f("J5B0-M53F-ETN1U", "JB9E-91K0-74840");
-		_8d4ca4824671bb70[4] = new xf6e5c5e1901f893f("UW3J-QFME-DANPF", "3KG4-2MQN-X1YYV", "VFE7-FK9B-M32EA", "KQEK-5ZFB-F8UP9");
+		_8d4ca4824671bb70 = new Codes[5];
+		_8d4ca4824671bb70[0] = new Codes("RK6H-QTBZ-Z1AQJ", "Z20Q-9YPG-TE8A7");
+		_8d4ca4824671bb70[1] = new Codes("8G45-8TTM-37RZY");
+		_8d4ca4824671bb70[2] = new Codes("6RMD-FFD2-FB6PG", "XM6T-KNFE-7M9F7");
+		_8d4ca4824671bb70[3] = new Codes("J5B0-M53F-ETN1U", "JB9E-91K0-74840");
+		_8d4ca4824671bb70[4] = new Codes("UW3J-QFME-DANPF", "3KG4-2MQN-X1YYV", "VFE7-FK9B-M32EA", "KQEK-5ZFB-F8UP9");
 		_47a596f517a06afc = new x047611ec9892e059[5];
 		_47a596f517a06afc[0] = new x047611ec9892e059(1365u, 84520u, RegionCode.PAL);
 		_47a596f517a06afc[0].xa54a49b4cb11c6d1.Add(new x047611ec9892e059.x8f4d4d97dd0fc840(15, 42u));
@@ -101,13 +101,13 @@ internal class x7bb28d9758d19dd0
 
 	private static bool x4760cd10f5b01fbf()
 	{
-		List<xbabc9feec6f641db> list = new List<xbabc9feec6f641db>();
+		List<CodeEntry> list = new List<CodeEntry>();
 		for (int i = 0; i < _8d4ca4824671bb70.Length; i++)
 		{
-			list.Add(new xbabc9feec6f641db());
+			list.Add(new CodeEntry());
 			list[i].xb3efee94cf138f44 = (uint)i;
 			list[i].Name = (i + 1).ToString(CultureInfo.CurrentCulture);
-			list[i].x7e5b09fa2269d9a5 = _8d4ca4824671bb70[i];
+			list[i].CheatCodes = _8d4ca4824671bb70[i];
 		}
 		_3452082a8fecf97d = true;
 		try
@@ -161,10 +161,10 @@ internal class x7bb28d9758d19dd0
 
 	private static bool xbf8f07e6cbdbd014()
 	{
-		List<xbabc9feec6f641db> list = new List<xbabc9feec6f641db>();
+		List<CodeEntry> list = new List<CodeEntry>();
 		for (int i = 0; i < _47a596f517a06afc.Length; i++)
 		{
-			list.Add(new xbabc9feec6f641db());
+			list.Add(new CodeEntry());
 			list[i].xb3efee94cf138f44 = (uint)i;
 			list[i].Name = (i + 1).ToString(CultureInfo.CurrentCulture);
 			list[i].xbe23edc82b0342c0 = _47a596f517a06afc[i];
@@ -187,23 +187,23 @@ internal class x7bb28d9758d19dd0
 		{
 			_321c8219d9ae23e6 = TimeSpan.Zero;
 		}
-		if (list[0].x7e5b09fa2269d9a5 == null || list[0].x7e5b09fa2269d9a5.x6b73aa01aa019d3a.Length != 0)
+		if (list[0].CheatCodes == null || list[0].CheatCodes.codes.Length != 0)
 		{
 			return false;
 		}
 		for (int j = 1; j < _47a596f517a06afc.Length; j++)
 		{
-			if (list[j].x7e5b09fa2269d9a5 == null)
+			if (list[j].CheatCodes == null)
 			{
 				return false;
 			}
-			if (list[j].x7e5b09fa2269d9a5.x6b73aa01aa019d3a.Length != _8d4ca4824671bb70[j].x6b73aa01aa019d3a.Length)
+			if (list[j].CheatCodes.codes.Length != _8d4ca4824671bb70[j].codes.Length)
 			{
 				return false;
 			}
-			for (int k = 0; k < list[j].x7e5b09fa2269d9a5.x6b73aa01aa019d3a.Length; k++)
+			for (int k = 0; k < list[j].CheatCodes.codes.Length; k++)
 			{
-				if (list[j].x7e5b09fa2269d9a5.x6b73aa01aa019d3a[k] != _8d4ca4824671bb70[j].x6b73aa01aa019d3a[k])
+				if (list[j].CheatCodes.codes[k] != _8d4ca4824671bb70[j].codes[k])
 				{
 					return false;
 				}
@@ -212,7 +212,7 @@ internal class x7bb28d9758d19dd0
 		return true;
 	}
 
-	public static List<string> x2731b90dfbad5cbc(List<xbabc9feec6f641db> xcdff170dbac909bf)
+	public static List<string> x2731b90dfbad5cbc(List<CodeEntry> codes)
 	{
 		if (!x3452082a8fecf97d)
 		{
@@ -228,28 +228,28 @@ internal class x7bb28d9758d19dd0
 				using x2193eba2bfddddf7 x2193eba2bfddddf = new x2193eba2bfddddf7(xbdfb620b7167944b, x4658008e2185b037: false);
 				if (x3b67f7a0ce62b49b)
 				{
-					List<xbabc9feec6f641db> list2 = new List<xbabc9feec6f641db>();
-					foreach (xbabc9feec6f641db item in xcdff170dbac909bf)
+					List<CodeEntry> list2 = new List<CodeEntry>();
+					foreach (CodeEntry item in codes)
 					{
-						if (item.x7e5b09fa2269d9a5.x6b73aa01aa019d3a.Length == 0)
+						if (item.CheatCodes.codes.Length == 0)
 						{
 							list2.Add(item);
 						}
 					}
 					if (list2.Count > 0)
 					{
-						List<xbabc9feec6f641db> list3 = new List<xbabc9feec6f641db>();
-						foreach (xbabc9feec6f641db item2 in list2)
+						List<CodeEntry> list3 = new List<CodeEntry>();
+						foreach (CodeEntry item2 in list2)
 						{
-							if (item2.xa0380078f0b6cbb7 == null)
+							if (item2.GameEntry == null)
 							{
 								list3.Add(item2);
 								continue;
 							}
-							item2.xbe23edc82b0342c0 = new x047611ec9892e059(item2.xa0380078f0b6cbb7.x52b8174788d367f9, item2.xb3efee94cf138f44, item2.xb1d0737e4174a713);
+							item2.xbe23edc82b0342c0 = new x047611ec9892e059(item2.GameEntry.x52b8174788d367f9, item2.xb3efee94cf138f44, item2.xb1d0737e4174a713);
 							list.Add("Code " + item2.xb3efee94cf138f44 + " \"" + item2.Name + "\": no code lines (auto repairing)");
 						}
-						foreach (xbabc9feec6f641db item3 in list3)
+						foreach (CodeEntry item3 in list3)
 						{
 							list2.Remove(item3);
 						}
@@ -264,9 +264,9 @@ internal class x7bb28d9758d19dd0
 					}
 				}
 				int num = 0;
-				foreach (xbabc9feec6f641db item4 in xcdff170dbac909bf)
+				foreach (CodeEntry item4 in codes)
 				{
-					x2193eba2bfddddf.xc4305ca6c268b073(num.ToString(CultureInfo.InvariantCulture), item4.x7e5b09fa2269d9a5);
+					x2193eba2bfddddf.xc4305ca6c268b073(num.ToString(CultureInfo.InvariantCulture), item4.CheatCodes);
 					num++;
 				}
 			}
@@ -284,14 +284,14 @@ internal class x7bb28d9758d19dd0
 					try
 					{
 						int index = int.Parse(xff029f749c7f2d1b.xea1e81378298fa81, CultureInfo.InvariantCulture);
-						xbabc9feec6f641db xbabc9feec6f641db = xcdff170dbac909bf[index];
+						CodeEntry codeEntry = codes[index];
 						if (xff029f749c7f2d1b.xb0b4ff1622a01d12 != null)
 						{
-							xbabc9feec6f641db.xbe23edc82b0342c0 = xff029f749c7f2d1b.xb0b4ff1622a01d12;
+							codeEntry.xbe23edc82b0342c0 = xff029f749c7f2d1b.xb0b4ff1622a01d12;
 						}
 						if (xff029f749c7f2d1b.xdc1af3a17717bf0a != null)
 						{
-							list.Add("Code " + xbabc9feec6f641db.xb3efee94cf138f44 + " \"" + xbabc9feec6f641db.Name + "\": " + xff029f749c7f2d1b.xdc1af3a17717bf0a);
+							list.Add("Code " + codeEntry.xb3efee94cf138f44 + " \"" + codeEntry.Name + "\": " + xff029f749c7f2d1b.xdc1af3a17717bf0a);
 						}
 					}
 					catch (Exception ex)
@@ -313,7 +313,7 @@ internal class x7bb28d9758d19dd0
 		}
 	}
 
-	public static List<string> x6b6fd0a44693bc2e(List<xbabc9feec6f641db> xcdff170dbac909bf)
+	public static List<string> x6b6fd0a44693bc2e(List<CodeEntry> codes)
 	{
 		if (!x3452082a8fecf97d)
 		{
@@ -331,7 +331,7 @@ internal class x7bb28d9758d19dd0
 			{
 				using xed601ddc3e643870 xed601ddc3e = new xed601ddc3e643870(xbdfb620b7167944b, x4658008e2185b037: false);
 				int num = 0;
-				foreach (xbabc9feec6f641db item in xcdff170dbac909bf)
+				foreach (CodeEntry item in codes)
 				{
 					xed601ddc3e.xc4305ca6c268b073(num.ToString(CultureInfo.InvariantCulture), item.xbe23edc82b0342c0);
 					num++;
@@ -352,14 +352,14 @@ internal class x7bb28d9758d19dd0
 					try
 					{
 						int index = int.Parse(x41b0bc8b458547c.xea1e81378298fa81, CultureInfo.InvariantCulture);
-						xbabc9feec6f641db xbabc9feec6f641db = xcdff170dbac909bf[index];
+						CodeEntry codeEntry = codes[index];
 						if (x41b0bc8b458547c.xb0b4ff1622a01d12 != null)
 						{
-							xbabc9feec6f641db.x7e5b09fa2269d9a5 = x41b0bc8b458547c.xb0b4ff1622a01d12;
+							codeEntry.CheatCodes = x41b0bc8b458547c.xb0b4ff1622a01d12;
 						}
 						if (x41b0bc8b458547c.xdc1af3a17717bf0a != null)
 						{
-							list.Add("Code " + xbabc9feec6f641db.xb3efee94cf138f44 + " \"" + xbabc9feec6f641db.Name + "\": " + x41b0bc8b458547c.xdc1af3a17717bf0a);
+							list.Add("Code " + codeEntry.xb3efee94cf138f44 + " \"" + codeEntry.Name + "\": " + x41b0bc8b458547c.xdc1af3a17717bf0a);
 						}
 					}
 					catch (Exception ex)
@@ -395,7 +395,7 @@ internal class x7bb28d9758d19dd0
 		}
 		try
 		{
-			using (MainWindow.xebcf83b00134300b(null, "Analysing game codes..."))
+			using (MainWindow.CreateMessageBox(null, "Analysing game codes..."))
 			{
 				process.ErrorDataReceived += delegate(object xe0292b9ed559da7d, DataReceivedEventArgs xfbf34718e704c6bc)
 				{

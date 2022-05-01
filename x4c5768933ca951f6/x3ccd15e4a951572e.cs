@@ -25,11 +25,11 @@ public class x3ccd15e4a951572e : UserControl
 
 	private Container xb7dfc13308b54974;
 
-	private x33636090f73cdcbf _06ca69422bbb7502;
+	private Codelist _06ca69422bbb7502;
 
 	[Browsable(false)]
 	[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-	public x33636090f73cdcbf x06ca69422bbb7502
+	public Codelist x06ca69422bbb7502
 	{
 		get
 		{

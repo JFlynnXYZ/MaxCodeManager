@@ -40,17 +40,17 @@ public class xfddbe928036d80d4 : Form
 
 	private Button x895e4a971b163d02;
 
-	private xa0380078f0b6cbb7 _a0380078f0b6cbb7;
+	private GameEntry _a0380078f0b6cbb7;
 
-	private xa0380078f0b6cbb7 _34ec3a293021c833;
+	private GameEntry _34ec3a293021c833;
 
-	private x33636090f73cdcbf _2e26bc427243234e;
+	private Codelist _2e26bc427243234e;
 
-	private x33636090f73cdcbf _93c06c96f0e1cbb2;
+	private Codelist _93c06c96f0e1cbb2;
 
 	private bool _953c89447b7e8f96;
 
-	private xbabc9feec6f641db _98d83af30fd99cf7;
+	private CodeEntry _98d83af30fd99cf7;
 
 	[CompilerGenerated]
 	private static Converter<xfd5dc9a89edfa955, string> xb52cc720056569fd;
@@ -197,8 +197,8 @@ public class xfddbe928036d80d4 : Form
 		ResumeLayout(performLayout: false);
 	}
 
-	public xfddbe928036d80d4(xa0380078f0b6cbb7 x6849540e228fbc76, bool xb2838c57f7b8cd66, x33636090f73cdcbf xd75e60e5e359bba6, x33636090f73cdcbf x674c7a44ab7af2f3, xa0380078f0b6cbb7 x44f5de605a235763)
-		: this(x6849540e228fbc76)
+	public xfddbe928036d80d4(GameEntry game, bool xb2838c57f7b8cd66, Codelist xd75e60e5e359bba6, Codelist x674c7a44ab7af2f3, GameEntry x44f5de605a235763)
+		: this(game)
 	{
 		_953c89447b7e8f96 = xb2838c57f7b8cd66;
 		_2e26bc427243234e = xd75e60e5e359bba6;
@@ -206,10 +206,10 @@ public class xfddbe928036d80d4 : Form
 		_34ec3a293021c833 = x44f5de605a235763;
 	}
 
-	public xfddbe928036d80d4(xa0380078f0b6cbb7 x6849540e228fbc76)
+	public xfddbe928036d80d4(GameEntry game)
 	{
 		x85601834555fb7d5();
-		_a0380078f0b6cbb7 = x6849540e228fbc76;
+		_a0380078f0b6cbb7 = game;
 	}
 
 	protected override void OnLoad(EventArgs xfbf34718e704c6bc)
@@ -229,7 +229,7 @@ public class xfddbe928036d80d4 : Form
 	private void x64ab53689bd4a83f()
 	{
 		xb12f33985116d9ca.xa0380078f0b6cbb7 = new x717219df0ea9ffd3(_a0380078f0b6cbb7, _34ec3a293021c833);
-		x33eb426bf00ce1b7.Text = string.Format(CultureInfo.CurrentCulture, "ID: {0}   Region: {1}        Code count: {2}        Memory used: {3}", _a0380078f0b6cbb7.x52b8174788d367f9, _a0380078f0b6cbb7.x9b7a81a8f32a1422, _a0380078f0b6cbb7.xd44988f225497f3a, x289f1a0ee2f795a7.xf0dac06e79e03a32(_a0380078f0b6cbb7.xd38f244fb61873da));
+		x33eb426bf00ce1b7.Text = string.Format(CultureInfo.CurrentCulture, "ID: {0}   Region: {1}        Code count: {2}        Memory used: {3}", _a0380078f0b6cbb7.x52b8174788d367f9, _a0380078f0b6cbb7.Region, _a0380078f0b6cbb7.xd44988f225497f3a, x289f1a0ee2f795a7.xf0dac06e79e03a32(_a0380078f0b6cbb7.xd38f244fb61873da));
 	}
 
 	private void x73a8c99fbebc78cc()
@@ -256,7 +256,7 @@ public class xfddbe928036d80d4 : Form
 		}
 		else
 		{
-			CodeManagerSettings.Instance.Favourites.Add(new FavouriteGame(_a0380078f0b6cbb7.x52b8174788d367f9, _a0380078f0b6cbb7.x759aa16c2016a289, _a0380078f0b6cbb7.x9b7a81a8f32a1422));
+			CodeManagerSettings.Instance.Favourites.Add(new FavouriteGame(_a0380078f0b6cbb7.x52b8174788d367f9, _a0380078f0b6cbb7.Name, _a0380078f0b6cbb7.Region));
 		}
 		OnFavouriteGamesChanged(EventArgs.Empty);
 		x73a8c99fbebc78cc();
@@ -366,12 +366,12 @@ public class xfddbe928036d80d4 : Form
 		_98d83af30fd99cf7 = xce39df0ea08992be.xb0b4ff1622a01d12;
 		if (_98d83af30fd99cf7.xda8f238d1a051872)
 		{
-			using (x1536525b14cf2192 x1536525b14cf2193 = x1536525b14cf2192.xebcf83b00134300b(null, _a0380078f0b6cbb7.x52b8174788d367f9, _98d83af30fd99cf7.xb3efee94cf138f44, "Edit Game", _a0380078f0b6cbb7.x759aa16c2016a289, _a0380078f0b6cbb7.x4e020dae918bd2ce, _98d83af30fd99cf7.x7e5b09fa2269d9a5.xa9edb3b115d067da()))
+			using (x1536525b14cf2192 x1536525b14cf2193 = x1536525b14cf2192.xebcf83b00134300b(null, _a0380078f0b6cbb7.x52b8174788d367f9, _98d83af30fd99cf7.xb3efee94cf138f44, "Edit Game", _a0380078f0b6cbb7.Name, _a0380078f0b6cbb7.x4e020dae918bd2ce, _98d83af30fd99cf7.CheatCodes.xa9edb3b115d067da()))
 			{
 				x1536525b14cf2193.x33db2684576804ef += x73dea472e6eda521;
 				if (x1536525b14cf2193.ShowDialog(this) == DialogResult.OK)
 				{
-					_a0380078f0b6cbb7.x759aa16c2016a289 = x1536525b14cf2193.xb0b4ff1622a01d12.Name;
+					_a0380078f0b6cbb7.Name = x1536525b14cf2193.xb0b4ff1622a01d12.Name;
 					_a0380078f0b6cbb7.x4e020dae918bd2ce = x1536525b14cf2193.xb0b4ff1622a01d12.x4e020dae918bd2ce;
 					if (x7bb28d9758d19dd0.x3452082a8fecf97d)
 					{
@@ -385,7 +385,7 @@ public class xfddbe928036d80d4 : Form
 				return;
 			}
 		}
-		using x1536525b14cf2192 x1536525b14cf2194 = x1536525b14cf2192.xebcf83b00134300b(_a0380078f0b6cbb7, _a0380078f0b6cbb7.x52b8174788d367f9, _98d83af30fd99cf7.xb3efee94cf138f44, "Edit Code", _98d83af30fd99cf7.Name, _98d83af30fd99cf7.x4e020dae918bd2ce, _98d83af30fd99cf7.x7e5b09fa2269d9a5.xa9edb3b115d067da());
+		using x1536525b14cf2192 x1536525b14cf2194 = x1536525b14cf2192.xebcf83b00134300b(_a0380078f0b6cbb7, _a0380078f0b6cbb7.x52b8174788d367f9, _98d83af30fd99cf7.xb3efee94cf138f44, "Edit Code", _98d83af30fd99cf7.Name, _98d83af30fd99cf7.x4e020dae918bd2ce, _98d83af30fd99cf7.CheatCodes.xa9edb3b115d067da());
 		x1536525b14cf2194.x33db2684576804ef += x43bf237084b5d838;
 		if (x1536525b14cf2194.ShowDialog(this) == DialogResult.OK)
 		{
@@ -433,13 +433,13 @@ public class xfddbe928036d80d4 : Form
 		return list;
 	}
 
-	private void x117337ce27d4fd1d(List<xfd5dc9a89edfa955> xcdff170dbac909bf, xfd5dc9a89edfa955 x9035cf16181332fc)
+	private void x117337ce27d4fd1d(List<xfd5dc9a89edfa955> codes, xfd5dc9a89edfa955 code)
 	{
-		xcdff170dbac909bf.Add(x9035cf16181332fc);
-		x95fcf261e3011b00 x95fcf261e3011b = xb12f33985116d9ca.x394a3caa61f59fc1(x9035cf16181332fc);
+		codes.Add(code);
+		x95fcf261e3011b00 x95fcf261e3011b = xb12f33985116d9ca.x394a3caa61f59fc1(code);
 		foreach (x95fcf261e3011b00 item in x95fcf261e3011b.x63b0f7fed3f5bd88)
 		{
-			x117337ce27d4fd1d(xcdff170dbac909bf, xb12f33985116d9ca.x9559a72e127afe45(item));
+			x117337ce27d4fd1d(codes, xb12f33985116d9ca.x9559a72e127afe45(item));
 		}
 	}
 
@@ -478,22 +478,22 @@ public class xfddbe928036d80d4 : Form
 		xf0cf3100aca6f962();
 	}
 
-	private bool xd8d81183209e6ec2(List<xfd5dc9a89edfa955> xcdff170dbac909bf, string xefcf7129d727243c, string x9966935a0d195c56)
+	private bool xd8d81183209e6ec2(List<xfd5dc9a89edfa955> codes, string xefcf7129d727243c, string x9966935a0d195c56)
 	{
-		if (xcdff170dbac909bf.Count == 1)
+		if (codes.Count == 1)
 		{
-			switch (MessageBox.Show(this, string.Format(CultureInfo.CurrentCulture, xefcf7129d727243c, xcdff170dbac909bf[0].xb0b4ff1622a01d12.Name), "Confirm deletion", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+			switch (MessageBox.Show(this, string.Format(CultureInfo.CurrentCulture, xefcf7129d727243c, codes[0].xb0b4ff1622a01d12.Name), "Confirm deletion", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
 			{
 			case DialogResult.Cancel:
 				return false;
 			case DialogResult.No:
-				xcdff170dbac909bf.Clear();
+				codes.Clear();
 				break;
 			}
 		}
-		else if (xcdff170dbac909bf.Count > 1)
+		else if (codes.Count > 1)
 		{
-			string[] array = xcdff170dbac909bf.ConvertAll((xfd5dc9a89edfa955 x9035cf16181332fc) => x9035cf16181332fc.xb0b4ff1622a01d12.Name).ToArray();
+			string[] array = codes.ConvertAll((xfd5dc9a89edfa955 code) => code.xb0b4ff1622a01d12.Name).ToArray();
 			if (array.Length > 25)
 			{
 				array[20] = "( + " + (array.Length - 20) + " other codes )";
@@ -504,7 +504,7 @@ public class xfddbe928036d80d4 : Form
 			case DialogResult.Cancel:
 				return false;
 			case DialogResult.No:
-				xcdff170dbac909bf.Clear();
+				codes.Clear();
 				break;
 			}
 		}
@@ -514,7 +514,7 @@ public class xfddbe928036d80d4 : Form
 	private void x73dea472e6eda521(object xe0292b9ed559da7d, CancelEventArgs xfbf34718e704c6bc)
 	{
 		x1536525b14cf2192 x1536525b14cf2193 = (x1536525b14cf2192)xe0292b9ed559da7d;
-		xbabc9feec6f641db xb0b4ff1622a01d = x1536525b14cf2193.xb0b4ff1622a01d12;
+		CodeEntry xb0b4ff1622a01d = x1536525b14cf2193.xb0b4ff1622a01d12;
 		if (!xb0b4ff1622a01d.xda8f238d1a051872)
 		{
 			MessageBox.Show(x1536525b14cf2193, "This does not appear to be a master (M) code.  Make sure you're entering the (M) code.", "Need master code", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -540,10 +540,10 @@ public class xfddbe928036d80d4 : Form
 				xfbf34718e704c6bc.Cancel = true;
 				return;
 			}
-			xbabc9feec6f641db xbabc9feec6f641db = _93c06c96f0e1cbb2.x13d95bb225c01867(xb0b4ff1622a01d.xbe23edc82b0342c0.x52b8174788d367f9, xb0b4ff1622a01d.xbe23edc82b0342c0.xb3efee94cf138f44);
-			if (xbabc9feec6f641db != null)
+			CodeEntry codeEntry = _93c06c96f0e1cbb2.x13d95bb225c01867(xb0b4ff1622a01d.xbe23edc82b0342c0.x52b8174788d367f9, xb0b4ff1622a01d.xbe23edc82b0342c0.xb3efee94cf138f44);
+			if (codeEntry != null)
 			{
-				MessageBox.Show(x1536525b14cf2193, "The game already contains another code (\"" + xbabc9feec6f641db.Name + "\") with the same id.  Clashes between code ids within a single game are not permitted; you will need to either remove the other code or change the ids.", "Code id clash", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show(x1536525b14cf2193, "The game already contains another code (\"" + codeEntry.Name + "\") with the same id.  Clashes between code ids within a single game are not permitted; you will need to either remove the other code or change the ids.", "Code id clash", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				xfbf34718e704c6bc.Cancel = true;
 				return;
 			}
@@ -557,7 +557,7 @@ public class xfddbe928036d80d4 : Form
 	private void x43bf237084b5d838(object xe0292b9ed559da7d, CancelEventArgs xfbf34718e704c6bc)
 	{
 		x1536525b14cf2192 x1536525b14cf2193 = (x1536525b14cf2192)xe0292b9ed559da7d;
-		xbabc9feec6f641db xb0b4ff1622a01d = x1536525b14cf2193.xb0b4ff1622a01d12;
+		CodeEntry xb0b4ff1622a01d = x1536525b14cf2193.xb0b4ff1622a01d12;
 		if (xb0b4ff1622a01d.xda8f238d1a051872)
 		{
 			MessageBox.Show(x1536525b14cf2193, "This appears to be a master (M) code.  Master codes should be added as games, not as codes within a game.", "Can't be master code", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -572,10 +572,10 @@ public class xfddbe928036d80d4 : Form
 		}
 		if (xb0b4ff1622a01d.xbe23edc82b0342c0.x52b8174788d367f9 != _a0380078f0b6cbb7.x52b8174788d367f9)
 		{
-			xa0380078f0b6cbb7 xa0380078f0b6cbb = _93c06c96f0e1cbb2.x45a46c637b44a527(xb0b4ff1622a01d.xbe23edc82b0342c0.x52b8174788d367f9);
+			GameEntry xa0380078f0b6cbb = _93c06c96f0e1cbb2.x45a46c637b44a527(xb0b4ff1622a01d.xbe23edc82b0342c0.x52b8174788d367f9);
 			if (xa0380078f0b6cbb != null)
 			{
-				MessageBox.Show(x1536525b14cf2193, "This code appears to be for the game \"" + xa0380078f0b6cbb.x759aa16c2016a289 + "\", not this one.  You should add it to that game instead.", "Different game", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+				MessageBox.Show(x1536525b14cf2193, "This code appears to be for the game \"" + xa0380078f0b6cbb.Name + "\", not this one.  You should add it to that game instead.", "Different game", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 			}
 			else
 			{
@@ -592,10 +592,10 @@ public class xfddbe928036d80d4 : Form
 		}
 		if (_98d83af30fd99cf7 == null || flag)
 		{
-			xbabc9feec6f641db xbabc9feec6f641db = _93c06c96f0e1cbb2.x13d95bb225c01867(xb0b4ff1622a01d.xbe23edc82b0342c0.x52b8174788d367f9, xb0b4ff1622a01d.xbe23edc82b0342c0.xb3efee94cf138f44);
-			if (xbabc9feec6f641db != null)
+			CodeEntry codeEntry = _93c06c96f0e1cbb2.x13d95bb225c01867(xb0b4ff1622a01d.xbe23edc82b0342c0.x52b8174788d367f9, xb0b4ff1622a01d.xbe23edc82b0342c0.xb3efee94cf138f44);
+			if (codeEntry != null)
 			{
-				MessageBox.Show(x1536525b14cf2193, "The game already contains another code (\"" + xbabc9feec6f641db.Name + "\") with the same id.  Clashes between code ids within a single game are not permitted; you will need to either remove the other code or change the ids.", "Code id clash", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show(x1536525b14cf2193, "The game already contains another code (\"" + codeEntry.Name + "\") with the same id.  Clashes between code ids within a single game are not permitted; you will need to either remove the other code or change the ids.", "Code id clash", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				xfbf34718e704c6bc.Cancel = true;
 				return;
 			}
@@ -605,7 +605,7 @@ public class xfddbe928036d80d4 : Form
 			x047611ec9892e059.x8f4d4d97dd0fc840 x8f4d4d97dd0fc = xb0b4ff1622a01d.xbe23edc82b0342c0.x4521e8bf4ec2b6be(4);
 			if (x8f4d4d97dd0fc != null)
 			{
-				xbabc9feec6f641db xbabc9feec6f641db2 = _a0380078f0b6cbb7.x13d95bb225c01867(x8f4d4d97dd0fc.x6b73aa01aa019d3a);
+				CodeEntry xbabc9feec6f641db2 = _a0380078f0b6cbb7.x13d95bb225c01867(x8f4d4d97dd0fc.x6b73aa01aa019d3a);
 				if (xbabc9feec6f641db2 == null && MessageBox.Show(x1536525b14cf2193, "The code you're adding is supposed to be contained within a 'folder' code, which doesn't appear to be in the list.  While you can proceed regardless, it's better to add the missing folder -- especially for mutually-exclusive (radio button style) codes.  (Note that a folder inherited from another codelist is not 'good enough' in this case, as there is no guarantee that it will stick around.)\r\n\r\nDo you still want to add this code?", "Missing parent code", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
 				{
 					xfbf34718e704c6bc.Cancel = true;
@@ -613,15 +613,15 @@ public class xfddbe928036d80d4 : Form
 				}
 			}
 		}
-		if (_a0380078f0b6cbb7.x9b7a81a8f32a1422 != RegionCode.Mixed && xb0b4ff1622a01d.xb1d0737e4174a713 != _a0380078f0b6cbb7.x9b7a81a8f32a1422 && MessageBox.Show(x1536525b14cf2193, string.Concat("You are trying to add a ", xb0b4ff1622a01d.xb1d0737e4174a713, " code to a ", _a0380078f0b6cbb7.x9b7a81a8f32a1422, " game.  We're not actually sure what that'll do (so we'll let you try it if you really want to), but it doesn't seem like a particularly good idea.\r\n\r\nDo you still want to add this code?"), "Different region", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
+		if (_a0380078f0b6cbb7.Region != RegionCode.Mixed && xb0b4ff1622a01d.xb1d0737e4174a713 != _a0380078f0b6cbb7.Region && MessageBox.Show(x1536525b14cf2193, string.Concat("You are trying to add a ", xb0b4ff1622a01d.xb1d0737e4174a713, " code to a ", _a0380078f0b6cbb7.Region, " game.  We're not actually sure what that'll do (so we'll let you try it if you really want to), but it doesn't seem like a particularly good idea.\r\n\r\nDo you still want to add this code?"), "Different region", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
 		{
 			xfbf34718e704c6bc.Cancel = true;
 		}
 	}
 
 	[CompilerGenerated]
-	private static string xcb8fcf8c1b111736(xfd5dc9a89edfa955 x9035cf16181332fc)
+	private static string xcb8fcf8c1b111736(xfd5dc9a89edfa955 code)
 	{
-		return x9035cf16181332fc.xb0b4ff1622a01d12.Name;
+		return code.xb0b4ff1622a01d12.Name;
 	}
 }

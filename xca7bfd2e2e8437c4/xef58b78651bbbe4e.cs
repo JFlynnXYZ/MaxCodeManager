@@ -32,7 +32,7 @@ internal class xef58b78651bbbe4e : ListView
 	private void x3dabed07063b41e9(ref Message x6088325dec1baa2a)
 	{
 		x842e24ef1160275b.x53cb129830509e4d x53cb129830509e4d = (x842e24ef1160275b.x53cb129830509e4d)x6088325dec1baa2a.GetLParam(typeof(x842e24ef1160275b.x53cb129830509e4d));
-		if (x53cb129830509e4d.x9035cf16181332fc == -2 || x53cb129830509e4d.x9035cf16181332fc == -3)
+		if (x53cb129830509e4d.code == -2 || x53cb129830509e4d.code == -3)
 		{
 			ListViewHitTestInfo listViewHitTestInfo = HitTest(PointToClient(Cursor.Position));
 			if (listViewHitTestInfo.Location != ListViewHitTestLocations.StateImage)

@@ -166,14 +166,14 @@ internal class x7a6ebf463a24aa8f : Form
 		ResumeLayout(performLayout: false);
 	}
 
-	public x7a6ebf463a24aa8f(Form x071bde1041617fce, string x399bfb4377fa76d2, bool xfb54ea78556e1909)
+	public x7a6ebf463a24aa8f(Form owner, string x399bfb4377fa76d2, bool xfb54ea78556e1909)
 	{
 		x85601834555fb7d5();
 		xe30a9ee77ac9ec35.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 		x8c7441c6635b5683.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 		x8c7441c6635b5683.Visible = xfb54ea78556e1909;
 		base.CancelButton = (xfb54ea78556e1909 ? x8c7441c6635b5683 : null);
-		base.Owner = x071bde1041617fce;
+		base.Owner = owner;
 		xd397bb1e465ce45e = x399bfb4377fa76d2;
 	}
 

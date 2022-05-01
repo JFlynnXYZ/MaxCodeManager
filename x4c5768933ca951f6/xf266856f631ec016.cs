@@ -38,13 +38,13 @@ public class xf266856f631ec016 : Form
 
 	private x131eae80bdcb392e x7d682c974eb9bc38 = x131eae80bdcb392e.x45260ad4b94166f2;
 
-	private x33636090f73cdcbf x40d7509752490077;
+	private Codelist x40d7509752490077;
 
-	private x33636090f73cdcbf x768b6665179efa05;
+	private Codelist x768b6665179efa05;
 
-	private x33636090f73cdcbf x844fa2fb9386a3c3;
+	private Codelist CodeListData;
 
-	private x33636090f73cdcbf x0bc07355221f6454;
+	private Codelist x0bc07355221f6454;
 
 	private CodelistFile x50892314664b644e;
 
@@ -70,15 +70,15 @@ public class xf266856f631ec016 : Form
 
 	private GroupBox x84d02b28dabdd2b4;
 
-	private Button x75fd20aa69980801;
+	private Button AddCodeListBtn;
 
-	private Button x2388a52851a4ea0a;
+	private Button RemoveCodeListBtn;
 
 	private Label x33a6dcc90c5f6721;
 
 	private Panel x1c4e58c064fe01db;
 
-	private Button x66919dbc56507539;
+	private Button SettingsBtn;
 
 	private xef58b78651bbbe4e xdb68d5db35f39c3b;
 
@@ -86,9 +86,9 @@ public class xf266856f631ec016 : Form
 
 	private Button xb7a48894a0af41a5;
 
-	private Button xfbc07e14ac882dfa;
+	private Button NewCodeListBtn;
 
-	private Button x6393e0b11f16c72d;
+	private Button MakeActiveBtn;
 
 	private ColumnHeader x5a428ce3753ad1d1;
 
@@ -108,17 +108,17 @@ public class xf266856f631ec016 : Form
 
 	private SaveFileDialog xc21543d0206190f3;
 
-	private Button x42aef2be9508ae51;
+	private Button ViewCodeListBtn;
 
-	private Button x41e5b232cf8f1fc7;
+	private Button CompareCodeListsBtn;
 
-	private LinkLabel xe67bc12c144a16ad;
+	private LinkLabel MiralityLinkLabel;
 
-	private LinkLabel x3fe10addb87ccdf3;
+	private LinkLabel CodeJunkiesLinkLabel;
 
-	private Button xf9c9e64e6f6c5f22;
+	private Button MoveUpBtn;
 
-	private Button x895e4a971b163d02;
+	private Button MoveDownBtn;
 
 	private ToolTip xc4c34e75b01b4519;
 
@@ -136,9 +136,9 @@ public class xf266856f631ec016 : Form
 
 	private x3ccd15e4a951572e x75cfc97b61818036;
 
-	private Button xa5100f0e0f8519f0;
+	private Button ExportActiveBtn;
 
-	private Button x657b3a4eafec2605;
+	private Button ViewActiveBtn;
 
 	private Panel x7662eb616ef3d51d;
 
@@ -148,15 +148,15 @@ public class xf266856f631ec016 : Form
 
 	private ColumnHeader x5f68d5b5d2980b57;
 
-	private ColumnHeader xbd8eb6087034acc6;
+	private ColumnHeader CodesColumnHeader;
 
-	private Button xd3dd5bc5271389c1;
+	private Button ViewCombinedBtn;
 
-	private Button x7e8118e41ae03af8;
+	private Button ExportFavsBtn;
 
 	private x3ccd15e4a951572e xd710ac080d58c58d;
 
-	private ColumnHeader xc357181822dcdd16;
+	private ColumnHeader RegionColumnHeader;
 
 	private GroupBox xb13e3492976e6435;
 
@@ -173,10 +173,10 @@ public class xf266856f631ec016 : Form
 	public xf266856f631ec016()
 	{
 		x85601834555fb7d5();
-		xe67bc12c144a16ad.Links[0].LinkData = "http://www.mirality.co.nz/";
-		x3fe10addb87ccdf3.Links[0].LinkData = "http://www.codejunkies.com/";
-		x3fe10addb87ccdf3.Links[0].Start = x3fe10addb87ccdf3.Text.IndexOf("CodeJunkies");
-		x3fe10addb87ccdf3.Links[0].Length = "CodeJunkies".Length;
+		MiralityLinkLabel.Links[0].LinkData = "http://www.mirality.co.nz/";
+		CodeJunkiesLinkLabel.Links[0].LinkData = "http://www.codejunkies.com/";
+		CodeJunkiesLinkLabel.Links[0].Start = CodeJunkiesLinkLabel.Text.IndexOf("CodeJunkies");
+		CodeJunkiesLinkLabel.Links[0].Length = "CodeJunkies".Length;
 	}
 
 	public void xc0517110e193d382(IEnumerable<string> x499b08a184e62535)
@@ -318,7 +318,7 @@ public class xf266856f631ec016 : Form
 
 	private static void xca640ee3fb73956c()
 	{
-		using (MainWindow.xebcf83b00134300b(null, "Verifying correctness of crypt engine..."))
+		using (MainWindow.CreateMessageBox(null, "Verifying correctness of crypt engine..."))
 		{
 			if (x7bb28d9758d19dd0.x7c3f02898beff87a() == false)
 			{
@@ -351,31 +351,31 @@ public class xf266856f631ec016 : Form
 		}
 	}
 
-	private void x6af1203b6caa7239(ref x131eae80bdcb392e x7d45a69b707b1582, RegionCode xa4d52e34b62b5495, string xb41a802ca5fde63b, string x5b017a6ede496d54, string x43ca4b32e485d93f, MainWindow x346ddb85fad09a98)
+	private void x6af1203b6caa7239(ref x131eae80bdcb392e x7d45a69b707b1582, RegionCode xa4d52e34b62b5495, string xb41a802ca5fde63b, string x5b017a6ede496d54, string x43ca4b32e485d93f, MainWindow MainWindow)
 	{
 		if (File.Exists(xb41a802ca5fde63b))
 		{
 			try
 			{
-				x7d45a69b707b1582.x90fda48194fc6b9a(xa4d52e34b62b5495, x33636090f73cdcbf.x5d95f5f98c940295(xb41a802ca5fde63b));
+				x7d45a69b707b1582.x90fda48194fc6b9a(xa4d52e34b62b5495, Codelist.x5d95f5f98c940295(xb41a802ca5fde63b));
 			}
 			catch (Exception ex)
 			{
-				x346ddb85fad09a98.x5486e0b5e830d25c();
+				MainWindow.x5486e0b5e830d25c();
 				MessageBox.Show(this, "Could not load " + x43ca4b32e485d93f + " codelist file.\r\n\r\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 			}
 		}
 	}
 
-	private void xb5debc4debbe9b2d(ref x131eae80bdcb392e x7d45a69b707b1582, x97cc998483ae0218 x43bec302f92080b9, string x5b017a6ede496d54, string x43ca4b32e485d93f, string xdd505126a6f8795f, string xfe91b1d530d8d078)
+	private void xb5debc4debbe9b2d(ref x131eae80bdcb392e x7d45a69b707b1582, x97cc998483ae0218 control, string x5b017a6ede496d54, string x43ca4b32e485d93f, string xdd505126a6f8795f, string xfe91b1d530d8d078)
 	{
 		bool useWaitCursor = base.UseWaitCursor;
 		base.UseWaitCursor = true;
 		try
 		{
 			x7d45a69b707b1582 = x131eae80bdcb392e.x45260ad4b94166f2;
-			x43bec302f92080b9.x451c5ee2445ffafd(x7d45a69b707b1582);
-			using MainWindow x346ddb85fad09a = MainWindow.xebcf83b00134300b(this, "Loading " + x5b017a6ede496d54 + " codelist...");
+			control.x451c5ee2445ffafd(x7d45a69b707b1582);
+			using MainWindow x346ddb85fad09a = MainWindow.CreateMessageBox(this, "Loading " + x5b017a6ede496d54 + " codelist...");
 			switch (CodeManagerSettings.Instance.RegionCode)
 			{
 			case RegionCode.Mixed:
@@ -389,7 +389,7 @@ public class xf266856f631ec016 : Form
 				x6af1203b6caa7239(ref x7d45a69b707b1582, RegionCode.PAL, xdd505126a6f8795f, x5b017a6ede496d54, x43ca4b32e485d93f, x346ddb85fad09a);
 				break;
 			}
-			x43bec302f92080b9.x451c5ee2445ffafd(x7d45a69b707b1582);
+			control.x451c5ee2445ffafd(x7d45a69b707b1582);
 		}
 		finally
 		{
@@ -418,7 +418,7 @@ public class xf266856f631ec016 : Form
 		x761d57200285bc56(this, EventArgs.Empty);
 	}
 
-	private void SettingsBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void SettingsBtnFn(object sender, EventArgs e)
 	{
 		RegionCode regionCode = CodeManagerSettings.Instance.RegionCode;
 		bool checkAssociations = CodeManagerSettings.Instance.CheckAssociations;
@@ -478,7 +478,7 @@ public class xf266856f631ec016 : Form
 		}
 	}
 
-	private void DownloadBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void DownloadBtnFn(object sender, EventArgs e)
 	{
 		if (x990ce41f6429c278)
 		{
@@ -523,7 +523,7 @@ public class xf266856f631ec016 : Form
 
 	private bool x204c70d9180bf248(RegionCode xa4d52e34b62b5495, bool xa85f9af1c5f740b5, bool x6b753c834085f4f9, out bool xc7ffcf38b300713c)
 	{
-		x33636090f73cdcbf x33636090f73cdcbf = xd8c2f6d1ce092fe8.x38758cbbee49e4cb(xa4d52e34b62b5495);
+		Codelist codelist = xd8c2f6d1ce092fe8.x38758cbbee49e4cb(xa4d52e34b62b5495);
 		xc7ffcf38b300713c = false;
 		int num;
 		try
@@ -551,26 +551,26 @@ public class xf266856f631ec016 : Form
 				return false;
 			}
 		}
-		if (x33636090f73cdcbf != null)
+		if (codelist != null)
 		{
-			if (num < x33636090f73cdcbf.x77fa6322561797a0)
+			if (num < codelist.x77fa6322561797a0)
 			{
 				string format = "You currently have version {0} of the {1} codelist, and version {2} is the latest available on the " + (xc7ffcf38b300713c ? "backup server.  Maybe you should get in touch with Mirality Systems and offer them your codelist?" : "CodeJunkies server.  Congratulations, you appear to have achieved time travel.");
-				MessageBox.Show(this, string.Format(CultureInfo.CurrentCulture, format, x33636090f73cdcbf.x77fa6322561797a0, xa4d52e34b62b5495.ToString(), num), "Your codelist is better than theirs", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show(this, string.Format(CultureInfo.CurrentCulture, format, codelist.x77fa6322561797a0, xa4d52e34b62b5495.ToString(), num), "Your codelist is better than theirs", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return false;
 			}
-			if (num == x33636090f73cdcbf.x77fa6322561797a0)
+			if (num == codelist.x77fa6322561797a0)
 			{
 				if (xa85f9af1c5f740b5)
 				{
 					return false;
 				}
 				string format2 = "You currently have version {0} of the {1} codelist.  That appears to match the latest version available from " + (xc7ffcf38b300713c ? "the backup server.  (The CodeJunkies server couldn't be contacted.)" : "the CodeJunkies server.");
-				MessageBox.Show(this, string.Format(CultureInfo.CurrentCulture, format2, x33636090f73cdcbf.x77fa6322561797a0, xa4d52e34b62b5495.ToString()), "Your codelist is already up to date", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+				MessageBox.Show(this, string.Format(CultureInfo.CurrentCulture, format2, codelist.x77fa6322561797a0, xa4d52e34b62b5495.ToString()), "Your codelist is already up to date", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 				return false;
 			}
 			string format3 = "You currently have version {0} of the {1} codelist, and version {2} is now available on " + (xc7ffcf38b300713c ? "the backup server.  (The CodeJunkies server couldn't be contacted.)  " : "the CodeJunkies server.  ") + "Would you like to download it?";
-			if (MessageBox.Show(this, string.Format(CultureInfo.CurrentCulture, format3, x33636090f73cdcbf.x77fa6322561797a0, xa4d52e34b62b5495.ToString(), num), "New codelist available", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+			if (MessageBox.Show(this, string.Format(CultureInfo.CurrentCulture, format3, codelist.x77fa6322561797a0, xa4d52e34b62b5495.ToString(), num), "New codelist available", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
 			{
 				return false;
 			}
@@ -588,10 +588,10 @@ public class xf266856f631ec016 : Form
 			{
 				if (xc7ffcf38b300713c ? x71e47d5e67c3290d.x3b4eb5505a678b12(this, xa4d52e34b62b5495, tempFileName) : x71e47d5e67c3290d.xb1fade4398e4ef6c(this, xa4d52e34b62b5495, tempFileName))
 				{
-					x33636090f73cdcbf x33636090f73cdcbf = null;
+					Codelist codelist = null;
 					try
 					{
-						x33636090f73cdcbf = x33636090f73cdcbf.x5d95f5f98c940295(tempFileName);
+						codelist = Codelist.x5d95f5f98c940295(tempFileName);
 					}
 					catch (Exception ex)
 					{
@@ -617,7 +617,7 @@ public class xf266856f631ec016 : Form
 						break;
 					}
 					x990ce41f6429c278 = true;
-					x7d682c974eb9bc38.x90fda48194fc6b9a(xa4d52e34b62b5495, x33636090f73cdcbf);
+					x7d682c974eb9bc38.x90fda48194fc6b9a(xa4d52e34b62b5495, codelist);
 				}
 				else
 				{
@@ -699,9 +699,9 @@ public class xf266856f631ec016 : Form
 
 	private void x76d8474d05bbe7db()
 	{
-		using (MainWindow.xebcf83b00134300b(this, "Generating official codelist..."))
+		using (MainWindow.CreateMessageBox(this, "Generating official codelist..."))
 		{
-			x40d7509752490077 = new x33636090f73cdcbf();
+			x40d7509752490077 = new Codelist();
 			x40d7509752490077.xd5da23b762ce52a2(x7d682c974eb9bc38.x32866930416901c3);
 			x40d7509752490077.xd5da23b762ce52a2(x341b5be0450509fe.x32866930416901c3);
 		}
@@ -709,45 +709,45 @@ public class xf266856f631ec016 : Form
 
 	private void x7a8b34a4828fff0b()
 	{
-		using (MainWindow.xebcf83b00134300b(this, "Generating combined codelist..."))
+		using (MainWindow.CreateMessageBox(this, "Generating combined codelist..."))
 		{
-			x33636090f73cdcbf x33636090f73cdcbf = xa021be45aed5eb5d();
-			x768b6665179efa05 = new x33636090f73cdcbf();
-			x768b6665179efa05.xd5da23b762ce52a2(x33636090f73cdcbf);
+			Codelist codelist = xa021be45aed5eb5d();
+			x768b6665179efa05 = new Codelist();
+			x768b6665179efa05.xd5da23b762ce52a2(codelist);
 			x768b6665179efa05.xd5da23b762ce52a2(x40d7509752490077);
-			xa06a52b1869d241d.x06ca69422bbb7502 = x33636090f73cdcbf;
+			xa06a52b1869d241d.x06ca69422bbb7502 = codelist;
 			x0f289e063dca8ffa.x06ca69422bbb7502 = x768b6665179efa05;
 		}
 		x5662a37e9c62e4ee();
 	}
 
-	private x33636090f73cdcbf xa021be45aed5eb5d()
+	private Codelist xa021be45aed5eb5d()
 	{
-		x0bc07355221f6454 = new x33636090f73cdcbf();
-		x33636090f73cdcbf x33636090f73cdcbf = new x33636090f73cdcbf();
+		x0bc07355221f6454 = new Codelist();
+		Codelist codelist = new Codelist();
 		bool flag = false;
 		foreach (ListViewItem item in xdb68d5db35f39c3b.Items)
 		{
 			if (item == xcd3f268901925ceb)
 			{
 				flag = true;
-				x0bc07355221f6454.xd5da23b762ce52a2(x33636090f73cdcbf);
+				x0bc07355221f6454.xd5da23b762ce52a2(codelist);
 			}
 			if (item.Checked)
 			{
 				xc68feac946ffcf6f x06ca69422bbb = ((CodelistFile)item.Tag).x06ca69422bbb7502;
 				if (x06ca69422bbb != null)
 				{
-					x33636090f73cdcbf.xd5da23b762ce52a2(x06ca69422bbb.x9425d7602dc80ff4);
+					codelist.xd5da23b762ce52a2(x06ca69422bbb.x9425d7602dc80ff4);
 				}
 			}
 		}
 		if (!flag)
 		{
-			x0bc07355221f6454.xd5da23b762ce52a2(x33636090f73cdcbf);
+			x0bc07355221f6454.xd5da23b762ce52a2(codelist);
 		}
 		x0bc07355221f6454.xd5da23b762ce52a2(x40d7509752490077);
-		return x33636090f73cdcbf;
+		return codelist;
 	}
 
 	private void x267b27bc4addcd6d(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
@@ -760,7 +760,7 @@ public class xf266856f631ec016 : Form
 	private void x1aaf83a875993cfd(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
 	{
 		int num = xda8bb6fd239370b7.ClientSize.Width - 2;
-		num -= xbd8eb6087034acc6.Width + xc357181822dcdd16.Width;
+		num -= CodesColumnHeader.Width + RegionColumnHeader.Width;
 		x5f68d5b5d2980b57.Width = num;
 	}
 
@@ -769,12 +769,12 @@ public class xf266856f631ec016 : Form
 		bool flag = xdb68d5db35f39c3b.SelectedItems.Count == 1;
 		bool enabled = xdb68d5db35f39c3b.SelectedItems.Count == 2;
 		bool enabled2 = xdb68d5db35f39c3b.SelectedItems.Count >= 1;
-		xf9c9e64e6f6c5f22.Enabled = flag && xdb68d5db35f39c3b.SelectedIndices[0] > 0;
-		x895e4a971b163d02.Enabled = flag && xdb68d5db35f39c3b.SelectedIndices[0] < xdb68d5db35f39c3b.Items.Count - 1;
-		x42aef2be9508ae51.Enabled = enabled2;
-		x41e5b232cf8f1fc7.Enabled = enabled;
-		x2388a52851a4ea0a.Enabled = enabled2;
-		x6393e0b11f16c72d.Enabled = flag && xdb68d5db35f39c3b.SelectedItems[0] != xcd3f268901925ceb;
+		MoveUpBtn.Enabled = flag && xdb68d5db35f39c3b.SelectedIndices[0] > 0;
+		MoveDownBtn.Enabled = flag && xdb68d5db35f39c3b.SelectedIndices[0] < xdb68d5db35f39c3b.Items.Count - 1;
+		ViewCodeListBtn.Enabled = enabled2;
+		CompareCodeListsBtn.Enabled = enabled;
+		RemoveCodeListBtn.Enabled = enabled2;
+		MakeActiveBtn.Enabled = flag && xdb68d5db35f39c3b.SelectedItems[0] != xcd3f268901925ceb;
 	}
 
 	private void xbbd29bd1d5a360f1(object xe0292b9ed559da7d, ItemCheckedEventArgs xfbf34718e704c6bc)
@@ -785,7 +785,7 @@ public class xf266856f631ec016 : Form
 
 	private void x05d68e95df241fd3(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
 	{
-		x42aef2be9508ae51.PerformClick();
+		ViewCodeListBtn.PerformClick();
 	}
 
 	private void xc7ed830360cab883()
@@ -811,7 +811,7 @@ public class xf266856f631ec016 : Form
 	private void x964d37dff5e41bd4(CodelistFile xb44380e048627945)
 	{
 		string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(xb44380e048627945.Filename);
-		using (MainWindow.xebcf83b00134300b(this, "Loading codelist \"" + fileNameWithoutExtension + "\"..."))
+		using (MainWindow.CreateMessageBox(this, "Loading codelist \"" + fileNameWithoutExtension + "\"..."))
 		{
 			xb44380e048627945.x06ca69422bbb7502 = xc68feac946ffcf6f.x5d95f5f98c940295(xb44380e048627945.Filename);
 		}
@@ -821,7 +821,7 @@ public class xf266856f631ec016 : Form
 	{
 		try
 		{
-			xb44380e048627945.x06ca69422bbb7502.x0acd3c2012ea2ee8(xb44380e048627945.Filename);
+			xb44380e048627945.x06ca69422bbb7502.Write(xb44380e048627945.Filename);
 			xb44380e048627945.Dirty = false;
 			return true;
 		}
@@ -882,7 +882,7 @@ public class xf266856f631ec016 : Form
 		}
 	}
 
-	private void AddBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void AddBtnFn(object sender, EventArgs e)
 	{
 		x1d8fb7d81af42349.Filter = "All supported files|*.mcmcode;*.bin;*.max;arsettings.dat|MCM Codelist (*.mcmcode)|*.mcmcode|MAX Codelist (*.bin)|*.bin|MAX SaveGame (*.max)|*.max|arsettings.dat file|arsettings.dat|All files|*.*";
 		if (x1d8fb7d81af42349.ShowDialog(this) == DialogResult.OK)
@@ -942,7 +942,7 @@ public class xf266856f631ec016 : Form
 				break;
 			}
 			case ".bin":
-				x7e6266fd418decf0("a MAX codelist file", xb41a802ca5fde63b, x33636090f73cdcbf.x5d95f5f98c940295(xb41a802ca5fde63b));
+				x7e6266fd418decf0("a MAX codelist file", xb41a802ca5fde63b, Codelist.x5d95f5f98c940295(xb41a802ca5fde63b));
 				break;
 			case ".max":
 			{
@@ -951,7 +951,7 @@ public class xf266856f631ec016 : Form
 				{
 					using (MemoryStream input = new MemoryStream(xbcea506a33cf))
 					{
-						x33636090f73cdcbf x8a0b266419f09a = x33636090f73cdcbf.x5d95f5f98c940295(new BinaryReader(input));
+						Codelist x8a0b266419f09a = Codelist.x5d95f5f98c940295(new BinaryReader(input));
 						x7e6266fd418decf0("a MAX savegame file (with embedded codelist)", xb41a802ca5fde63b, x8a0b266419f09a);
 					}
 					break;
@@ -961,14 +961,14 @@ public class xf266856f631ec016 : Form
 					using (MemoryStream input2 = new MemoryStream(xbcea506a33cf))
 					{
 						x89c597989b13898e x89c597989b13898e = x89c597989b13898e.x5d95f5f98c940295(new BinaryReader(input2));
-						x7e6266fd418decf0("a MAX savegame file (with embedded settings)", xb41a802ca5fde63b, x89c597989b13898e.x33636090f73cdcbf);
+						x7e6266fd418decf0("a MAX savegame file (with embedded settings)", xb41a802ca5fde63b, x89c597989b13898e.Codelist);
 					}
 					break;
 				}
 				return "While the file \"" + xb41a802ca5fde63b + "\" does appear to be a valid MAX save file (\"" + x485b33aee91e.xe9c44fbf9adae540 + "\"), it does not appear to be an \"ActionReplayMAXSettings\" file and so does not contain a loadable codelist.";
 			}
 			case ".dat":
-				x7e6266fd418decf0("a MAX settings file", xb41a802ca5fde63b, x89c597989b13898e.x5d95f5f98c940295(xb41a802ca5fde63b).x33636090f73cdcbf);
+				x7e6266fd418decf0("a MAX settings file", xb41a802ca5fde63b, x89c597989b13898e.x5d95f5f98c940295(xb41a802ca5fde63b).Codelist);
 				break;
 			default:
 				return "The file \"" + xb41a802ca5fde63b + "\" doesn't have a recognised extension; not sure how to load it.";
@@ -981,9 +981,9 @@ public class xf266856f631ec016 : Form
 		return null;
 	}
 
-	private void x7e6266fd418decf0(string xc2358fbac7da3d45, string xb41a802ca5fde63b, x33636090f73cdcbf x8a0b266419f09a55)
+	private void x7e6266fd418decf0(string xc2358fbac7da3d45, string xb41a802ca5fde63b, Codelist list)
 	{
-		if ((x8a0b266419f09a55 == null || x8a0b266419f09a55.x69e1830021be7f93 == 0) && MessageBox.Show(this, "While the file \"" + xb41a802ca5fde63b + "\" does appear to be valid, it doesn't seem to contain any actual codes.\r\n\r\nDo you want to continue importing it anyway?", "Codelist empty", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+		if ((list == null || list.x69e1830021be7f93 == 0) && MessageBox.Show(this, "While the file \"" + xb41a802ca5fde63b + "\" does appear to be valid, it doesn't seem to contain any actual codes.\r\n\r\nDo you want to continue importing it anyway?", "Codelist empty", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
 		{
 			return;
 		}
@@ -1004,7 +1004,7 @@ public class xf266856f631ec016 : Form
 		{
 			CodelistFile codelistFile = new CodelistFile(fileName);
 			codelistFile.x06ca69422bbb7502 = new xc68feac946ffcf6f();
-			codelistFile.x06ca69422bbb7502.x9425d7602dc80ff4 = x8a0b266419f09a55;
+			codelistFile.x06ca69422bbb7502.x9425d7602dc80ff4 = list;
 			codelistFile.Dirty = true;
 			CodeManagerSettings.Instance.Codelists.Add(codelistFile);
 			ListViewItem listViewItem = xc423482c5e4eb4b4(codelistFile);
@@ -1025,12 +1025,12 @@ public class xf266856f631ec016 : Form
 		return xdb68d5db35f39c3b.Items.Add(listViewItem);
 	}
 
-	private void x3d18c4841d9c7d0b(ListViewItem xccb63ca5f63dc470)
+	private void x3d18c4841d9c7d0b(ListViewItem item)
 	{
-		CodelistFile codelistFile = (CodelistFile)xccb63ca5f63dc470.Tag;
-		xccb63ca5f63dc470.ForeColor = ((codelistFile.x06ca69422bbb7502 == null) ? Color.Red : Color.Empty);
-		xccb63ca5f63dc470.SubItems[x5a428ce3753ad1d1.Index].Text = Path.GetFileNameWithoutExtension(codelistFile.Filename);
-		xccb63ca5f63dc470.SubItems[x4f9e88a7f60520ba.Index].Text = ((codelistFile.x06ca69422bbb7502 == null) ? "0" : codelistFile.x06ca69422bbb7502.x9425d7602dc80ff4.x69e1830021be7f93.ToString(CultureInfo.CurrentCulture));
+		CodelistFile codelistFile = (CodelistFile)item.Tag;
+		item.ForeColor = ((codelistFile.x06ca69422bbb7502 == null) ? Color.Red : Color.Empty);
+		item.SubItems[x5a428ce3753ad1d1.Index].Text = Path.GetFileNameWithoutExtension(codelistFile.Filename);
+		item.SubItems[x4f9e88a7f60520ba.Index].Text = ((codelistFile.x06ca69422bbb7502 == null) ? "0" : codelistFile.x06ca69422bbb7502.x9425d7602dc80ff4.x69e1830021be7f93.ToString(CultureInfo.CurrentCulture));
 	}
 
 	private void xfbb5d827b0145991()
@@ -1049,7 +1049,7 @@ public class xf266856f631ec016 : Form
 		}
 	}
 
-	private void NewBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void NewCodeListBtnFn(object sender, EventArgs e)
 	{
 		if (xc21543d0206190f3.ShowDialog(this) == DialogResult.OK)
 		{
@@ -1068,7 +1068,7 @@ public class xf266856f631ec016 : Form
 		}
 	}
 
-	private void RemoveBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void RemoveBtnFn(object sender, EventArgs e)
 	{
 		xdb68d5db35f39c3b.BeginUpdate();
 		try
@@ -1105,9 +1105,9 @@ public class xf266856f631ec016 : Form
 		}
 	}
 
-	private void xf34dbca941eda6fd(ListViewItem xccb63ca5f63dc470, int x374ea4fe62468d0f)
+	private void xf34dbca941eda6fd(ListViewItem item, int x374ea4fe62468d0f)
 	{
-		CodelistFile xccb63ca5f63dc471 = (CodelistFile)xccb63ca5f63dc470.Tag;
+		CodelistFile xccb63ca5f63dc471 = (CodelistFile)item.Tag;
 		int num = CodeManagerSettings.Instance.Codelists.IndexOf(xccb63ca5f63dc471);
 		if (num == -1)
 		{
@@ -1115,12 +1115,12 @@ public class xf266856f631ec016 : Form
 		}
 		CodeManagerSettings.Instance.Codelists.RemoveAt(num);
 		CodeManagerSettings.Instance.Codelists.Insert(num + x374ea4fe62468d0f, xccb63ca5f63dc471);
-		num = xccb63ca5f63dc470.Index;
+		num = item.Index;
 		xdb68d5db35f39c3b.BeginUpdate();
 		try
 		{
-			xdb68d5db35f39c3b.Items.Remove(xccb63ca5f63dc470);
-			xdb68d5db35f39c3b.Items.Insert(num + x374ea4fe62468d0f, xccb63ca5f63dc470);
+			xdb68d5db35f39c3b.Items.Remove(item);
+			xdb68d5db35f39c3b.Items.Insert(num + x374ea4fe62468d0f, item);
 		}
 		finally
 		{
@@ -1128,12 +1128,12 @@ public class xf266856f631ec016 : Form
 		}
 	}
 
-	private void MoveUpBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void MoveUpBtnFn(object sender, EventArgs e)
 	{
 		xf34dbca941eda6fd(xdb68d5db35f39c3b.SelectedItems[0], -1);
 	}
 
-	private void MoveDownBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void MoveDownBtnFn(object sender, EventArgs e)
 	{
 		xf34dbca941eda6fd(xdb68d5db35f39c3b.SelectedItems[0], 1);
 	}
@@ -1149,26 +1149,26 @@ public class xf266856f631ec016 : Form
 		}
 	}
 
-	private void OpenLinkBtnFn(object xe0292b9ed559da7d, LinkLabelLinkClickedEventArgs xfbf34718e704c6bc)
+	private void OpenLinkBtnFn(object sender, LinkLabelLinkClickedEventArgs e)
 	{
-		if (xfbf34718e704c6bc.Button == MouseButtons.Left && xfbf34718e704c6bc.Link.LinkData.ToString().StartsWith("http://"))
+		if (e.Button == MouseButtons.Left && e.Link.LinkData.ToString().StartsWith("http://"))
 		{
-			x2ff81ffb42e24727(xfbf34718e704c6bc.Link.LinkData.ToString());
+			x2ff81ffb42e24727(e.Link.LinkData.ToString());
 		}
 	}
 
-	private void x72c269e9be1c5015(string xc15bd84e01929885, x33636090f73cdcbf x8a0b266419f09a55)
+	private void x72c269e9be1c5015(string xc15bd84e01929885, Codelist list)
 	{
-		if (x8a0b266419f09a55 == null)
+		if (list == null)
 		{
 			throw new ArgumentNullException("list");
 		}
-		x33636090f73cdcbf x33636090f73cdcbf = ((x50892314664b644e == null) ? null : x50892314664b644e.x06ca69422bbb7502.x9425d7602dc80ff4);
+		Codelist codelist = ((x50892314664b644e == null) ? null : x50892314664b644e.x06ca69422bbb7502.x9425d7602dc80ff4);
 		if (x0bc07355221f6454 == null)
 		{
 			x7a8b34a4828fff0b();
 		}
-		using x325527706166bcaf x325527706166bcaf2 = new x325527706166bcaf(xc15bd84e01929885, x8a0b266419f09a55, x33636090f73cdcbf, x768b6665179efa05, (x8a0b266419f09a55 == x33636090f73cdcbf) ? x0bc07355221f6454 : null);
+		using x325527706166bcaf x325527706166bcaf2 = new x325527706166bcaf(xc15bd84e01929885, list, codelist, x768b6665179efa05, (list == codelist) ? x0bc07355221f6454 : null);
 		bool favouritesChanged = false;
 		bool activeListChanged = false;
 		x325527706166bcaf2.x978f28482caa2f52 += delegate
@@ -1192,12 +1192,12 @@ public class xf266856f631ec016 : Form
 		}
 	}
 
-	private void ViewAllCodesBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void ViewAllCodesBtnFn(object sender, EventArgs e)
 	{
 		x72c269e9be1c5015("Official Lists", x40d7509752490077);
 	}
 
-	private void ViewBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void ViewCodeListBtnFn(object sender, EventArgs e)
 	{
 		if (xdb68d5db35f39c3b.SelectedItems.Count == 0)
 		{
@@ -1223,33 +1223,33 @@ public class xf266856f631ec016 : Form
 			x72c269e9be1c5015(listViewItem.Text, codelistFile.x06ca69422bbb7502.x9425d7602dc80ff4);
 			return;
 		}
-		x33636090f73cdcbf x33636090f73cdcbf = new x33636090f73cdcbf();
+		Codelist codelist = new Codelist();
 		foreach (ListViewItem selectedItem in xdb68d5db35f39c3b.SelectedItems)
 		{
 			xc68feac946ffcf6f x06ca69422bbb = ((CodelistFile)selectedItem.Tag).x06ca69422bbb7502;
 			if (x06ca69422bbb != null)
 			{
-				x33636090f73cdcbf.xd5da23b762ce52a2(x06ca69422bbb.x9425d7602dc80ff4);
+				codelist.xd5da23b762ce52a2(x06ca69422bbb.x9425d7602dc80ff4);
 			}
 		}
-		x72c269e9be1c5015("Custom Codelists", x33636090f73cdcbf);
+		x72c269e9be1c5015("Custom Codelists", codelist);
 	}
 
-	private void MakeActiveBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void MakeActiveBtnFn(object sender, EventArgs e)
 	{
 		x10cbf211cdc9304b(xdb68d5db35f39c3b.SelectedItems[0]);
-		x6393e0b11f16c72d.Enabled = false;
+		MakeActiveBtn.Enabled = false;
 	}
 
-	private void x10cbf211cdc9304b(ListViewItem xccb63ca5f63dc470)
+	private void x10cbf211cdc9304b(ListViewItem item)
 	{
-		CodelistFile codelistFile = ((xccb63ca5f63dc470 == null) ? null : ((CodelistFile)xccb63ca5f63dc470.Tag));
+		CodelistFile codelistFile = ((item == null) ? null : ((CodelistFile)item.Tag));
 		if (codelistFile != null && codelistFile.x06ca69422bbb7502 == null)
 		{
 			try
 			{
 				x964d37dff5e41bd4(codelistFile);
-				x3d18c4841d9c7d0b(xccb63ca5f63dc470);
+				x3d18c4841d9c7d0b(item);
 			}
 			catch (Exception ex)
 			{
@@ -1261,37 +1261,37 @@ public class xf266856f631ec016 : Form
 		{
 			xcd3f268901925ceb.ForeColor = SystemColors.WindowText;
 		}
-		xcd3f268901925ceb = xccb63ca5f63dc470;
-		if (xccb63ca5f63dc470 == null)
+		xcd3f268901925ceb = item;
+		if (item == null)
 		{
 			x50892314664b644e = null;
 			CodeManagerSettings.Instance.ActiveCodelistFile = null;
 		}
 		else
 		{
-			x50892314664b644e = (CodelistFile)xccb63ca5f63dc470.Tag;
-			xccb63ca5f63dc470.ForeColor = Color.Green;
+			x50892314664b644e = (CodelistFile)item.Tag;
+			item.ForeColor = Color.Green;
 			CodeManagerSettings.Instance.ActiveCodelistFile = x50892314664b644e.Filename;
 		}
 		x0bc07355221f6454 = null;
 		x89f94fbb2f9f5452();
 	}
 
-	private void View2BtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void ViewActiveBtnFn(object sender, EventArgs e)
 	{
 		x72c269e9be1c5015("Active List", x50892314664b644e.x06ca69422bbb7502.x9425d7602dc80ff4);
 	}
 
-	private void ViewFullBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void ViewCombinedBtnFn(object sender, EventArgs e)
 	{
 		x72c269e9be1c5015("Combined List", x768b6665179efa05);
 	}
 
-	private void WhatsNewBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void WhatsNewBtnFn(object sender, EventArgs e)
 	{
-		x33636090f73cdcbf x32866930416901c = xd8c2f6d1ce092fe8.x32866930416901c3;
+		Codelist x32866930416901c = xd8c2f6d1ce092fe8.x32866930416901c3;
 		string x13c3fb0565df0a = string.Format(CultureInfo.CurrentCulture, "Previously downloaded official codelist (v{0})", x32866930416901c.x77fa6322561797a0);
-		x33636090f73cdcbf x32866930416901c2 = x7d682c974eb9bc38.x32866930416901c3;
+		Codelist x32866930416901c2 = x7d682c974eb9bc38.x32866930416901c3;
 		string xac95817976f = string.Format(CultureInfo.CurrentCulture, "Newly downloaded official codelist (v{0})", x32866930416901c2.x77fa6322561797a0);
 		bool favouritesChanged = false;
 		using (x9ae7778f2e265c77 x9ae7778f2e265c78 = new x9ae7778f2e265c77(x13c3fb0565df0a, x32866930416901c, xac95817976f, x32866930416901c2))
@@ -1308,7 +1308,7 @@ public class xf266856f631ec016 : Form
 		}
 	}
 
-	private void CompareBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void CompareCodeListsBtnFn(object sender, EventArgs e)
 	{
 		if (xdb68d5db35f39c3b.SelectedItems.Count != 2)
 		{
@@ -1336,7 +1336,7 @@ public class xf266856f631ec016 : Form
 		}
 	}
 
-	private void ExportBtnFn(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void ExportActiveBtnFn(object sender, EventArgs e)
 	{
 		x2005f29ea96528c1.Filter = "Text files (*.txt)|*.txt|XML files (*.xml)|*.xml|HTML files (*.html)|*.html|MAX Codelist files (*.bin)|*.bin|All files (*.*)|*.*";
 		string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(x50892314664b644e.Filename);
@@ -1348,7 +1348,7 @@ public class xf266856f631ec016 : Form
 		}
 		try
 		{
-			using MainWindow x0ad6e0a9d6b71dfc = MainWindow.xebcf83b00134300b(this, "Exporting codelist...");
+			using MainWindow x0ad6e0a9d6b71dfc = MainWindow.CreateMessageBox(this, "Exporting codelist...");
 			switch (x2005f29ea96528c1.FilterIndex)
 			{
 			case 1:
@@ -1406,21 +1406,21 @@ public class xf266856f631ec016 : Form
 			{
 				ListViewItem listViewItem = new ListViewItem(new string[xda8bb6fd239370b7.Columns.Count]);
 				listViewItem.SubItems[x5f68d5b5d2980b57.Index].Text = favourite.Name;
-				listViewItem.SubItems[xc357181822dcdd16.Index].Text = favourite.Region.ToString();
+				listViewItem.SubItems[RegionColumnHeader.Index].Text = favourite.Region.ToString();
 				listViewItem.Tag = favourite;
-				xa0380078f0b6cbb7 xa0380078f0b6cbb = ((x768b6665179efa05 == null) ? null : x768b6665179efa05.x45a46c637b44a527(favourite.GameId));
+				GameEntry xa0380078f0b6cbb = ((x768b6665179efa05 == null) ? null : x768b6665179efa05.x45a46c637b44a527(favourite.GameId));
 				if (xa0380078f0b6cbb == null)
 				{
 					listViewItem.ForeColor = Color.Red;
-					listViewItem.SubItems[xbd8eb6087034acc6.Index].Text = "0";
+					listViewItem.SubItems[CodesColumnHeader.Index].Text = "0";
 				}
 				else
 				{
 					if (favourite.Region == RegionCode.Unknown)
 					{
-						favourite.Region = xa0380078f0b6cbb.x9b7a81a8f32a1422;
+						favourite.Region = xa0380078f0b6cbb.Region;
 					}
-					listViewItem.SubItems[xbd8eb6087034acc6.Index].Text = xa0380078f0b6cbb.xd44988f225497f3a.ToString(CultureInfo.CurrentCulture);
+					listViewItem.SubItems[CodesColumnHeader.Index].Text = xa0380078f0b6cbb.xd44988f225497f3a.ToString(CultureInfo.CurrentCulture);
 				}
 				xda8bb6fd239370b7.Items.Add(listViewItem);
 			}
@@ -1434,28 +1434,28 @@ public class xf266856f631ec016 : Form
 
 	private void x78487572c0ac6449()
 	{
-		using (MainWindow.xebcf83b00134300b(this, "Generating favourite codelist..."))
+		using (MainWindow.CreateMessageBox(this, "Generating favourite codelist..."))
 		{
 			if (x768b6665179efa05 == null || x768b6665179efa05.x69e1830021be7f93 == 0)
 			{
 				xd710ac080d58c58d.x06ca69422bbb7502 = null;
-				x844fa2fb9386a3c3 = null;
-				x7e8118e41ae03af8.Enabled = false;
+				CodeListData = null;
+				ExportFavsBtn.Enabled = false;
 				return;
 			}
-			x33636090f73cdcbf x33636090f73cdcbf = new x33636090f73cdcbf();
-			x33636090f73cdcbf.x77fa6322561797a0 = x768b6665179efa05.x77fa6322561797a0;
+			Codelist codelist = new Codelist();
+			codelist.x77fa6322561797a0 = x768b6665179efa05.x77fa6322561797a0;
 			foreach (FavouriteGame favourite in CodeManagerSettings.Instance.Favourites)
 			{
-				xa0380078f0b6cbb7 xa0380078f0b6cbb = x768b6665179efa05.x45a46c637b44a527(favourite.GameId);
+				GameEntry xa0380078f0b6cbb = x768b6665179efa05.x45a46c637b44a527(favourite.GameId);
 				if (xa0380078f0b6cbb != null)
 				{
-					x33636090f73cdcbf.xd6b6ed77479ef68c(xa0380078f0b6cbb);
+					codelist.xd6b6ed77479ef68c(xa0380078f0b6cbb);
 				}
 			}
-			xd710ac080d58c58d.x06ca69422bbb7502 = x33636090f73cdcbf;
-			x844fa2fb9386a3c3 = x33636090f73cdcbf;
-			x7e8118e41ae03af8.Enabled = true;
+			xd710ac080d58c58d.x06ca69422bbb7502 = codelist;
+			CodeListData = codelist;
+			ExportFavsBtn.Enabled = true;
 		}
 	}
 
@@ -1465,7 +1465,7 @@ public class xf266856f631ec016 : Form
 		{
 			return;
 		}
-		xa0380078f0b6cbb7 xa0380078f0b6cbb = x768b6665179efa05.x45a46c637b44a527(favouriteGame.GameId);
+		GameEntry xa0380078f0b6cbb = x768b6665179efa05.x45a46c637b44a527(favouriteGame.GameId);
 		if (xa0380078f0b6cbb == null)
 		{
 			return;
@@ -1511,27 +1511,27 @@ public class xf266856f631ec016 : Form
 		x5662a37e9c62e4ee();
 	}
 
-	private void ExportFavouritesToARMAX(object xe0292b9ed559da7d, EventArgs xfbf34718e704c6bc)
+	private void ExportFavsBtnFn(object sender, EventArgs e)
 	{
-		if (x844fa2fb9386a3c3 != null)
+		if (CodeListData != null)
 		{
-			xa7a034bfe24cb1a9.x6bf418b1d79a537d(this, x844fa2fb9386a3c3);
+			CodelistFunctionLibrary.ExportFavsToARMAX(this, CodeListData);
 		}
 	}
 
-	private void x863eda1ee465de85(object xe0292b9ed559da7d, DragEventArgs xfbf34718e704c6bc)
+	private void x863eda1ee465de85(object sender, DragEventArgs e)
 	{
-		if ((xfbf34718e704c6bc.AllowedEffect & DragDropEffects.Copy) == 0)
+		if ((e.AllowedEffect & DragDropEffects.Copy) == 0)
 		{
-			xfbf34718e704c6bc.Effect = DragDropEffects.None;
+			e.Effect = DragDropEffects.None;
 		}
-		if (xfbf34718e704c6bc.Data.GetDataPresent(DataFormats.FileDrop))
+		if (e.Data.GetDataPresent(DataFormats.FileDrop))
 		{
-			xfbf34718e704c6bc.Effect = DragDropEffects.Copy;
+			e.Effect = DragDropEffects.Copy;
 		}
 		else
 		{
-			xfbf34718e704c6bc.Effect = DragDropEffects.None;
+			e.Effect = DragDropEffects.None;
 		}
 	}
 
@@ -1579,35 +1579,35 @@ public class xf266856f631ec016 : Form
 		xdb68d5db35f39c3b = new xef58b78651bbbe4e();
 		x5a428ce3753ad1d1 = new ColumnHeader();
 		x4f9e88a7f60520ba = new ColumnHeader();
-		x75fd20aa69980801 = new Button();
-		x2388a52851a4ea0a = new Button();
-		xfbc07e14ac882dfa = new Button();
-		x6393e0b11f16c72d = new Button();
-		xf9c9e64e6f6c5f22 = new Button();
-		x895e4a971b163d02 = new Button();
-		x41e5b232cf8f1fc7 = new Button();
-		x42aef2be9508ae51 = new Button();
+		AddCodeListBtn = new Button();
+		RemoveCodeListBtn = new Button();
+		NewCodeListBtn = new Button();
+		MakeActiveBtn = new Button();
+		MoveUpBtn = new Button();
+		MoveDownBtn = new Button();
+		CompareCodeListsBtn = new Button();
+		ViewCodeListBtn = new Button();
 		x9be4e52c9a35b583 = new Label();
 		x7662eb616ef3d51d = new Panel();
 		x7c1870c66bed243f = new GroupBox();
 		xda8bb6fd239370b7 = new ListView();
 		x5f68d5b5d2980b57 = new ColumnHeader();
-		xc357181822dcdd16 = new ColumnHeader();
-		xbd8eb6087034acc6 = new ColumnHeader();
-		x7e8118e41ae03af8 = new Button();
+		RegionColumnHeader = new ColumnHeader();
+		CodesColumnHeader = new ColumnHeader();
+		ExportFavsBtn = new Button();
 		xd710ac080d58c58d = new x3ccd15e4a951572e();
 		xb13e3492976e6435 = new GroupBox();
 		x0f289e063dca8ffa = new x3ccd15e4a951572e();
-		xd3dd5bc5271389c1 = new Button();
+		ViewCombinedBtn = new Button();
 		x1c4e58c064fe01db = new Panel();
-		x66919dbc56507539 = new Button();
-		x3fe10addb87ccdf3 = new LinkLabel();
-		xe67bc12c144a16ad = new LinkLabel();
+		SettingsBtn = new Button();
+		CodeJunkiesLinkLabel = new LinkLabel();
+		MiralityLinkLabel = new LinkLabel();
 		x31b6f3a354074bae = new Label();
 		x33a6dcc90c5f6721 = new Label();
 		xd514546ab3c9516d = new GroupBox();
-		xa5100f0e0f8519f0 = new Button();
-		x657b3a4eafec2605 = new Button();
+		ExportActiveBtn = new Button();
+		ViewActiveBtn = new Button();
 		x7468a31bcc5ded5a = new Label();
 		x7702318dbc4bbe4b = new Label();
 		x75cfc97b61818036 = new x3ccd15e4a951572e();
@@ -1761,14 +1761,14 @@ public class xf266856f631ec016 : Form
 		x6faa1d7ea341a63b.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50f));
 		x6faa1d7ea341a63b.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50f));
 		x6faa1d7ea341a63b.Controls.Add(xdb68d5db35f39c3b, 0, 0);
-		x6faa1d7ea341a63b.Controls.Add(x75fd20aa69980801, 0, 4);
-		x6faa1d7ea341a63b.Controls.Add(x2388a52851a4ea0a, 1, 4);
-		x6faa1d7ea341a63b.Controls.Add(xfbc07e14ac882dfa, 0, 5);
-		x6faa1d7ea341a63b.Controls.Add(x6393e0b11f16c72d, 1, 5);
-		x6faa1d7ea341a63b.Controls.Add(xf9c9e64e6f6c5f22, 0, 2);
-		x6faa1d7ea341a63b.Controls.Add(x895e4a971b163d02, 1, 2);
-		x6faa1d7ea341a63b.Controls.Add(x41e5b232cf8f1fc7, 1, 3);
-		x6faa1d7ea341a63b.Controls.Add(x42aef2be9508ae51, 0, 3);
+		x6faa1d7ea341a63b.Controls.Add(AddCodeListBtn, 0, 4);
+		x6faa1d7ea341a63b.Controls.Add(RemoveCodeListBtn, 1, 4);
+		x6faa1d7ea341a63b.Controls.Add(NewCodeListBtn, 0, 5);
+		x6faa1d7ea341a63b.Controls.Add(MakeActiveBtn, 1, 5);
+		x6faa1d7ea341a63b.Controls.Add(MoveUpBtn, 0, 2);
+		x6faa1d7ea341a63b.Controls.Add(MoveDownBtn, 1, 2);
+		x6faa1d7ea341a63b.Controls.Add(CompareCodeListsBtn, 1, 3);
+		x6faa1d7ea341a63b.Controls.Add(ViewCodeListBtn, 0, 3);
 		x6faa1d7ea341a63b.Controls.Add(x9be4e52c9a35b583, 0, 1);
 		x6faa1d7ea341a63b.Location = new Point(3, 50);
 		x6faa1d7ea341a63b.Name = "tableLayoutPanelCodelists";
@@ -1805,70 +1805,70 @@ public class xf266856f631ec016 : Form
 		x5a428ce3753ad1d1.Text = "Name";
 		x5a428ce3753ad1d1.Width = 229;
 		x4f9e88a7f60520ba.Text = "Games";
-		x75fd20aa69980801.Dock = DockStyle.Fill;
-		x75fd20aa69980801.Location = new Point(3, 313);
-		x75fd20aa69980801.Name = "buttonAddCodelist";
-		x75fd20aa69980801.Size = new Size(151, 26);
-		x75fd20aa69980801.TabIndex = 5;
-		x75fd20aa69980801.Text = "Add...";
-		x75fd20aa69980801.UseVisualStyleBackColor = true;
-		x75fd20aa69980801.Click += AddBtnFn;
-		x2388a52851a4ea0a.Dock = DockStyle.Fill;
-		x2388a52851a4ea0a.Location = new Point(160, 313);
-		x2388a52851a4ea0a.Name = "buttonRemoveCodelist";
-		x2388a52851a4ea0a.Size = new Size(152, 26);
-		x2388a52851a4ea0a.TabIndex = 6;
-		x2388a52851a4ea0a.Text = "Remove";
-		x2388a52851a4ea0a.UseVisualStyleBackColor = true;
-		x2388a52851a4ea0a.Click += RemoveBtnFn;
-		xfbc07e14ac882dfa.Dock = DockStyle.Fill;
-		xfbc07e14ac882dfa.Location = new Point(3, 345);
-		xfbc07e14ac882dfa.Name = "buttonNewCodelist";
-		xfbc07e14ac882dfa.Size = new Size(151, 26);
-		xfbc07e14ac882dfa.TabIndex = 7;
-		xfbc07e14ac882dfa.Text = "New...";
-		xfbc07e14ac882dfa.UseVisualStyleBackColor = true;
-		xfbc07e14ac882dfa.Click += NewBtnFn;
-		x6393e0b11f16c72d.Dock = DockStyle.Fill;
-		x6393e0b11f16c72d.Location = new Point(160, 345);
-		x6393e0b11f16c72d.Name = "buttonMakeActive";
-		x6393e0b11f16c72d.Size = new Size(152, 26);
-		x6393e0b11f16c72d.TabIndex = 8;
-		x6393e0b11f16c72d.Text = "Make Active";
-		x6393e0b11f16c72d.UseVisualStyleBackColor = true;
-		x6393e0b11f16c72d.Click += MakeActiveBtnFn;
-		xf9c9e64e6f6c5f22.Dock = DockStyle.Fill;
-		xf9c9e64e6f6c5f22.Location = new Point(3, 249);
-		xf9c9e64e6f6c5f22.Name = "buttonMoveUp";
-		xf9c9e64e6f6c5f22.Size = new Size(151, 26);
-		xf9c9e64e6f6c5f22.TabIndex = 2;
-		xf9c9e64e6f6c5f22.Text = "Move Up";
-		xf9c9e64e6f6c5f22.UseVisualStyleBackColor = true;
-		xf9c9e64e6f6c5f22.Click += MoveUpBtnFn;
-		x895e4a971b163d02.Dock = DockStyle.Fill;
-		x895e4a971b163d02.Location = new Point(160, 249);
-		x895e4a971b163d02.Name = "buttonMoveDown";
-		x895e4a971b163d02.Size = new Size(152, 26);
-		x895e4a971b163d02.TabIndex = 3;
-		x895e4a971b163d02.Text = "Move Down";
-		x895e4a971b163d02.UseVisualStyleBackColor = true;
-		x895e4a971b163d02.Click += MoveDownBtnFn;
-		x41e5b232cf8f1fc7.Dock = DockStyle.Fill;
-		x41e5b232cf8f1fc7.Location = new Point(160, 281);
-		x41e5b232cf8f1fc7.Name = "buttonCompareCodelists";
-		x41e5b232cf8f1fc7.Size = new Size(152, 26);
-		x41e5b232cf8f1fc7.TabIndex = 4;
-		x41e5b232cf8f1fc7.Text = "Compare...";
-		x41e5b232cf8f1fc7.UseVisualStyleBackColor = true;
-		x41e5b232cf8f1fc7.Click += CompareBtnFn;
-		x42aef2be9508ae51.Dock = DockStyle.Fill;
-		x42aef2be9508ae51.Location = new Point(3, 281);
-		x42aef2be9508ae51.Name = "buttonViewCodelist";
-		x42aef2be9508ae51.Size = new Size(151, 26);
-		x42aef2be9508ae51.TabIndex = 3;
-		x42aef2be9508ae51.Text = "View...";
-		x42aef2be9508ae51.UseVisualStyleBackColor = true;
-		x42aef2be9508ae51.Click += ViewBtnFn;
+		AddCodeListBtn.Dock = DockStyle.Fill;
+		AddCodeListBtn.Location = new Point(3, 313);
+		AddCodeListBtn.Name = "buttonAddCodelist";
+		AddCodeListBtn.Size = new Size(151, 26);
+		AddCodeListBtn.TabIndex = 5;
+		AddCodeListBtn.Text = "Add...";
+		AddCodeListBtn.UseVisualStyleBackColor = true;
+		AddCodeListBtn.Click += AddBtnFn;
+		RemoveCodeListBtn.Dock = DockStyle.Fill;
+		RemoveCodeListBtn.Location = new Point(160, 313);
+		RemoveCodeListBtn.Name = "buttonRemoveCodelist";
+		RemoveCodeListBtn.Size = new Size(152, 26);
+		RemoveCodeListBtn.TabIndex = 6;
+		RemoveCodeListBtn.Text = "Remove";
+		RemoveCodeListBtn.UseVisualStyleBackColor = true;
+		RemoveCodeListBtn.Click += RemoveBtnFn;
+		NewCodeListBtn.Dock = DockStyle.Fill;
+		NewCodeListBtn.Location = new Point(3, 345);
+		NewCodeListBtn.Name = "buttonNewCodelist";
+		NewCodeListBtn.Size = new Size(151, 26);
+		NewCodeListBtn.TabIndex = 7;
+		NewCodeListBtn.Text = "New...";
+		NewCodeListBtn.UseVisualStyleBackColor = true;
+		NewCodeListBtn.Click += NewCodeListBtnFn;
+		MakeActiveBtn.Dock = DockStyle.Fill;
+		MakeActiveBtn.Location = new Point(160, 345);
+		MakeActiveBtn.Name = "buttonMakeActive";
+		MakeActiveBtn.Size = new Size(152, 26);
+		MakeActiveBtn.TabIndex = 8;
+		MakeActiveBtn.Text = "Make Active";
+		MakeActiveBtn.UseVisualStyleBackColor = true;
+		MakeActiveBtn.Click += MakeActiveBtnFn;
+		MoveUpBtn.Dock = DockStyle.Fill;
+		MoveUpBtn.Location = new Point(3, 249);
+		MoveUpBtn.Name = "buttonMoveUp";
+		MoveUpBtn.Size = new Size(151, 26);
+		MoveUpBtn.TabIndex = 2;
+		MoveUpBtn.Text = "Move Up";
+		MoveUpBtn.UseVisualStyleBackColor = true;
+		MoveUpBtn.Click += MoveUpBtnFn;
+		MoveDownBtn.Dock = DockStyle.Fill;
+		MoveDownBtn.Location = new Point(160, 249);
+		MoveDownBtn.Name = "buttonMoveDown";
+		MoveDownBtn.Size = new Size(152, 26);
+		MoveDownBtn.TabIndex = 3;
+		MoveDownBtn.Text = "Move Down";
+		MoveDownBtn.UseVisualStyleBackColor = true;
+		MoveDownBtn.Click += MoveDownBtnFn;
+		CompareCodeListsBtn.Dock = DockStyle.Fill;
+		CompareCodeListsBtn.Location = new Point(160, 281);
+		CompareCodeListsBtn.Name = "buttonCompareCodelists";
+		CompareCodeListsBtn.Size = new Size(152, 26);
+		CompareCodeListsBtn.TabIndex = 4;
+		CompareCodeListsBtn.Text = "Compare...";
+		CompareCodeListsBtn.UseVisualStyleBackColor = true;
+		CompareCodeListsBtn.Click += CompareCodeListsBtnFn;
+		ViewCodeListBtn.Dock = DockStyle.Fill;
+		ViewCodeListBtn.Location = new Point(3, 281);
+		ViewCodeListBtn.Name = "buttonViewCodelist";
+		ViewCodeListBtn.Size = new Size(151, 26);
+		ViewCodeListBtn.TabIndex = 3;
+		ViewCodeListBtn.Text = "View...";
+		ViewCodeListBtn.UseVisualStyleBackColor = true;
+		ViewCodeListBtn.Click += ViewCodeListBtnFn;
 		x6faa1d7ea341a63b.SetColumnSpan(x9be4e52c9a35b583, 2);
 		x9be4e52c9a35b583.Dock = DockStyle.Fill;
 		x9be4e52c9a35b583.Location = new Point(3, 226);
@@ -1886,7 +1886,7 @@ public class xf266856f631ec016 : Form
 		x7662eb616ef3d51d.Size = new Size(321, 427);
 		x7662eb616ef3d51d.TabIndex = 6;
 		x7c1870c66bed243f.Controls.Add(xda8bb6fd239370b7);
-		x7c1870c66bed243f.Controls.Add(x7e8118e41ae03af8);
+		x7c1870c66bed243f.Controls.Add(ExportFavsBtn);
 		x7c1870c66bed243f.Controls.Add(xd710ac080d58c58d);
 		x7c1870c66bed243f.Dock = DockStyle.Fill;
 		x7c1870c66bed243f.Location = new Point(0, 79);
@@ -1896,7 +1896,7 @@ public class xf266856f631ec016 : Form
 		x7c1870c66bed243f.TabStop = false;
 		x7c1870c66bed243f.Text = "Your Favourites";
 		xda8bb6fd239370b7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-		xda8bb6fd239370b7.Columns.AddRange(new ColumnHeader[3] { x5f68d5b5d2980b57, xc357181822dcdd16, xbd8eb6087034acc6 });
+		xda8bb6fd239370b7.Columns.AddRange(new ColumnHeader[3] { x5f68d5b5d2980b57, RegionColumnHeader, CodesColumnHeader });
 		xda8bb6fd239370b7.FullRowSelect = true;
 		xda8bb6fd239370b7.HeaderStyle = ColumnHeaderStyle.Nonclickable;
 		xda8bb6fd239370b7.HideSelection = false;
@@ -1912,16 +1912,16 @@ public class xf266856f631ec016 : Form
 		xda8bb6fd239370b7.KeyDown += x63755db512d53357;
 		x5f68d5b5d2980b57.Text = "Name";
 		x5f68d5b5d2980b57.Width = 181;
-		xc357181822dcdd16.Text = "Region";
-		xbd8eb6087034acc6.Text = "Codes";
-		x7e8118e41ae03af8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-		x7e8118e41ae03af8.Location = new Point(6, 222);
-		x7e8118e41ae03af8.Name = "buttonExportUser";
-		x7e8118e41ae03af8.Size = new Size(306, 23);
-		x7e8118e41ae03af8.TabIndex = 1;
-		x7e8118e41ae03af8.Text = "Export favourites to ARMAX";
-		x7e8118e41ae03af8.UseVisualStyleBackColor = true;
-		x7e8118e41ae03af8.Click += ExportFavouritesToARMAX;
+		RegionColumnHeader.Text = "Region";
+		CodesColumnHeader.Text = "Codes";
+		ExportFavsBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+		ExportFavsBtn.Location = new Point(6, 222);
+		ExportFavsBtn.Name = "buttonExportUser";
+		ExportFavsBtn.Size = new Size(306, 23);
+		ExportFavsBtn.TabIndex = 1;
+		ExportFavsBtn.Text = "Export favourites to ARMAX";
+		ExportFavsBtn.UseVisualStyleBackColor = true;
+		ExportFavsBtn.Click += ExportFavsBtnFn;
 		xd710ac080d58c58d.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 		xd710ac080d58c58d.Font = new Font("Microsoft Sans Serif", 8.25f);
 		xd710ac080d58c58d.Location = new Point(6, 194);
@@ -1929,7 +1929,7 @@ public class xf266856f631ec016 : Form
 		xd710ac080d58c58d.Size = new Size(306, 24);
 		xd710ac080d58c58d.TabIndex = 0;
 		xb13e3492976e6435.Controls.Add(x0f289e063dca8ffa);
-		xb13e3492976e6435.Controls.Add(xd3dd5bc5271389c1);
+		xb13e3492976e6435.Controls.Add(ViewCombinedBtn);
 		xb13e3492976e6435.Dock = DockStyle.Top;
 		xb13e3492976e6435.Location = new Point(0, 0);
 		xb13e3492976e6435.Name = "groupBoxCombined";
@@ -1943,17 +1943,17 @@ public class xf266856f631ec016 : Form
 		x0f289e063dca8ffa.Name = "codelistInfoCombined";
 		x0f289e063dca8ffa.Size = new Size(306, 24);
 		x0f289e063dca8ffa.TabIndex = 0;
-		xd3dd5bc5271389c1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-		xd3dd5bc5271389c1.Location = new Point(6, 50);
-		xd3dd5bc5271389c1.Name = "buttonViewCombined";
-		xd3dd5bc5271389c1.Size = new Size(306, 23);
-		xd3dd5bc5271389c1.TabIndex = 1;
-		xd3dd5bc5271389c1.Text = "View full combined codelist...";
-		xd3dd5bc5271389c1.UseVisualStyleBackColor = true;
-		xd3dd5bc5271389c1.Click += ViewFullBtnFn;
-		x1c4e58c064fe01db.Controls.Add(x66919dbc56507539);
-		x1c4e58c064fe01db.Controls.Add(x3fe10addb87ccdf3);
-		x1c4e58c064fe01db.Controls.Add(xe67bc12c144a16ad);
+		ViewCombinedBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+		ViewCombinedBtn.Location = new Point(6, 50);
+		ViewCombinedBtn.Name = "buttonViewCombined";
+		ViewCombinedBtn.Size = new Size(306, 23);
+		ViewCombinedBtn.TabIndex = 1;
+		ViewCombinedBtn.Text = "View full combined codelist...";
+		ViewCombinedBtn.UseVisualStyleBackColor = true;
+		ViewCombinedBtn.Click += ViewCombinedBtnFn;
+		x1c4e58c064fe01db.Controls.Add(SettingsBtn);
+		x1c4e58c064fe01db.Controls.Add(CodeJunkiesLinkLabel);
+		x1c4e58c064fe01db.Controls.Add(MiralityLinkLabel);
 		x1c4e58c064fe01db.Controls.Add(x31b6f3a354074bae);
 		x1c4e58c064fe01db.Controls.Add(x33a6dcc90c5f6721);
 		x1c4e58c064fe01db.Dock = DockStyle.Bottom;
@@ -1961,34 +1961,34 @@ public class xf266856f631ec016 : Form
 		x1c4e58c064fe01db.Name = "panelBanner";
 		x1c4e58c064fe01db.Size = new Size(321, 94);
 		x1c4e58c064fe01db.TabIndex = 1;
-		x66919dbc56507539.Anchor = AnchorStyles.Top;
-		x66919dbc56507539.Location = new Point(94, 48);
-		x66919dbc56507539.Name = "buttonSettings";
-		x66919dbc56507539.Size = new Size(133, 25);
-		x66919dbc56507539.TabIndex = 3;
-		x66919dbc56507539.Text = "Settings";
-		x66919dbc56507539.UseVisualStyleBackColor = true;
-		x66919dbc56507539.Click += SettingsBtnFn;
-		x3fe10addb87ccdf3.Anchor = AnchorStyles.Bottom;
-		x3fe10addb87ccdf3.AutoSize = true;
-		x3fe10addb87ccdf3.Location = new Point(62, 72);
-		x3fe10addb87ccdf3.Name = "linkLabelCodeJunkies";
-		x3fe10addb87ccdf3.Size = new Size(197, 16);
-		x3fe10addb87ccdf3.TabIndex = 4;
-		x3fe10addb87ccdf3.TabStop = true;
-		x3fe10addb87ccdf3.Text = "Datel's official CodeJunkies site";
-		x3fe10addb87ccdf3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-		x3fe10addb87ccdf3.LinkClicked += OpenLinkBtnFn;
-		xe67bc12c144a16ad.Anchor = AnchorStyles.Top;
-		xe67bc12c144a16ad.AutoSize = true;
-		xe67bc12c144a16ad.Location = new Point(108, 5);
-		xe67bc12c144a16ad.Name = "linkLabelMirality";
-		xe67bc12c144a16ad.Size = new Size(105, 16);
-		xe67bc12c144a16ad.TabIndex = 4;
-		xe67bc12c144a16ad.TabStop = true;
-		xe67bc12c144a16ad.Text = "Mirality Systems";
-		xe67bc12c144a16ad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-		xe67bc12c144a16ad.LinkClicked += OpenLinkBtnFn;
+		SettingsBtn.Anchor = AnchorStyles.Top;
+		SettingsBtn.Location = new Point(94, 48);
+		SettingsBtn.Name = "buttonSettings";
+		SettingsBtn.Size = new Size(133, 25);
+		SettingsBtn.TabIndex = 3;
+		SettingsBtn.Text = "Settings";
+		SettingsBtn.UseVisualStyleBackColor = true;
+		SettingsBtn.Click += SettingsBtnFn;
+		CodeJunkiesLinkLabel.Anchor = AnchorStyles.Bottom;
+		CodeJunkiesLinkLabel.AutoSize = true;
+		CodeJunkiesLinkLabel.Location = new Point(62, 72);
+		CodeJunkiesLinkLabel.Name = "linkLabelCodeJunkies";
+		CodeJunkiesLinkLabel.Size = new Size(197, 16);
+		CodeJunkiesLinkLabel.TabIndex = 4;
+		CodeJunkiesLinkLabel.TabStop = true;
+		CodeJunkiesLinkLabel.Text = "Datel's official CodeJunkies site";
+		CodeJunkiesLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+		CodeJunkiesLinkLabel.LinkClicked += OpenLinkBtnFn;
+		MiralityLinkLabel.Anchor = AnchorStyles.Top;
+		MiralityLinkLabel.AutoSize = true;
+		MiralityLinkLabel.Location = new Point(108, 5);
+		MiralityLinkLabel.Name = "linkLabelMirality";
+		MiralityLinkLabel.Size = new Size(105, 16);
+		MiralityLinkLabel.TabIndex = 4;
+		MiralityLinkLabel.TabStop = true;
+		MiralityLinkLabel.Text = "Mirality Systems";
+		MiralityLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+		MiralityLinkLabel.LinkClicked += OpenLinkBtnFn;
 		x31b6f3a354074bae.Anchor = AnchorStyles.Top;
 		x31b6f3a354074bae.Location = new Point(242, 5);
 		x31b6f3a354074bae.Name = "labelVersion";
@@ -2005,8 +2005,8 @@ public class xf266856f631ec016 : Form
 		x33a6dcc90c5f6721.Text = "MAX Codelist Manager v2";
 		x33a6dcc90c5f6721.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 		x645415d3d104f12c.SetColumnSpan(xd514546ab3c9516d, 2);
-		xd514546ab3c9516d.Controls.Add(xa5100f0e0f8519f0);
-		xd514546ab3c9516d.Controls.Add(x657b3a4eafec2605);
+		xd514546ab3c9516d.Controls.Add(ExportActiveBtn);
+		xd514546ab3c9516d.Controls.Add(ViewActiveBtn);
 		xd514546ab3c9516d.Controls.Add(x7468a31bcc5ded5a);
 		xd514546ab3c9516d.Controls.Add(x7702318dbc4bbe4b);
 		xd514546ab3c9516d.Controls.Add(label);
@@ -2018,22 +2018,22 @@ public class xf266856f631ec016 : Form
 		xd514546ab3c9516d.TabIndex = 7;
 		xd514546ab3c9516d.TabStop = false;
 		xd514546ab3c9516d.Text = "Active List";
-		xa5100f0e0f8519f0.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-		xa5100f0e0f8519f0.Location = new Point(522, 40);
-		xa5100f0e0f8519f0.Name = "buttonExportActive";
-		xa5100f0e0f8519f0.Size = new Size(120, 23);
-		xa5100f0e0f8519f0.TabIndex = 1;
-		xa5100f0e0f8519f0.Text = "Export...";
-		xa5100f0e0f8519f0.UseVisualStyleBackColor = true;
-		xa5100f0e0f8519f0.Click += ExportBtnFn;
-		x657b3a4eafec2605.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-		x657b3a4eafec2605.Location = new Point(522, 15);
-		x657b3a4eafec2605.Name = "buttonViewActive";
-		x657b3a4eafec2605.Size = new Size(120, 23);
-		x657b3a4eafec2605.TabIndex = 1;
-		x657b3a4eafec2605.Text = "View...";
-		x657b3a4eafec2605.UseVisualStyleBackColor = true;
-		x657b3a4eafec2605.Click += View2BtnFn;
+		ExportActiveBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+		ExportActiveBtn.Location = new Point(522, 40);
+		ExportActiveBtn.Name = "buttonExportActive";
+		ExportActiveBtn.Size = new Size(120, 23);
+		ExportActiveBtn.TabIndex = 1;
+		ExportActiveBtn.Text = "Export...";
+		ExportActiveBtn.UseVisualStyleBackColor = true;
+		ExportActiveBtn.Click += ExportActiveBtnFn;
+		ViewActiveBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+		ViewActiveBtn.Location = new Point(522, 15);
+		ViewActiveBtn.Name = "buttonViewActive";
+		ViewActiveBtn.Size = new Size(120, 23);
+		ViewActiveBtn.TabIndex = 1;
+		ViewActiveBtn.Text = "View...";
+		ViewActiveBtn.UseVisualStyleBackColor = true;
+		ViewActiveBtn.Click += ViewActiveBtnFn;
 		x7468a31bcc5ded5a.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 		x7468a31bcc5ded5a.Location = new Point(57, 17);
 		x7468a31bcc5ded5a.Name = "labelActiveName";

@@ -46,9 +46,9 @@ public class CodelistFileCollection : IList<CodelistFile>, ICollection<CodelistF
 		InnerList.Clear();
 	}
 
-	public bool Contains(CodelistFile xccb63ca5f63dc470)
+	public bool Contains(CodelistFile item)
 	{
-		return InnerList.Contains(xccb63ca5f63dc470);
+		return InnerList.Contains(item);
 	}
 
 	public bool Contains(string xb41a802ca5fde63b)
@@ -67,28 +67,28 @@ public class CodelistFileCollection : IList<CodelistFile>, ICollection<CodelistF
 		return false;
 	}
 
-	public int IndexOf(CodelistFile xccb63ca5f63dc470)
+	public int IndexOf(CodelistFile item)
 	{
-		return InnerList.IndexOf(xccb63ca5f63dc470);
+		return InnerList.IndexOf(item);
 	}
 
-	public void Add(CodelistFile xccb63ca5f63dc470)
+	public void Add(CodelistFile item)
 	{
-		if (!Contains(xccb63ca5f63dc470))
+		if (!Contains(item))
 		{
-			InnerList.Add(xccb63ca5f63dc470);
+			InnerList.Add(item);
 		}
 	}
 
-	public void Insert(int xc0c4c459c6ccbd00, CodelistFile xccb63ca5f63dc470)
+	public void Insert(int xc0c4c459c6ccbd00, CodelistFile item)
 	{
-		Remove(xccb63ca5f63dc470);
-		InnerList.Insert(xc0c4c459c6ccbd00, xccb63ca5f63dc470);
+		Remove(item);
+		InnerList.Insert(xc0c4c459c6ccbd00, item);
 	}
 
-	public bool Remove(CodelistFile xccb63ca5f63dc470)
+	public bool Remove(CodelistFile item)
 	{
-		return InnerList.Remove(xccb63ca5f63dc470);
+		return InnerList.Remove(item);
 	}
 
 	public void RemoveAt(int xc0c4c459c6ccbd00)

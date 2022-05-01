@@ -22,15 +22,15 @@ internal static class x289f1a0ee2f795a7
 		return StringComparer.InvariantCultureIgnoreCase.Compare(x62584df2cb5d40dd.Trim(), xac08cf66a2c6510c.Trim()) == 0;
 	}
 
-	public static void x62dd9224cc6b1063(Control x43bec302f92080b9, bool x972d12acec9b230c)
+	public static void x62dd9224cc6b1063(Control control, bool x972d12acec9b230c)
 	{
-		if (x43bec302f92080b9 == null)
+		if (control == null)
 		{
 			throw new ArgumentNullException("control");
 		}
-		if (x43bec302f92080b9.IsHandleCreated)
+		if (control.IsHandleCreated)
 		{
-			x842e24ef1160275b.SendMessage(new HandleRef(x43bec302f92080b9, x43bec302f92080b9.Handle), 11, new IntPtr(x972d12acec9b230c ? (-1) : 0), IntPtr.Zero);
+			x842e24ef1160275b.SendMessage(new HandleRef(control, control.Handle), 11, new IntPtr(x972d12acec9b230c ? (-1) : 0), IntPtr.Zero);
 		}
 	}
 

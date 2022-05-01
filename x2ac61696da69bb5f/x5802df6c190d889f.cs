@@ -60,42 +60,42 @@ internal static class x5802df6c190d889f
 		return xbcea506a33cf9111 != uint.MaxValue;
 	}
 
-	public static bool x00f742c9f580fc6b(string x311e7a92306d7199, out uint xb5a2e77d8a10fc03, out uint xafb40ac268818189)
+	public static bool x00f742c9f580fc6b(string line, out uint xb5a2e77d8a10fc03, out uint xafb40ac268818189)
 	{
-		if (x311e7a92306d7199 == null)
+		if (line == null)
 		{
 			throw new ArgumentNullException("line");
 		}
-		x311e7a92306d7199 = x311e7a92306d7199.Trim().ToUpperInvariant().Replace("-", "");
+		line = line.Trim().ToUpperInvariant().Replace("-", "");
 		xb5a2e77d8a10fc03 = 0u;
 		xafb40ac268818189 = 0u;
-		if (x311e7a92306d7199.Length != 13)
+		if (line.Length != 13)
 		{
 			return false;
 		}
 		uint xbcea506a33cf;
 		for (int i = 0; i < 6; i++)
 		{
-			if (!x039b7b9dae47acfd(x311e7a92306d7199[i], out xbcea506a33cf))
+			if (!x039b7b9dae47acfd(line[i], out xbcea506a33cf))
 			{
 				return false;
 			}
 			xb5a2e77d8a10fc03 |= xbcea506a33cf << (5 - i) * 5 + 2;
 		}
-		if (!x039b7b9dae47acfd(x311e7a92306d7199[6], out xbcea506a33cf))
+		if (!x039b7b9dae47acfd(line[6], out xbcea506a33cf))
 		{
 			return false;
 		}
 		xb5a2e77d8a10fc03 |= xbcea506a33cf >> 3;
 		for (int j = 0; j < 6; j++)
 		{
-			if (!x039b7b9dae47acfd(x311e7a92306d7199[j + 6], out xbcea506a33cf))
+			if (!x039b7b9dae47acfd(line[j + 6], out xbcea506a33cf))
 			{
 				return false;
 			}
 			xafb40ac268818189 |= xbcea506a33cf << (5 - j) * 5 + 4;
 		}
-		if (!x039b7b9dae47acfd(x311e7a92306d7199[12], out xbcea506a33cf))
+		if (!x039b7b9dae47acfd(line[12], out xbcea506a33cf))
 		{
 			return false;
 		}
@@ -113,36 +113,36 @@ internal static class x5802df6c190d889f
 		return b == (b2 & 1);
 	}
 
-	public static string[] x78ec2064c8cf60f7(uint[] xcdff170dbac909bf)
+	public static string[] x78ec2064c8cf60f7(uint[] codes)
 	{
-		if (xcdff170dbac909bf == null)
+		if (codes == null)
 		{
 			throw new ArgumentNullException("codes");
 		}
-		if (((uint)xcdff170dbac909bf.Length & (true ? 1u : 0u)) != 0)
+		if (((uint)codes.Length & (true ? 1u : 0u)) != 0)
 		{
 			throw new ArgumentException("Data must consist of an even number of dwords.");
 		}
 		List<string> list = new List<string>();
-		for (int i = 0; i < xcdff170dbac909bf.Length; i += 2)
+		for (int i = 0; i < codes.Length; i += 2)
 		{
-			list.Add(x485aeac4429d388f(xcdff170dbac909bf[i], xcdff170dbac909bf[i + 1]));
+			list.Add(x485aeac4429d388f(codes[i], codes[i + 1]));
 		}
 		return list.ToArray();
 	}
 
-	public static uint[] x0db5280e6da4eea1(string[] x0383ec486664fa18)
+	public static uint[] x0db5280e6da4eea1(string[] lines)
 	{
-		if (x0383ec486664fa18 == null)
+		if (lines == null)
 		{
 			throw new ArgumentNullException("lines");
 		}
-		uint[] array = new uint[2 * x0383ec486664fa18.Length];
-		for (int i = 0; i < x0383ec486664fa18.Length; i++)
+		uint[] array = new uint[2 * lines.Length];
+		for (int i = 0; i < lines.Length; i++)
 		{
-			if (!x00f742c9f580fc6b(x0383ec486664fa18[i], out array[2 * i], out array[2 * i + 1]))
+			if (!x00f742c9f580fc6b(lines[i], out array[2 * i], out array[2 * i + 1]))
 			{
-				throw new CodeLineException(i, x0383ec486664fa18[i], new ArgumentException("Unable to parse code"));
+				throw new CodeLineException(i, lines[i], new ArgumentException("Unable to parse code"));
 			}
 		}
 		return array;

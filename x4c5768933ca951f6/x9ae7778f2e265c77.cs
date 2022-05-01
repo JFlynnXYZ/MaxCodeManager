@@ -11,9 +11,9 @@ namespace x4c5768933ca951f6;
 
 public class x9ae7778f2e265c77 : Form
 {
-	private x33636090f73cdcbf xdbc26f54a18218e3;
+	private Codelist xdbc26f54a18218e3;
 
-	private x33636090f73cdcbf xa072dfe9d0c72dab;
+	private Codelist xa072dfe9d0c72dab;
 
 	private string xc4bf01dcdcfd7401;
 
@@ -39,7 +39,7 @@ public class x9ae7778f2e265c77 : Form
 
 	public event EventHandler x978f28482caa2f52;
 
-	public x9ae7778f2e265c77(string x13c3fb0565df0a72, x33636090f73cdcbf x88efcf2300e59dda, string xac95817976f27543, x33636090f73cdcbf x59d51a66ee1aa871)
+	public x9ae7778f2e265c77(string x13c3fb0565df0a72, Codelist x88efcf2300e59dda, string xac95817976f27543, Codelist x59d51a66ee1aa871)
 	{
 		x85601834555fb7d5();
 		x379f3a3a3ed7e970.Images.Add("Game", Resources.Game);
@@ -74,7 +74,7 @@ public class x9ae7778f2e265c77 : Form
 	private void x2990768153581b80()
 	{
 		xebcb243b84cc11d7 xebcb243b84cc11d;
-		using (MainWindow.xebcf83b00134300b(this, "Calculating differences between codelists..."))
+		using (MainWindow.CreateMessageBox(this, "Calculating differences between codelists..."))
 		{
 			xebcb243b84cc11d = new xebcb243b84cc11d7(xdbc26f54a18218e3, xa072dfe9d0c72dab);
 		}
@@ -94,15 +94,15 @@ public class x9ae7778f2e265c77 : Form
 		xc5cb9a9162810cac.x5577363cc650aaeb();
 		try
 		{
-			foreach (xa0380078f0b6cbb7 item in xebcb243b84cc11d.x6a78f14f880171ac)
+			foreach (GameEntry item in xebcb243b84cc11d.x6a78f14f880171ac)
 			{
 				xccb35d3fb7874b48(xebcb243b84cc11d, item, Color.Red);
 			}
-			foreach (xa0380078f0b6cbb7 item2 in xebcb243b84cc11d.xac7b02fee8234bcf)
+			foreach (GameEntry item2 in xebcb243b84cc11d.xac7b02fee8234bcf)
 			{
 				xccb35d3fb7874b48(xebcb243b84cc11d, item2, Color.Orange);
 			}
-			foreach (xa0380078f0b6cbb7 item3 in xebcb243b84cc11d.x5a80eb62c0d7189e)
+			foreach (GameEntry item3 in xebcb243b84cc11d.x5a80eb62c0d7189e)
 			{
 				xccb35d3fb7874b48(xebcb243b84cc11d, item3, Color.Green);
 			}
@@ -113,15 +113,15 @@ public class x9ae7778f2e265c77 : Form
 		}
 	}
 
-	private void xccb35d3fb7874b48(xebcb243b84cc11d7 x778cad6dac263160, xa0380078f0b6cbb7 x6849540e228fbc76, Color x253107b6f4b9adf6)
+	private void xccb35d3fb7874b48(xebcb243b84cc11d7 x778cad6dac263160, GameEntry game, Color x253107b6f4b9adf6)
 	{
 		x95fcf261e3011b00 x95fcf261e3011b = new x95fcf261e3011b00();
-		x95fcf261e3011b.xf9ad6fb78355fe13 = string.Concat(x6849540e228fbc76.x759aa16c2016a289, " (", x6849540e228fbc76.x9b7a81a8f32a1422, ")");
+		x95fcf261e3011b.xf9ad6fb78355fe13 = string.Concat(game.Name, " (", game.Region, ")");
 		x95fcf261e3011b.x7dd793a62d047456 = x253107b6f4b9adf6;
 		x95fcf261e3011b.xc439cbba6c00a3a0 = "Game";
-		x95fcf261e3011b.xd229d86af0f16fb0 = x6849540e228fbc76;
+		x95fcf261e3011b.xd229d86af0f16fb0 = game;
 		xc5cb9a9162810cac.x63b0f7fed3f5bd88.Add(x95fcf261e3011b);
-		foreach (xbabc9feec6f641db item in x6849540e228fbc76)
+		foreach (CodeEntry item in game)
 		{
 			if (x778cad6dac263160.xc50b25ead802c791(item))
 			{
@@ -142,13 +142,13 @@ public class x9ae7778f2e265c77 : Form
 		}
 	}
 
-	private static void x38333c9abee64106(x95fcf261e3011b00 x9915c1f5b6422c36, xbabc9feec6f641db x9035cf16181332fc, Color xb24c2669665f2488)
+	private static void x38333c9abee64106(x95fcf261e3011b00 x9915c1f5b6422c36, CodeEntry code, Color xb24c2669665f2488)
 	{
 		x95fcf261e3011b00 x95fcf261e3011b = new x95fcf261e3011b00();
-		x95fcf261e3011b.xf9ad6fb78355fe13 = x9035cf16181332fc.Name;
+		x95fcf261e3011b.xf9ad6fb78355fe13 = code.Name;
 		x95fcf261e3011b.x7dd793a62d047456 = xb24c2669665f2488;
 		x95fcf261e3011b.xc439cbba6c00a3a0 = "Code";
-		x95fcf261e3011b.xd229d86af0f16fb0 = x9035cf16181332fc;
+		x95fcf261e3011b.xd229d86af0f16fb0 = code;
 		x9915c1f5b6422c36.x63b0f7fed3f5bd88.Add(x95fcf261e3011b);
 	}
 
@@ -160,12 +160,12 @@ public class x9ae7778f2e265c77 : Form
 		}
 	}
 
-	private static xa0380078f0b6cbb7 x8169d08a2892e676(x95fcf261e3011b00 xda5bf54deb817e37)
+	private static GameEntry x8169d08a2892e676(x95fcf261e3011b00 node)
 	{
-		xa0380078f0b6cbb7 xa0380078f0b6cbb = xda5bf54deb817e37.xd229d86af0f16fb0 as xa0380078f0b6cbb7;
-		if (xa0380078f0b6cbb == null && xda5bf54deb817e37.xd229d86af0f16fb0 is xbabc9feec6f641db xbabc9feec6f641db)
+		GameEntry xa0380078f0b6cbb = node.xd229d86af0f16fb0 as GameEntry;
+		if (xa0380078f0b6cbb == null && node.xd229d86af0f16fb0 is CodeEntry xbabc9feec6f641db)
 		{
-			xa0380078f0b6cbb = xbabc9feec6f641db.xa0380078f0b6cbb7;
+			xa0380078f0b6cbb = xbabc9feec6f641db.GameEntry;
 		}
 		return xa0380078f0b6cbb;
 	}
@@ -178,7 +178,7 @@ public class x9ae7778f2e265c77 : Form
 			return;
 		}
 		x95fcf261e3011b00 xda5bf54deb817e = xc5cb9a9162810cac.xc82eff4818ce3f25[0];
-		xa0380078f0b6cbb7 xa0380078f0b6cbb = x8169d08a2892e676(xda5bf54deb817e);
+		GameEntry xa0380078f0b6cbb = x8169d08a2892e676(xda5bf54deb817e);
 		if (xa0380078f0b6cbb == null)
 		{
 			xfbf34718e704c6bc.Cancel = true;
@@ -194,10 +194,10 @@ public class x9ae7778f2e265c77 : Form
 		if (xc5cb9a9162810cac.xc82eff4818ce3f25.Count == 1)
 		{
 			x95fcf261e3011b00 xda5bf54deb817e = xc5cb9a9162810cac.xc82eff4818ce3f25[0];
-			xa0380078f0b6cbb7 xa0380078f0b6cbb = x8169d08a2892e676(xda5bf54deb817e);
+			GameEntry xa0380078f0b6cbb = x8169d08a2892e676(xda5bf54deb817e);
 			if (xa0380078f0b6cbb != null)
 			{
-				CodeManagerSettings.Instance.Favourites.Add(new FavouriteGame(xa0380078f0b6cbb.x52b8174788d367f9, xa0380078f0b6cbb.x759aa16c2016a289, xa0380078f0b6cbb.x9b7a81a8f32a1422));
+				CodeManagerSettings.Instance.Favourites.Add(new FavouriteGame(xa0380078f0b6cbb.x52b8174788d367f9, xa0380078f0b6cbb.Name, xa0380078f0b6cbb.Region));
 				OnFavouriteGamesChanged(EventArgs.Empty);
 			}
 		}
@@ -208,7 +208,7 @@ public class x9ae7778f2e265c77 : Form
 		if (xc5cb9a9162810cac.xc82eff4818ce3f25.Count == 1)
 		{
 			x95fcf261e3011b00 xda5bf54deb817e = xc5cb9a9162810cac.xc82eff4818ce3f25[0];
-			xa0380078f0b6cbb7 xa0380078f0b6cbb = x8169d08a2892e676(xda5bf54deb817e);
+			GameEntry xa0380078f0b6cbb = x8169d08a2892e676(xda5bf54deb817e);
 			if (xa0380078f0b6cbb != null)
 			{
 				CodeManagerSettings.Instance.Favourites.Remove(xa0380078f0b6cbb.x52b8174788d367f9);

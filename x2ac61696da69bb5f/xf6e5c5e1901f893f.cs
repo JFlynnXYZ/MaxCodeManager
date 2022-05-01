@@ -2,35 +2,40 @@ using System;
 
 namespace x2ac61696da69bb5f;
 
-public class xf6e5c5e1901f893f : ICloneable
+public class Codes : ICloneable
 {
 	private uint[] _6b73aa01aa019d3a;
 
-	public uint[] x6b73aa01aa019d3a => _6b73aa01aa019d3a;
+	public uint[] codes => _6b73aa01aa019d3a;
 
-	public xf6e5c5e1901f893f(uint[] x4a3f0a05c02f235f)
+	public Codes(uint[] x4a3f0a05c02f235f)
 	{
 		_6b73aa01aa019d3a = x4a3f0a05c02f235f;
 	}
 
-	public xf6e5c5e1901f893f(params string[] x0383ec486664fa18)
-		: this(x5802df6c190d889f.x0db5280e6da4eea1(x0383ec486664fa18))
+	public Codes(params string[] lines)
+		: this(x5802df6c190d889f.x0db5280e6da4eea1(lines))
 	{
 	}
 
 	public string[] xa9edb3b115d067da()
 	{
-		return x5802df6c190d889f.x78ec2064c8cf60f7(x6b73aa01aa019d3a);
+		return x5802df6c190d889f.x78ec2064c8cf60f7(codes);
 	}
 
 	public override string ToString()
 	{
 		return string.Join(" ", xa9edb3b115d067da());
 	}
-
-	public xf6e5c5e1901f893f Clone()
+	
+	public string ToLines()
 	{
-		return new xf6e5c5e1901f893f((uint[])_6b73aa01aa019d3a.Clone());
+		return string.Join("\r\n", xa9edb3b115d067da());
+	}
+
+	public Codes Clone()
+	{
+		return new Codes((uint[])_6b73aa01aa019d3a.Clone());
 	}
 
 	private object xc1ca9fe073d7b6d8()

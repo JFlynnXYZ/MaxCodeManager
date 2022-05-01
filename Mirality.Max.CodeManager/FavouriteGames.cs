@@ -45,9 +45,9 @@ public class FavouriteGames : IList<FavouriteGame>, ICollection<FavouriteGame>, 
 		InnerList.Clear();
 	}
 
-	public bool Contains(FavouriteGame xccb63ca5f63dc470)
+	public bool Contains(FavouriteGame item)
 	{
-		return InnerList.Contains(xccb63ca5f63dc470);
+		return InnerList.Contains(item);
 	}
 
 	public bool Contains(uint x28011ef2e60e6ef5)
@@ -66,28 +66,28 @@ public class FavouriteGames : IList<FavouriteGame>, ICollection<FavouriteGame>, 
 		return false;
 	}
 
-	public int IndexOf(FavouriteGame xccb63ca5f63dc470)
+	public int IndexOf(FavouriteGame item)
 	{
-		return InnerList.IndexOf(xccb63ca5f63dc470);
+		return InnerList.IndexOf(item);
 	}
 
-	public void Add(FavouriteGame xccb63ca5f63dc470)
+	public void Add(FavouriteGame item)
 	{
-		if (!Contains(xccb63ca5f63dc470.GameId))
+		if (!Contains(item.GameId))
 		{
-			InnerList.Add(xccb63ca5f63dc470);
+			InnerList.Add(item);
 		}
 	}
 
-	public void Insert(int xc0c4c459c6ccbd00, FavouriteGame xccb63ca5f63dc470)
+	public void Insert(int xc0c4c459c6ccbd00, FavouriteGame item)
 	{
-		Remove(xccb63ca5f63dc470);
-		InnerList.Insert(xc0c4c459c6ccbd00, xccb63ca5f63dc470);
+		Remove(item);
+		InnerList.Insert(xc0c4c459c6ccbd00, item);
 	}
 
-	public bool Remove(FavouriteGame xccb63ca5f63dc470)
+	public bool Remove(FavouriteGame item)
 	{
-		return InnerList.Remove(xccb63ca5f63dc470);
+		return InnerList.Remove(item);
 	}
 
 	public void Remove(uint x28011ef2e60e6ef5)

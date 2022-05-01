@@ -575,13 +575,13 @@ public class xea5e4be807a4597b : ScrollableControl
 		return x5b1e6d73a61cb6dc > xb649229befc1f999();
 	}
 
-	protected virtual void UpdateNodeHeight(x95fcf261e3011b00 xda5bf54deb817e37, int x9b0739496f8b5475)
+	protected virtual void UpdateNodeHeight(x95fcf261e3011b00 node, int x9b0739496f8b5475)
 	{
 	}
 
-	private Rectangle xcd73b3729cbff83a(x95fcf261e3011b00 xda5bf54deb817e37, int xc941868c59399d3e)
+	private Rectangle xcd73b3729cbff83a(x95fcf261e3011b00 node, int xc941868c59399d3e)
 	{
-		return new Rectangle(base.ClientRectangle.Left, xc941868c59399d3e, base.ClientRectangle.Width, xda5bf54deb817e37.x449ad19c79665932);
+		return new Rectangle(base.ClientRectangle.Left, xc941868c59399d3e, base.ClientRectangle.Width, node.x449ad19c79665932);
 	}
 
 	internal void x7facab8f46b5857c()
@@ -608,9 +608,9 @@ public class xea5e4be807a4597b : ScrollableControl
 		}
 	}
 
-	private void x7facab8f46b5857c(x0bc7d5c84e62d912 xa955664f4f50999d, ref int xc941868c59399d3e)
+	private void x7facab8f46b5857c(x0bc7d5c84e62d912 nodes, ref int xc941868c59399d3e)
 	{
-		foreach (x95fcf261e3011b00 item in xa955664f4f50999d)
+		foreach (x95fcf261e3011b00 item in nodes)
 		{
 			if (item.xa853df7acdb217c8)
 			{
@@ -678,10 +678,10 @@ public class xea5e4be807a4597b : ScrollableControl
 		return xf60cb2af5ee423f5(x0b433f30d6157b49, ref xb814177533985e8d, x63b0f7fed3f5bd88);
 	}
 
-	private x96bed71d06f031fe xf60cb2af5ee423f5(Point x0b433f30d6157b49, ref x95fcf261e3011b00 xb814177533985e8d, x0bc7d5c84e62d912 xa955664f4f50999d)
+	private x96bed71d06f031fe xf60cb2af5ee423f5(Point x0b433f30d6157b49, ref x95fcf261e3011b00 xb814177533985e8d, x0bc7d5c84e62d912 nodes)
 	{
 		x96bed71d06f031fe x96bed71d06f031fe2 = x96bed71d06f031fe.x4d0b9d4447ba7566;
-		foreach (x95fcf261e3011b00 item in xa955664f4f50999d)
+		foreach (x95fcf261e3011b00 item in nodes)
 		{
 			Rectangle xda73fcb97c77d = x0d74e8d3eb8db1a0(item);
 			if (!xda73fcb97c77d.IsEmpty && xda73fcb97c77d.Contains(x0b433f30d6157b49))
@@ -711,11 +711,11 @@ public class xea5e4be807a4597b : ScrollableControl
 		return x96bed71d06f031fe2;
 	}
 
-	private Rectangle x0d74e8d3eb8db1a0(x95fcf261e3011b00 xda5bf54deb817e37)
+	private Rectangle x0d74e8d3eb8db1a0(x95fcf261e3011b00 node)
 	{
-		if (xda5bf54deb817e37.xa853df7acdb217c8)
+		if (node.xa853df7acdb217c8)
 		{
-			Rectangle x5099f0a = xda5bf54deb817e37.x5099f0a842899426;
+			Rectangle x5099f0a = node.x5099f0a842899426;
 			x5099f0a.Offset(base.AutoScrollPosition);
 			return x5099f0a;
 		}
@@ -920,9 +920,9 @@ public class xea5e4be807a4597b : ScrollableControl
 		}
 	}
 
-	internal void xe88ab84767e8fb69(x95fcf261e3011b00 xda5bf54deb817e37)
+	internal void xe88ab84767e8fb69(x95fcf261e3011b00 node)
 	{
-		Rectangle rc = x0d74e8d3eb8db1a0(xda5bf54deb817e37);
+		Rectangle rc = x0d74e8d3eb8db1a0(node);
 		Invalidate(rc);
 	}
 
@@ -932,9 +932,9 @@ public class xea5e4be807a4597b : ScrollableControl
 		base.OnPaint(xfbf34718e704c6bc);
 	}
 
-	private void x0b247eed46221634(Graphics x41347a961b838962, x0bc7d5c84e62d912 xa955664f4f50999d)
+	private void x0b247eed46221634(Graphics x41347a961b838962, x0bc7d5c84e62d912 nodes)
 	{
-		foreach (x95fcf261e3011b00 item in xa955664f4f50999d)
+		foreach (x95fcf261e3011b00 item in nodes)
 		{
 			Rectangle xda73fcb97c77d = x0d74e8d3eb8db1a0(item);
 			if (!xda73fcb97c77d.IsEmpty && xda73fcb97c77d.IntersectsWith(base.ClientRectangle))
@@ -945,45 +945,45 @@ public class xea5e4be807a4597b : ScrollableControl
 		}
 	}
 
-	protected virtual void PaintNode(Graphics x41347a961b838962, x95fcf261e3011b00 xda5bf54deb817e37, Rectangle xda73fcb97c77d998)
+	protected virtual void PaintNode(Graphics x41347a961b838962, x95fcf261e3011b00 node, Rectangle xda73fcb97c77d998)
 	{
-		xda5bf54deb817e37.xe072b21e8fe21a7e(xda73fcb97c77d998, out var x87dd47ddb178ff, out var x443b4b9ad47ce, out var xc685053fae6eaa);
+		node.xe072b21e8fe21a7e(xda73fcb97c77d998, out var x87dd47ddb178ff, out var x443b4b9ad47ce, out var xc685053fae6eaa);
 		if (xfb7eed5237ac7734)
 		{
-			x0310a6d1f51902dd(x41347a961b838962, xda5bf54deb817e37, x87dd47ddb178ff, x443b4b9ad47ce, xc685053fae6eaa);
+			x0310a6d1f51902dd(x41347a961b838962, node, x87dd47ddb178ff, x443b4b9ad47ce, xc685053fae6eaa);
 		}
 		if (x443b4b9ad47ce.Size != Size.Empty)
 		{
-			PaintImage(x41347a961b838962, xda5bf54deb817e37, x443b4b9ad47ce);
+			PaintImage(x41347a961b838962, node, x443b4b9ad47ce);
 		}
 		GraphicsContainer container = x41347a961b838962.BeginContainer();
 		x41347a961b838962.Clip = new Region(xda73fcb97c77d998);
-		PaintContent(x41347a961b838962, xda5bf54deb817e37, xc685053fae6eaa);
+		PaintContent(x41347a961b838962, node, xc685053fae6eaa);
 		x41347a961b838962.EndContainer(container);
 	}
 
-	private void x0310a6d1f51902dd(Graphics x41347a961b838962, x95fcf261e3011b00 xda5bf54deb817e37, Rectangle x87dd47ddb178ff41, Rectangle x443b4b9ad47ce447, Rectangle xc685053fae6eaa64)
+	private void x0310a6d1f51902dd(Graphics x41347a961b838962, x95fcf261e3011b00 node, Rectangle x87dd47ddb178ff41, Rectangle x443b4b9ad47ce447, Rectangle xc685053fae6eaa64)
 	{
 		using Pen pen = new Pen(x3c68d0a3c5adb970, 1f);
 		pen.DashStyle = DashStyle.Dot;
 		Point point = ((!(x443b4b9ad47ce447.Size == Size.Empty)) ? new Point((x443b4b9ad47ce447.Left + x443b4b9ad47ce447.Right) / 2, (x443b4b9ad47ce447.Top + x443b4b9ad47ce447.Bottom) / 2) : new Point(xc685053fae6eaa64.Left - 1, (xc685053fae6eaa64.Top + xc685053fae6eaa64.Bottom) / 2));
 		int num = Math.Abs(base.AutoScrollPosition.X) + Math.Abs(base.AutoScrollPosition.Y);
-		if (x95a235bff44ec867 || xda5bf54deb817e37.x332a8eedb847940d != null)
+		if (x95a235bff44ec867 || node.x332a8eedb847940d != null)
 		{
 			Point point2 = new Point(x87dd47ddb178ff41.Right - x941a43d4a5637fd0 / 2, point.Y);
 			pen.DashOffset = (point2.X + point2.Y + num) & 1;
 			x41347a961b838962.DrawLine(pen, point2, point);
-			if (xda5bf54deb817e37.x99d6b0b05cd7185f != null || xda5bf54deb817e37.x332a8eedb847940d != null)
+			if (node.x99d6b0b05cd7185f != null || node.x332a8eedb847940d != null)
 			{
 				pen.DashOffset = (point2.X + x87dd47ddb178ff41.Top - 1 + num) & 1;
 				x41347a961b838962.DrawLine(pen, new Point(point2.X, x87dd47ddb178ff41.Top - 1), point2);
 			}
-			if (xda5bf54deb817e37.x4f6686d624d5dfe1 != null)
+			if (node.x4f6686d624d5dfe1 != null)
 			{
 				pen.DashOffset = (point2.X + point2.Y + num) & 1;
 				x41347a961b838962.DrawLine(pen, point2, new Point(point2.X, x87dd47ddb178ff41.Bottom + 1));
 			}
-			x95fcf261e3011b00 x332a8eedb847940d = xda5bf54deb817e37.x332a8eedb847940d;
+			x95fcf261e3011b00 x332a8eedb847940d = node.x332a8eedb847940d;
 			int num2 = point2.X;
 			while (x332a8eedb847940d != null)
 			{
@@ -995,21 +995,21 @@ public class xea5e4be807a4597b : ScrollableControl
 				}
 				x332a8eedb847940d = x332a8eedb847940d.x332a8eedb847940d;
 			}
-			if (xeeb72f5f2d391f6f && xda5bf54deb817e37.xf303b4c014a7017b)
+			if (xeeb72f5f2d391f6f && node.xf303b4c014a7017b)
 			{
-				xe56177bf052c1380(x41347a961b838962, xda5bf54deb817e37, point2, x87dd47ddb178ff41);
+				xe56177bf052c1380(x41347a961b838962, node, point2, x87dd47ddb178ff41);
 			}
 		}
-		if (xda5bf54deb817e37.x5e48bd0c96038b5e && x443b4b9ad47ce447.Size != Size.Empty)
+		if (node.x5e48bd0c96038b5e && x443b4b9ad47ce447.Size != Size.Empty)
 		{
 			pen.DashOffset = (point.X + point.Y + num) & 1;
 			x41347a961b838962.DrawLine(pen, point, new Point(point.X, x87dd47ddb178ff41.Bottom));
 		}
 	}
 
-	private void xe56177bf052c1380(Graphics x41347a961b838962, x95fcf261e3011b00 xda5bf54deb817e37, Point x16f75a4353bb408e, Rectangle xda73fcb97c77d998)
+	private void xe56177bf052c1380(Graphics x41347a961b838962, x95fcf261e3011b00 node, Point x16f75a4353bb408e, Rectangle xda73fcb97c77d998)
 	{
-		VisualStyleRenderer visualStyleRenderer = xb819faf9bf7096b0(xda5bf54deb817e37.x5e48bd0c96038b5e ? VisualStyleElement.TreeView.Glyph.Opened : VisualStyleElement.TreeView.Glyph.Closed);
+		VisualStyleRenderer visualStyleRenderer = xb819faf9bf7096b0(node.x5e48bd0c96038b5e ? VisualStyleElement.TreeView.Glyph.Opened : VisualStyleElement.TreeView.Glyph.Closed);
 		if (visualStyleRenderer == null)
 		{
 			Rectangle rect = new Rectangle(x16f75a4353bb408e - new Size(4, 4), new Size(8, 8));
@@ -1025,7 +1025,7 @@ public class xea5e4be807a4597b : ScrollableControl
 			Size size = new Size(rect.Width / 2 - 2, 0);
 			Size size2 = new Size(0, rect.Height / 2 - 2);
 			x41347a961b838962.DrawLine(pen2, x16f75a4353bb408e - size, x16f75a4353bb408e + size);
-			if (!xda5bf54deb817e37.x5e48bd0c96038b5e)
+			if (!node.x5e48bd0c96038b5e)
 			{
 				x41347a961b838962.DrawLine(pen2, x16f75a4353bb408e - size2, x16f75a4353bb408e + size2);
 			}
@@ -1036,13 +1036,13 @@ public class xea5e4be807a4597b : ScrollableControl
 		visualStyleRenderer.DrawBackground(x41347a961b838962, bounds);
 	}
 
-	protected virtual void PaintImage(Graphics x41347a961b838962, x95fcf261e3011b00 xda5bf54deb817e37, Rectangle xda73fcb97c77d998)
+	protected virtual void PaintImage(Graphics x41347a961b838962, x95fcf261e3011b00 node, Rectangle xda73fcb97c77d998)
 	{
 		if (x7bc501a48fc6524b == null)
 		{
 			return;
 		}
-		int actualIndex = xda5bf54deb817e37.x2a8b7cba94394169.ActualIndex;
+		int actualIndex = node.x2a8b7cba94394169.ActualIndex;
 		switch (actualIndex)
 		{
 		case -2:
@@ -1066,11 +1066,11 @@ public class xea5e4be807a4597b : ScrollableControl
 		}
 	}
 
-	protected virtual void PaintContent(Graphics x41347a961b838962, x95fcf261e3011b00 xda5bf54deb817e37, Rectangle xda73fcb97c77d998)
+	protected virtual void PaintContent(Graphics x41347a961b838962, x95fcf261e3011b00 node, Rectangle xda73fcb97c77d998)
 	{
-		Color x53218bf919efffd = xda5bf54deb817e37.x7dd793a62d047456;
-		Color x154083d58301ef = xda5bf54deb817e37.xf83c69bb98e96a69;
-		if (xda5bf54deb817e37.xaa7558c320af04eb)
+		Color x53218bf919efffd = node.x7dd793a62d047456;
+		Color x154083d58301ef = node.xf83c69bb98e96a69;
+		if (node.xaa7558c320af04eb)
 		{
 			VisualStyleRenderer visualStyleRenderer = xb819faf9bf7096b0(VisualStyleElement.TreeView.Item.Selected);
 			if (visualStyleRenderer == null)
@@ -1102,7 +1102,7 @@ public class xea5e4be807a4597b : ScrollableControl
 			}
 			if (x154083d58301ef.IsEmpty)
 			{
-				if (!xda5bf54deb817e37.xe87800b64c00467c)
+				if (!node.xe87800b64c00467c)
 				{
 					x154083d58301ef = visualStyleRenderer2?.GetColor(ColorProperty.FillColor) ?? BackColor;
 				}
@@ -1113,10 +1113,10 @@ public class xea5e4be807a4597b : ScrollableControl
 				}
 			}
 		}
-		PaintContentText(x41347a961b838962, xda73fcb97c77d998, xda5bf54deb817e37, x53218bf919efffd, x154083d58301ef);
+		PaintContentText(x41347a961b838962, xda73fcb97c77d998, node, x53218bf919efffd, x154083d58301ef);
 	}
 
-	protected virtual void PaintContentText(Graphics x41347a961b838962, Rectangle xda73fcb97c77d998, x95fcf261e3011b00 xda5bf54deb817e37, Color x53218bf919efffd4, Color x154083d58301ef75)
+	protected virtual void PaintContentText(Graphics x41347a961b838962, Rectangle xda73fcb97c77d998, x95fcf261e3011b00 node, Color x53218bf919efffd4, Color x154083d58301ef75)
 	{
 		using Brush brush2 = new SolidBrush(x53218bf919efffd4);
 		using Brush brush = new SolidBrush(x154083d58301ef75);
@@ -1124,7 +1124,7 @@ public class xea5e4be807a4597b : ScrollableControl
 		using StringFormat stringFormat = new StringFormat();
 		stringFormat.Alignment = StringAlignment.Near;
 		stringFormat.LineAlignment = StringAlignment.Center;
-		x41347a961b838962.DrawString(xda5bf54deb817e37.xf9ad6fb78355fe13, Font, brush2, xda73fcb97c77d998, stringFormat);
+		x41347a961b838962.DrawString(node.xf9ad6fb78355fe13, Font, brush2, xda73fcb97c77d998, stringFormat);
 	}
 
 	private void x9bf3b5eed54b0145(int x6ca4005f748d141c)
@@ -1240,10 +1240,10 @@ public class xea5e4be807a4597b : ScrollableControl
 		}
 	}
 
-	internal void xd83ad294b860926f(x95fcf261e3011b00 xda5bf54deb817e37)
+	internal void xd83ad294b860926f(x95fcf261e3011b00 node)
 	{
 		_4dcf8d74821042cd = null;
-		OnNodeSelectionChanged(new x8f674b723ab8cda2(xda5bf54deb817e37));
+		OnNodeSelectionChanged(new x8f674b723ab8cda2(node));
 	}
 
 	protected virtual void OnNodeSelectionChanged(x8f674b723ab8cda2 xfbf34718e704c6bc)
@@ -1372,12 +1372,12 @@ public class xea5e4be807a4597b : ScrollableControl
 		x1afa69e4cfcb7734(x63b0f7fed3f5bd88, null);
 	}
 
-	public void x89be10370322706f(x95fcf261e3011b00 xda5bf54deb817e37)
+	public void x89be10370322706f(x95fcf261e3011b00 node)
 	{
 		x8e238fd29a0c8441();
-		if (xda5bf54deb817e37 != null)
+		if (node != null)
 		{
-			xda5bf54deb817e37.xaa7558c320af04eb = true;
+			node.xaa7558c320af04eb = true;
 		}
 	}
 
@@ -1386,9 +1386,9 @@ public class xea5e4be807a4597b : ScrollableControl
 		x1afa69e4cfcb7734(x63b0f7fed3f5bd88, xa4ccebff87d304c1);
 	}
 
-	private void x1afa69e4cfcb7734(x0bc7d5c84e62d912 xa955664f4f50999d, x95fcf261e3011b00 xa4ccebff87d304c1)
+	private void x1afa69e4cfcb7734(x0bc7d5c84e62d912 nodes, x95fcf261e3011b00 xa4ccebff87d304c1)
 	{
-		foreach (x95fcf261e3011b00 item in xa955664f4f50999d)
+		foreach (x95fcf261e3011b00 item in nodes)
 		{
 			if (xa4ccebff87d304c1 == null || item.x332a8eedb847940d != xa4ccebff87d304c1.x332a8eedb847940d)
 			{

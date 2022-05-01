@@ -15,7 +15,7 @@ internal static class x842e24ef1160275b
 
 		public IntPtr x4f3b221b51385ccd;
 
-		public int x9035cf16181332fc;
+		public int code;
 	}
 
 	public struct x8dd4b7a13a696a09
@@ -117,9 +117,9 @@ internal static class x842e24ef1160275b
 
 	[DllImport("AdvApi32.dll", SetLastError = true)]
 	[return: MarshalAs(UnmanagedType.Bool)]
-	public static extern bool GetTokenInformation(IntPtr x159f8d10bfb3428d, x238376a23aa938d4.xb8cab4e3b6a3986c x43163d22e8cd5a71, IntPtr x8d3f74e5f925679c, uint x961016a387451f05, out uint xf8c51ced30acecd9);
+	public static extern bool GetTokenInformation(IntPtr x159f8d10bfb3428d, x238376a23aa938d4.xb8cab4e3b6a3986c x43163d22e8cd5a71, IntPtr info, uint x961016a387451f05, out uint xf8c51ced30acecd9);
 
 	[DllImport("AdvApi32.dll", SetLastError = true)]
 	[return: MarshalAs(UnmanagedType.Bool)]
-	public static extern bool SetTokenInformation(IntPtr x159f8d10bfb3428d, x238376a23aa938d4.xb8cab4e3b6a3986c x43163d22e8cd5a71, IntPtr x8d3f74e5f925679c, uint x961016a387451f05);
+	public static extern bool SetTokenInformation(IntPtr x159f8d10bfb3428d, x238376a23aa938d4.xb8cab4e3b6a3986c x43163d22e8cd5a71, IntPtr info, uint x961016a387451f05);
 }

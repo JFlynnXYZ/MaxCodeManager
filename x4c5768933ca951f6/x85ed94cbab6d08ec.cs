@@ -22,7 +22,7 @@ public class x85ed94cbab6d08ec : UserControl
 
 	[Browsable(false)]
 	[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-	public x33636090f73cdcbf x06ca69422bbb7502
+	public Codelist x06ca69422bbb7502
 	{
 		get
 		{
@@ -123,7 +123,7 @@ public class x85ed94cbab6d08ec : UserControl
 		}
 		else
 		{
-			x3e886f7a41145fe4.Text = x06ca69422bbb7502.x9b7a81a8f32a1422.ToString();
+			x3e886f7a41145fe4.Text = x06ca69422bbb7502.Region.ToString();
 			x31b6f3a354074bae.Text = x06ca69422bbb7502.x77fa6322561797a0.ToString(CultureInfo.CurrentCulture);
 		}
 	}

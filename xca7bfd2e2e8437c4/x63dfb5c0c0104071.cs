@@ -13,7 +13,7 @@ internal class x63dfb5c0c0104071 : ScrollableControlDesigner
 		EnableDragDrop(value: false);
 	}
 
-	public override bool CanParent(Control x43bec302f92080b9)
+	public override bool CanParent(Control control)
 	{
 		return false;
 	}

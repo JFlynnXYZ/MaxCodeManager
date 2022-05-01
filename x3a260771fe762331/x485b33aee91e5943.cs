@@ -85,37 +85,37 @@ internal class x485b33aee91e5943 : IDictionary<string, byte[]>, ICollection<KeyV
 		_3539b9fa3bc41dc1.Clear();
 	}
 
-	private bool x2e66f071fa03e90b(KeyValuePair<string, byte[]> xccb63ca5f63dc470)
+	private bool x2e66f071fa03e90b(KeyValuePair<string, byte[]> item)
 	{
-		return ((ICollection<KeyValuePair<string, byte[]>>)_3539b9fa3bc41dc1).Contains(xccb63ca5f63dc470);
+		return ((ICollection<KeyValuePair<string, byte[]>>)_3539b9fa3bc41dc1).Contains(item);
 	}
 
-	bool ICollection<KeyValuePair<string, byte[]>>.Contains(KeyValuePair<string, byte[]> xccb63ca5f63dc470)
+	bool ICollection<KeyValuePair<string, byte[]>>.Contains(KeyValuePair<string, byte[]> item)
 	{
 		//ILSpy generated this explicit interface implementation from .override directive in x2e66f071fa03e90b
-		return this.x2e66f071fa03e90b(xccb63ca5f63dc470);
+		return this.x2e66f071fa03e90b(item);
 	}
 
-	private void xf351c9053d8f09ae(KeyValuePair<string, byte[]> xccb63ca5f63dc470)
+	private void xf351c9053d8f09ae(KeyValuePair<string, byte[]> item)
 	{
-		((ICollection<KeyValuePair<string, byte[]>>)_3539b9fa3bc41dc1).Add(xccb63ca5f63dc470);
+		((ICollection<KeyValuePair<string, byte[]>>)_3539b9fa3bc41dc1).Add(item);
 	}
 
-	void ICollection<KeyValuePair<string, byte[]>>.Add(KeyValuePair<string, byte[]> xccb63ca5f63dc470)
+	void ICollection<KeyValuePair<string, byte[]>>.Add(KeyValuePair<string, byte[]> item)
 	{
 		//ILSpy generated this explicit interface implementation from .override directive in xf351c9053d8f09ae
-		this.xf351c9053d8f09ae(xccb63ca5f63dc470);
+		this.xf351c9053d8f09ae(item);
 	}
 
-	private bool x35911d7c50c036de(KeyValuePair<string, byte[]> xccb63ca5f63dc470)
+	private bool x35911d7c50c036de(KeyValuePair<string, byte[]> item)
 	{
-		return ((ICollection<KeyValuePair<string, byte[]>>)_3539b9fa3bc41dc1).Remove(xccb63ca5f63dc470);
+		return ((ICollection<KeyValuePair<string, byte[]>>)_3539b9fa3bc41dc1).Remove(item);
 	}
 
-	bool ICollection<KeyValuePair<string, byte[]>>.Remove(KeyValuePair<string, byte[]> xccb63ca5f63dc470)
+	bool ICollection<KeyValuePair<string, byte[]>>.Remove(KeyValuePair<string, byte[]> item)
 	{
 		//ILSpy generated this explicit interface implementation from .override directive in x35911d7c50c036de
-		return this.x35911d7c50c036de(xccb63ca5f63dc470);
+		return this.x35911d7c50c036de(item);
 	}
 
 	private void x4513c2ceec411caf(KeyValuePair<string, byte[]>[] x9d5750eb2d6373bc, int xdbec072306fb2e81)
@@ -152,35 +152,35 @@ internal class x485b33aee91e5943 : IDictionary<string, byte[]>, ICollection<KeyV
 		return x5d95f5f98c940295(xe134235b3526fa);
 	}
 
-	public static x485b33aee91e5943 x5d95f5f98c940295(BinaryReader xe134235b3526fa75)
+	public static x485b33aee91e5943 x5d95f5f98c940295(BinaryReader reader)
 	{
 		x5e4059a15fb5fca5 x5e4059a15fb5fca6 = new x5e4059a15fb5fca5();
-		byte[] array = xe134235b3526fa75.ReadBytes(12);
+		byte[] array = reader.ReadBytes(12);
 		string @string = Encoding.ASCII.GetString(array);
 		if (@string != "Ps2PowerSave")
 		{
 			throw new IOException("Stream is not an ARMAX savegame file!");
 		}
 		x5e4059a15fb5fca6.x295cb4a1df7a5add(array);
-		uint num = xe134235b3526fa75.ReadUInt32();
+		uint num = reader.ReadUInt32();
 		byte[] x5cafa8d49ea71ea = new byte[4];
 		x5e4059a15fb5fca6.x295cb4a1df7a5add(x5cafa8d49ea71ea);
 		x485b33aee91e5943 x485b33aee91e5944 = new x485b33aee91e5943();
-		byte[] array2 = xe134235b3526fa75.ReadBytes(32);
+		byte[] array2 = reader.ReadBytes(32);
 		string string2 = Encoding.ASCII.GetString(array2);
 		char[] trimChars = new char[1];
 		x485b33aee91e5944.x8ba449f61de5f8ec = string2.TrimEnd(trimChars);
 		x5e4059a15fb5fca6.x295cb4a1df7a5add(array2);
-		byte[] array3 = xe134235b3526fa75.ReadBytes(32);
+		byte[] array3 = reader.ReadBytes(32);
 		string string3 = Encoding.ASCII.GetString(array3);
 		char[] trimChars2 = new char[1];
 		x485b33aee91e5944.xe9c44fbf9adae540 = string3.TrimEnd(trimChars2);
 		x5e4059a15fb5fca6.x295cb4a1df7a5add(array3);
-		uint num2 = xe134235b3526fa75.ReadUInt32();
+		uint num2 = reader.ReadUInt32();
 		x5e4059a15fb5fca6.x295cb4a1df7a5add(BitConverter.GetBytes(num2));
-		uint num3 = xe134235b3526fa75.ReadUInt32();
+		uint num3 = reader.ReadUInt32();
 		x5e4059a15fb5fca6.x295cb4a1df7a5add(BitConverter.GetBytes(num3));
-		byte[] array4 = xe134235b3526fa75.ReadBytes((int)num2);
+		byte[] array4 = reader.ReadBytes((int)num2);
 		x5e4059a15fb5fca6.x295cb4a1df7a5add(array4);
 		if (x5e4059a15fb5fca6.xd2f68ee6f47e9dfb != num)
 		{

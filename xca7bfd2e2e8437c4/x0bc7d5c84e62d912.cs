@@ -111,9 +111,9 @@ public class x0bc7d5c84e62d912 : IList<x95fcf261e3011b00>, ICollection<x95fcf261
 		}
 	}
 
-	internal x0bc7d5c84e62d912(x95fcf261e3011b00 x071bde1041617fce)
+	internal x0bc7d5c84e62d912(x95fcf261e3011b00 owner)
 	{
-		_9ce35bc295da5a81 = x071bde1041617fce;
+		_9ce35bc295da5a81 = owner;
 	}
 
 	private void x31e52814f0febd6d(object xe0292b9ed559da7d, x495ca8a85eccbead xfbf34718e704c6bc)
@@ -136,22 +136,22 @@ public class x0bc7d5c84e62d912 : IList<x95fcf261e3011b00>, ICollection<x95fcf261
 		OnCollapsed(xfbf34718e704c6bc);
 	}
 
-	private void xe014cc494bbbb1d4(x95fcf261e3011b00 xda5bf54deb817e37)
+	private void xe014cc494bbbb1d4(x95fcf261e3011b00 node)
 	{
-		xda5bf54deb817e37.x332a8eedb847940d = _9ce35bc295da5a81;
-		xda5bf54deb817e37.x6b30bb6c5f41e32f += x31e52814f0febd6d;
-		xda5bf54deb817e37.x25302ae69cf01877 += x180ac33b1a48b2c8;
-		xda5bf54deb817e37.x7757e023237c7679 += x4e143c28e5d82e32;
-		xda5bf54deb817e37.x8f530dd9a6341bae += xb1d822a60e722420;
+		node.x332a8eedb847940d = _9ce35bc295da5a81;
+		node.x6b30bb6c5f41e32f += x31e52814f0febd6d;
+		node.x25302ae69cf01877 += x180ac33b1a48b2c8;
+		node.x7757e023237c7679 += x4e143c28e5d82e32;
+		node.x8f530dd9a6341bae += xb1d822a60e722420;
 	}
 
-	private void xb8ce62321f41fcd9(x95fcf261e3011b00 xda5bf54deb817e37)
+	private void xb8ce62321f41fcd9(x95fcf261e3011b00 node)
 	{
-		xda5bf54deb817e37.x332a8eedb847940d = null;
-		xda5bf54deb817e37.x6b30bb6c5f41e32f -= x31e52814f0febd6d;
-		xda5bf54deb817e37.x25302ae69cf01877 -= x180ac33b1a48b2c8;
-		xda5bf54deb817e37.x7757e023237c7679 -= x4e143c28e5d82e32;
-		xda5bf54deb817e37.x8f530dd9a6341bae -= xb1d822a60e722420;
+		node.x332a8eedb847940d = null;
+		node.x6b30bb6c5f41e32f -= x31e52814f0febd6d;
+		node.x25302ae69cf01877 -= x180ac33b1a48b2c8;
+		node.x7757e023237c7679 -= x4e143c28e5d82e32;
+		node.x8f530dd9a6341bae -= xb1d822a60e722420;
 	}
 
 	public virtual x95fcf261e3011b00 Add(string xb41faee6912a2313)
@@ -161,20 +161,20 @@ public class x0bc7d5c84e62d912 : IList<x95fcf261e3011b00>, ICollection<x95fcf261
 		return x95fcf261e3011b;
 	}
 
-	public virtual int Add(x95fcf261e3011b00 xda5bf54deb817e37)
+	public virtual int Add(x95fcf261e3011b00 node)
 	{
-		return x2252c77099794fa9(xda5bf54deb817e37);
+		return x2252c77099794fa9(node);
 	}
 
-	private void x20908faacd2592f9(x95fcf261e3011b00 xccb63ca5f63dc470)
+	private void x20908faacd2592f9(x95fcf261e3011b00 item)
 	{
-		Add(xccb63ca5f63dc470);
+		Add(item);
 	}
 
-	void ICollection<x95fcf261e3011b00>.Add(x95fcf261e3011b00 xccb63ca5f63dc470)
+	void ICollection<x95fcf261e3011b00>.Add(x95fcf261e3011b00 item)
 	{
 		//ILSpy generated this explicit interface implementation from .override directive in x20908faacd2592f9
-		this.x20908faacd2592f9(xccb63ca5f63dc470);
+		this.x20908faacd2592f9(item);
 	}
 
 	private int xae8b83d75f3358b9(object xbcea506a33cf9111)
@@ -212,40 +212,40 @@ public class x0bc7d5c84e62d912 : IList<x95fcf261e3011b00>, ICollection<x95fcf261
 		}
 	}
 
-	private int x2252c77099794fa9(x95fcf261e3011b00 xda5bf54deb817e37)
+	private int x2252c77099794fa9(x95fcf261e3011b00 node)
 	{
-		if (xda5bf54deb817e37 == null)
+		if (node == null)
 		{
 			throw new ArgumentNullException("node");
 		}
 		xea5e4be807a4597b view = _9ce35bc295da5a81.x62e86f2fb9e3a57b;
-		if (xda5bf54deb817e37.x332a8eedb847940d != null || xda5bf54deb817e37.x62e86f2fb9e3a57b != null)
+		if (node.x332a8eedb847940d != null || node.x62e86f2fb9e3a57b != null)
 		{
 			throw new ArgumentException("Node has already been added elsewhere.", "node");
 		}
-		xe014cc494bbbb1d4(xda5bf54deb817e37);
+		xe014cc494bbbb1d4(node);
 		if (view != null && view.x65ae7187ad9944b4)
 		{
-			int num = _63b0f7fed3f5bd88.FindIndex((x95fcf261e3011b00 x3bd62873fafa6252) => (view.x97ebca14fccfbefa == null) ? (StringComparer.CurrentCulture.Compare(xda5bf54deb817e37.xf9ad6fb78355fe13, x3bd62873fafa6252.xf9ad6fb78355fe13) > 0) : (view.x97ebca14fccfbefa.Compare(xda5bf54deb817e37, x3bd62873fafa6252) > 0));
+			int num = _63b0f7fed3f5bd88.FindIndex((x95fcf261e3011b00 x3bd62873fafa6252) => (view.x97ebca14fccfbefa == null) ? (StringComparer.CurrentCulture.Compare(node.xf9ad6fb78355fe13, x3bd62873fafa6252.xf9ad6fb78355fe13) > 0) : (view.x97ebca14fccfbefa.Compare(node, x3bd62873fafa6252) > 0));
 			if (num >= 0)
 			{
-				_63b0f7fed3f5bd88.Insert(num, xda5bf54deb817e37);
+				_63b0f7fed3f5bd88.Insert(num, node);
 				xcbc511030aa1eefb();
 				return num;
 			}
 		}
-		_63b0f7fed3f5bd88.Add(xda5bf54deb817e37);
+		_63b0f7fed3f5bd88.Add(node);
 		xcbc511030aa1eefb();
 		return _63b0f7fed3f5bd88.Count - 1;
 	}
 
-	public virtual void AddRange(x95fcf261e3011b00[] xa955664f4f50999d)
+	public virtual void AddRange(x95fcf261e3011b00[] nodes)
 	{
-		if (xa955664f4f50999d == null)
+		if (nodes == null)
 		{
 			throw new ArgumentNullException("nodes");
 		}
-		if (xa955664f4f50999d.Length <= 0)
+		if (nodes.Length <= 0)
 		{
 			return;
 		}
@@ -253,7 +253,7 @@ public class x0bc7d5c84e62d912 : IList<x95fcf261e3011b00>, ICollection<x95fcf261
 		x62e86f2fb9e3a57b?.x5577363cc650aaeb();
 		try
 		{
-			foreach (x95fcf261e3011b00 xda5bf54deb817e in xa955664f4f50999d)
+			foreach (x95fcf261e3011b00 xda5bf54deb817e in nodes)
 			{
 				Add(xda5bf54deb817e);
 			}
@@ -264,14 +264,14 @@ public class x0bc7d5c84e62d912 : IList<x95fcf261e3011b00>, ICollection<x95fcf261
 		}
 	}
 
-	public void Insert(int xc0c4c459c6ccbd00, x95fcf261e3011b00 xccb63ca5f63dc470)
+	public void Insert(int xc0c4c459c6ccbd00, x95fcf261e3011b00 item)
 	{
-		if (xccb63ca5f63dc470 == null)
+		if (item == null)
 		{
 			throw new ArgumentNullException("item");
 		}
 		xea5e4be807a4597b x62e86f2fb9e3a57b = _9ce35bc295da5a81.x62e86f2fb9e3a57b;
-		if (xccb63ca5f63dc470.x332a8eedb847940d != null || xccb63ca5f63dc470.x62e86f2fb9e3a57b != null)
+		if (item.x332a8eedb847940d != null || item.x62e86f2fb9e3a57b != null)
 		{
 			throw new ArgumentException("Node has already been added elsewhere.", "item");
 		}
@@ -279,8 +279,8 @@ public class x0bc7d5c84e62d912 : IList<x95fcf261e3011b00>, ICollection<x95fcf261
 		{
 			throw new InvalidOperationException("Cannot insert into sorted tree.");
 		}
-		xe014cc494bbbb1d4(xccb63ca5f63dc470);
-		_63b0f7fed3f5bd88.Insert(xc0c4c459c6ccbd00, xccb63ca5f63dc470);
+		xe014cc494bbbb1d4(item);
+		_63b0f7fed3f5bd88.Insert(xc0c4c459c6ccbd00, item);
 		xcbc511030aa1eefb();
 	}
 
@@ -305,9 +305,9 @@ public class x0bc7d5c84e62d912 : IList<x95fcf261e3011b00>, ICollection<x95fcf261
 		xcbc511030aa1eefb();
 	}
 
-	public int IndexOf(x95fcf261e3011b00 xccb63ca5f63dc470)
+	public int IndexOf(x95fcf261e3011b00 item)
 	{
-		return _63b0f7fed3f5bd88.IndexOf(xccb63ca5f63dc470);
+		return _63b0f7fed3f5bd88.IndexOf(item);
 	}
 
 	private int x104b91678c6b7dff(object xbcea506a33cf9111)
@@ -321,9 +321,9 @@ public class x0bc7d5c84e62d912 : IList<x95fcf261e3011b00>, ICollection<x95fcf261
 		return this.x104b91678c6b7dff(xbcea506a33cf9111);
 	}
 
-	public bool Contains(x95fcf261e3011b00 xccb63ca5f63dc470)
+	public bool Contains(x95fcf261e3011b00 item)
 	{
-		return _63b0f7fed3f5bd88.Contains(xccb63ca5f63dc470);
+		return _63b0f7fed3f5bd88.Contains(item);
 	}
 
 	private bool x6532c18338cc2620(object xbcea506a33cf9111)
@@ -337,11 +337,11 @@ public class x0bc7d5c84e62d912 : IList<x95fcf261e3011b00>, ICollection<x95fcf261
 		return this.x6532c18338cc2620(xbcea506a33cf9111);
 	}
 
-	public bool Remove(x95fcf261e3011b00 xccb63ca5f63dc470)
+	public bool Remove(x95fcf261e3011b00 item)
 	{
-		if (_63b0f7fed3f5bd88.Remove(xccb63ca5f63dc470))
+		if (_63b0f7fed3f5bd88.Remove(item))
 		{
-			xb8ce62321f41fcd9(xccb63ca5f63dc470);
+			xb8ce62321f41fcd9(item);
 			xcbc511030aa1eefb();
 			return true;
 		}

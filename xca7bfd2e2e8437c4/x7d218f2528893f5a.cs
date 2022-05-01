@@ -41,10 +41,10 @@ internal class x7d218f2528893f5a : MainWindow
 		x85601834555fb7d5();
 	}
 
-	public new static x7d218f2528893f5a xebcf83b00134300b(Form x071bde1041617fce, string x399bfb4377fa76d2)
+	public static x7d218f2528893f5a xebcf83b00134300b(Form owner, string x399bfb4377fa76d2)
 	{
 		x7d218f2528893f5a x7d218f2528893f5a2 = new x7d218f2528893f5a();
-		x7d218f2528893f5a2.x20aee281977480cf(x071bde1041617fce, x399bfb4377fa76d2);
+		x7d218f2528893f5a2.x20aee281977480cf(owner, x399bfb4377fa76d2);
 		x7d218f2528893f5a2.x4d62cc522d2d5538.Visible = true;
 		return x7d218f2528893f5a2;
 	}

@@ -6,11 +6,11 @@ using x2ac61696da69bb5f;
 
 namespace x3a260771fe762331;
 
-public class xbabc9feec6f641db : ICloneable
+public class CodeEntry : ICloneable
 {
 	private uint _b3efee94cf138f44;
 
-	private xa0380078f0b6cbb7 _a0380078f0b6cbb7;
+	private GameEntry _a0380078f0b6cbb7;
 
 	private string _759aa16c2016a289 = "";
 
@@ -18,7 +18,7 @@ public class xbabc9feec6f641db : ICloneable
 
 	private byte[] _fd7718c88ee45a3e = new byte[3];
 
-	private xf6e5c5e1901f893f _7e5b09fa2269d9a5 = new xf6e5c5e1901f893f(new uint[0]);
+	private Codes _7e5b09fa2269d9a5 = new Codes(new uint[0]);
 
 	private x047611ec9892e059 _be23edc82b0342c0;
 
@@ -42,7 +42,7 @@ public class xbabc9feec6f641db : ICloneable
 		}
 	}
 
-	public xa0380078f0b6cbb7 xa0380078f0b6cbb7
+	public GameEntry GameEntry
 	{
 		get
 		{
@@ -104,7 +104,7 @@ public class xbabc9feec6f641db : ICloneable
 		}
 	}
 
-	public xf6e5c5e1901f893f x7e5b09fa2269d9a5
+	public Codes CheatCodes
 	{
 		get
 		{
@@ -129,18 +129,18 @@ public class xbabc9feec6f641db : ICloneable
 		}
 	}
 
-	public string x4191326b8c285bfa => string.Join("  ", x7e5b09fa2269d9a5.xa9edb3b115d067da());
+	public string x4191326b8c285bfa => string.Join("  ", CheatCodes.xa9edb3b115d067da());
 
-	public uint xd38f244fb61873da => (uint)(4 + (Name.Length + x4e020dae918bd2ce.Length + 2) * 2 + xfd7718c88ee45a3e.Length + 4 + x7e5b09fa2269d9a5.x6b73aa01aa019d3a.Length * 4);
+	public uint xd38f244fb61873da => (uint)(4 + (Name.Length + x4e020dae918bd2ce.Length + 2) * 2 + xfd7718c88ee45a3e.Length + 4 + CheatCodes.codes.Length * 4);
 
-	public xbabc9feec6f641db Clone()
+	public CodeEntry Clone()
 	{
-		xbabc9feec6f641db xbabc9feec6f641db2 = (xbabc9feec6f641db)MemberwiseClone();
-		xbabc9feec6f641db2.xa0380078f0b6cbb7 = null;
+		CodeEntry xbabc9feec6f641db2 = (CodeEntry)MemberwiseClone();
+		xbabc9feec6f641db2.GameEntry = null;
 		xbabc9feec6f641db2._fd7718c88ee45a3e = (byte[])xfd7718c88ee45a3e.Clone();
-		if (x7e5b09fa2269d9a5 != null)
+		if (CheatCodes != null)
 		{
-			xbabc9feec6f641db2.x7e5b09fa2269d9a5 = x7e5b09fa2269d9a5.Clone();
+			xbabc9feec6f641db2.CheatCodes = CheatCodes.Clone();
 		}
 		if (xbe23edc82b0342c0 != null)
 		{
@@ -160,18 +160,18 @@ public class xbabc9feec6f641db : ICloneable
 		return this.xc1ca9fe073d7b6d8();
 	}
 
-	public static xbabc9feec6f641db x5d95f5f98c940295(BinaryReader xe134235b3526fa75)
+	public static CodeEntry x5d95f5f98c940295(BinaryReader reader)
 	{
-		if (xe134235b3526fa75 == null)
+		if (reader == null)
 		{
 			throw new ArgumentNullException("reader");
 		}
-		xbabc9feec6f641db xbabc9feec6f641db2 = new xbabc9feec6f641db();
-		xbabc9feec6f641db2._b3efee94cf138f44 = xe134235b3526fa75.ReadUInt32();
-		xbabc9feec6f641db2._759aa16c2016a289 = x6b7a089e1d3477ec(x33636090f73cdcbf.x6cb7e4df256c4673(xe134235b3526fa75));
-		xbabc9feec6f641db2._4e020dae918bd2ce = x6b7a089e1d3477ec(x33636090f73cdcbf.x6cb7e4df256c4673(xe134235b3526fa75));
-		xbabc9feec6f641db2._fd7718c88ee45a3e = xe134235b3526fa75.ReadBytes(3);
-		int num = xe134235b3526fa75.ReadInt32();
+		CodeEntry xbabc9feec6f641db2 = new CodeEntry();
+		xbabc9feec6f641db2._b3efee94cf138f44 = reader.ReadUInt32();
+		xbabc9feec6f641db2._759aa16c2016a289 = x6b7a089e1d3477ec(Codelist.x6cb7e4df256c4673(reader));
+		xbabc9feec6f641db2._4e020dae918bd2ce = x6b7a089e1d3477ec(Codelist.x6cb7e4df256c4673(reader));
+		xbabc9feec6f641db2._fd7718c88ee45a3e = reader.ReadBytes(3);
+		int num = reader.ReadInt32();
 		if (((uint)num & (true ? 1u : 0u)) != 0)
 		{
 			throw new IOException("Code size mismatch in code id " + xbabc9feec6f641db2.xb3efee94cf138f44);
@@ -181,28 +181,48 @@ public class xbabc9feec6f641db : ICloneable
 			uint[] array = new uint[num];
 			for (int i = 0; i < num; i++)
 			{
-				array[i] = xe134235b3526fa75.ReadUInt32();
+				array[i] = reader.ReadUInt32();
 			}
-			xbabc9feec6f641db2._7e5b09fa2269d9a5 = new xf6e5c5e1901f893f(array);
+			xbabc9feec6f641db2._7e5b09fa2269d9a5 = new Codes(array);
 		}
 		return xbabc9feec6f641db2;
 	}
 
-	public void x0acd3c2012ea2ee8(BinaryWriter xbdfb620b7167944b)
+	public void Write(BinaryWriter writer)
 	{
-		if (xbdfb620b7167944b == null)
+		if (writer == null)
 		{
-			throw new ArgumentNullException("writer");
+			throw new ArgumentNullException(nameof(writer));
 		}
-		xbdfb620b7167944b.Write(xb3efee94cf138f44);
-		x33636090f73cdcbf.xd80e037acfa32563(xbdfb620b7167944b, x9e58cde81e068cff(Name));
-		x33636090f73cdcbf.xd80e037acfa32563(xbdfb620b7167944b, x9e58cde81e068cff(x4e020dae918bd2ce));
-		xbdfb620b7167944b.Write(xfd7718c88ee45a3e);
-		xbdfb620b7167944b.Write((uint)x7e5b09fa2269d9a5.x6b73aa01aa019d3a.Length);
-		for (int i = 0; i < x7e5b09fa2269d9a5.x6b73aa01aa019d3a.Length; i++)
+		writer.Write(xb3efee94cf138f44);
+		Codelist.xd80e037acfa32563(writer, x9e58cde81e068cff(Name));
+		Codelist.xd80e037acfa32563(writer, x9e58cde81e068cff(x4e020dae918bd2ce));
+		writer.Write(xfd7718c88ee45a3e);
+		writer.Write((uint)CheatCodes.codes.Length);
+		for (int i = 0; i < CheatCodes.codes.Length; i++)
 		{
-			xbdfb620b7167944b.Write(x7e5b09fa2269d9a5.x6b73aa01aa019d3a[i]);
+			writer.Write(CheatCodes.codes[i]);
 		}
+	}
+	
+	public void Write(StreamWriter writer)
+	{
+		if (writer == null)
+		{
+			throw new ArgumentNullException(nameof(writer));
+		}
+
+		if (Name == "(M)")
+		{
+			writer.Write("Enable Code (Must Be On)\r\n");
+		}
+		else
+		{
+			writer.Write($"{Name}\r\n");
+		}
+		
+		writer.Write(CheatCodes.ToLines());
+		writer.Write("\r\n");
 	}
 
 	public static string x6b7a089e1d3477ec(string xb41faee6912a2313)
@@ -249,7 +269,7 @@ public class xbabc9feec6f641db : ICloneable
 		{
 			throw new InvalidOperationException("Cannot update from nonexistent decrypted data.");
 		}
-		if (x7e5b09fa2269d9a5 == null)
+		if (CheatCodes == null)
 		{
 			throw new InvalidOperationException("Encrypted code data expected to be present already.");
 		}

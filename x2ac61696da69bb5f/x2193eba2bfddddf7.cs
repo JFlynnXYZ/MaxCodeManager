@@ -57,9 +57,9 @@ internal sealed class x2193eba2bfddddf7 : IDisposable
 		}
 	}
 
-	public void xc4305ca6c268b073(string xeaf1b27180c0557b, xf6e5c5e1901f893f x9035cf16181332fc)
+	public void xc4305ca6c268b073(string xeaf1b27180c0557b, Codes code)
 	{
-		if (x9035cf16181332fc == null)
+		if (code == null)
 		{
 			throw new ArgumentNullException("code");
 		}
@@ -72,7 +72,7 @@ internal sealed class x2193eba2bfddddf7 : IDisposable
 		{
 			x5aa326f374b3d0ef.WriteAttributeString("Id", xeaf1b27180c0557b);
 		}
-		string[] array = x9035cf16181332fc.xa9edb3b115d067da();
+		string[] array = code.xa9edb3b115d067da();
 		string[] array2 = array;
 		foreach (string value in array2)
 		{

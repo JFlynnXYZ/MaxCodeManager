@@ -14,13 +14,13 @@ public class FavouriteGame
 
 	public RegionCode Region = RegionCode.Unknown;
 
-	public static FavouriteGame x7fb4a4853286849b(xa0380078f0b6cbb7 x6849540e228fbc76)
+	public static FavouriteGame x7fb4a4853286849b(GameEntry game)
 	{
-		if (x6849540e228fbc76 == null)
+		if (game == null)
 		{
 			throw new ArgumentNullException("game");
 		}
-		return new FavouriteGame(x6849540e228fbc76.x52b8174788d367f9, x6849540e228fbc76.x759aa16c2016a289, x6849540e228fbc76.x9b7a81a8f32a1422);
+		return new FavouriteGame(game.x52b8174788d367f9, game.Name, game.Region);
 	}
 
 	public FavouriteGame()

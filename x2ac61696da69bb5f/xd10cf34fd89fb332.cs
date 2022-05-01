@@ -14,7 +14,7 @@ internal sealed class xd10cf34fd89fb332 : IDisposable
 
 	private TextReader xad23438fa23654dc;
 
-	public xd10cf34fd89fb332(TextReader xe134235b3526fa75)
+	public xd10cf34fd89fb332(TextReader reader)
 	{
 		XmlReaderSettings xmlReaderSettings = new XmlReaderSettings();
 		xmlReaderSettings.IgnoreComments = true;
@@ -23,7 +23,7 @@ internal sealed class xd10cf34fd89fb332 : IDisposable
 		xmlReaderSettings.ValidationType = ValidationType.Schema;
 		xmlReaderSettings.Schemas.Add(xe0178b3cb76b6574());
 		xmlReaderSettings.Schemas.Compile();
-		xad23438fa23654dc = xe134235b3526fa75;
+		xad23438fa23654dc = reader;
 		xf86de1bd2f396938 = XmlReader.Create(xad23438fa23654dc, xmlReaderSettings);
 		xf86de1bd2f396938.ReadStartElement("CodeList");
 	}
@@ -83,7 +83,7 @@ internal sealed class xd10cf34fd89fb332 : IDisposable
 		xf86de1bd2f396938.ReadEndElement();
 		try
 		{
-			return new x41b0bc8b458547c2(attribute, new xf6e5c5e1901f893f(list.ToArray()));
+			return new x41b0bc8b458547c2(attribute, new Codes(list.ToArray()));
 		}
 		catch (CodeLineException ex)
 		{

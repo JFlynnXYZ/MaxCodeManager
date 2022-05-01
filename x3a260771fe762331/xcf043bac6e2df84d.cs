@@ -53,7 +53,7 @@ internal class xcf043bac6e2df84d
 
 	private int[] x2ec7ec95ae71f5c0 = new int[4353];
 
-	private int[] xb6a159a84cb992d6 = new int[4097];
+	private int[] Form = new int[4097];
 
 	private uint xd12d1dba8a023d95;
 
@@ -120,7 +120,7 @@ internal class xcf043bac6e2df84d
 		}
 		for (int j = 0; j < 4096; j++)
 		{
-			xb6a159a84cb992d6[j] = 4096;
+			Form[j] = 4096;
 		}
 	}
 
@@ -137,7 +137,7 @@ internal class xcf043bac6e2df84d
 				if (x2ec7ec95ae71f5c0[num2] == 4096)
 				{
 					x2ec7ec95ae71f5c0[num2] = xb55b340ae3a3e4e0;
-					xb6a159a84cb992d6[xb55b340ae3a3e4e0] = num2;
+					Form[xb55b340ae3a3e4e0] = num2;
 					return;
 				}
 				num2 = x2ec7ec95ae71f5c0[num2];
@@ -147,7 +147,7 @@ internal class xcf043bac6e2df84d
 				if (x2d1142a7dcb401f8[num2] == 4096)
 				{
 					x2d1142a7dcb401f8[num2] = xb55b340ae3a3e4e0;
-					xb6a159a84cb992d6[xb55b340ae3a3e4e0] = num2;
+					Form[xb55b340ae3a3e4e0] = num2;
 					return;
 				}
 				num2 = x2d1142a7dcb401f8[num2];
@@ -183,25 +183,25 @@ internal class xcf043bac6e2df84d
 				}
 			}
 		}
-		xb6a159a84cb992d6[xb55b340ae3a3e4e0] = xb6a159a84cb992d6[num2];
+		Form[xb55b340ae3a3e4e0] = Form[num2];
 		x2d1142a7dcb401f8[xb55b340ae3a3e4e0] = x2d1142a7dcb401f8[num2];
 		x2ec7ec95ae71f5c0[xb55b340ae3a3e4e0] = x2ec7ec95ae71f5c0[num2];
-		xb6a159a84cb992d6[x2d1142a7dcb401f8[num2]] = xb55b340ae3a3e4e0;
-		xb6a159a84cb992d6[x2ec7ec95ae71f5c0[num2]] = xb55b340ae3a3e4e0;
-		if (x2ec7ec95ae71f5c0[xb6a159a84cb992d6[num2]] == num2)
+		Form[x2d1142a7dcb401f8[num2]] = xb55b340ae3a3e4e0;
+		Form[x2ec7ec95ae71f5c0[num2]] = xb55b340ae3a3e4e0;
+		if (x2ec7ec95ae71f5c0[Form[num2]] == num2)
 		{
-			x2ec7ec95ae71f5c0[xb6a159a84cb992d6[num2]] = xb55b340ae3a3e4e0;
+			x2ec7ec95ae71f5c0[Form[num2]] = xb55b340ae3a3e4e0;
 		}
 		else
 		{
-			x2d1142a7dcb401f8[xb6a159a84cb992d6[num2]] = xb55b340ae3a3e4e0;
+			x2d1142a7dcb401f8[Form[num2]] = xb55b340ae3a3e4e0;
 		}
-		xb6a159a84cb992d6[num2] = 4096;
+		Form[num2] = 4096;
 	}
 
 	private void x92361180a53fdf7c(int x9c79b5ad7b769b12)
 	{
-		if (xb6a159a84cb992d6[x9c79b5ad7b769b12] == 4096)
+		if (Form[x9c79b5ad7b769b12] == 4096)
 		{
 			return;
 		}
@@ -224,24 +224,24 @@ internal class xcf043bac6e2df84d
 					num = x2ec7ec95ae71f5c0[x9c79b5ad7b769b12];
 				}
 				while (x2ec7ec95ae71f5c0[num] != 4096);
-				x2ec7ec95ae71f5c0[xb6a159a84cb992d6[num]] = x2d1142a7dcb401f8[num];
-				xb6a159a84cb992d6[x2d1142a7dcb401f8[num]] = xb6a159a84cb992d6[num];
+				x2ec7ec95ae71f5c0[Form[num]] = x2d1142a7dcb401f8[num];
+				Form[x2d1142a7dcb401f8[num]] = Form[num];
 				x2d1142a7dcb401f8[num] = x2d1142a7dcb401f8[x9c79b5ad7b769b12];
-				xb6a159a84cb992d6[x2d1142a7dcb401f8[x9c79b5ad7b769b12]] = num;
+				Form[x2d1142a7dcb401f8[x9c79b5ad7b769b12]] = num;
 			}
 			x2ec7ec95ae71f5c0[num] = x2ec7ec95ae71f5c0[x9c79b5ad7b769b12];
-			xb6a159a84cb992d6[x2ec7ec95ae71f5c0[x9c79b5ad7b769b12]] = num;
+			Form[x2ec7ec95ae71f5c0[x9c79b5ad7b769b12]] = num;
 		}
-		xb6a159a84cb992d6[num] = xb6a159a84cb992d6[x9c79b5ad7b769b12];
-		if (x2ec7ec95ae71f5c0[xb6a159a84cb992d6[x9c79b5ad7b769b12]] == x9c79b5ad7b769b12)
+		Form[num] = Form[x9c79b5ad7b769b12];
+		if (x2ec7ec95ae71f5c0[Form[x9c79b5ad7b769b12]] == x9c79b5ad7b769b12)
 		{
-			x2ec7ec95ae71f5c0[xb6a159a84cb992d6[x9c79b5ad7b769b12]] = num;
+			x2ec7ec95ae71f5c0[Form[x9c79b5ad7b769b12]] = num;
 		}
 		else
 		{
-			x2d1142a7dcb401f8[xb6a159a84cb992d6[x9c79b5ad7b769b12]] = num;
+			x2d1142a7dcb401f8[Form[x9c79b5ad7b769b12]] = num;
 		}
-		xb6a159a84cb992d6[x9c79b5ad7b769b12] = 4096;
+		Form[x9c79b5ad7b769b12] = 4096;
 	}
 
 	private void x07af4ca3c293821e()

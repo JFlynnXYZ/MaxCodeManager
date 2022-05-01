@@ -31,9 +31,9 @@ public class x95fcf261e3011b00
 			}
 		}
 
-		public x66905b21d831a573(x95fcf261e3011b00 x071bde1041617fce)
+		public x66905b21d831a573(x95fcf261e3011b00 owner)
 		{
-			_9ce35bc295da5a81 = x071bde1041617fce;
+			_9ce35bc295da5a81 = owner;
 		}
 	}
 

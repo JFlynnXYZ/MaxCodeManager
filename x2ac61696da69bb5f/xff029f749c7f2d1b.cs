@@ -18,10 +18,10 @@ internal class xff029f749c7f2d1b
 
 	public int x9f7648f40d0312e9 => _9f7648f40d0312e9;
 
-	public xff029f749c7f2d1b(string xeaf1b27180c0557b, x047611ec9892e059 x9035cf16181332fc)
+	public xff029f749c7f2d1b(string xeaf1b27180c0557b, x047611ec9892e059 code)
 	{
 		_ea1e81378298fa81 = xeaf1b27180c0557b;
-		_b0b4ff1622a01d12 = x9035cf16181332fc;
+		_b0b4ff1622a01d12 = code;
 	}
 
 	public xff029f749c7f2d1b(string xeaf1b27180c0557b, string xc685eed2987781a2)
